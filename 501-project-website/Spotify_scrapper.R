@@ -17,7 +17,7 @@ HeaderValue = paste0('Bearer ', mytoken)
 
 header = {"Authorization":HeaderValue}
 
-
+# Importing the dataset with the songs we want to extract Spotify features using the API
 tracks_list <- read.csv("/Users/anthonymoubarak/Desktop/Project/Project Data/missingyears_updated.csv")
 
 #name of Spotify Features
@@ -32,7 +32,7 @@ tracks_list[,c("id","danceability","energy","key","loudness","mode","speechiness
 
 
 
-
+# Looping over every song and extracting the required data 
 for(i in 1:nrow(tracks_list)){
   Sys.sleep(0.10)
   track_URI2 = paste0('https://api.spotify.com/v1/audio-features/',   
