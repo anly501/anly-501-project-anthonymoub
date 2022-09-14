@@ -3,7 +3,7 @@
 	margin: 0;
 	font-family: 'Josefin Sans', sans-serif;
 	box-sizing: border-box;
-	overflow: hidden;
+	 
 }
 .hero{
 	height: 100vh;
@@ -22,10 +22,10 @@ nav{
 }
 
 .wifi{
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     position: absolute;
-	right: -20%;
+    right: -23%;
     top: 15%;
 	
 }
@@ -70,8 +70,48 @@ nav ul li a:hover{
 	position: absolute;
 	top: 50%;
 	left:8%;
-	transform: translateY(-50%);
+	animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+		
+		
+    }
+
+    80% {
+        transform: translateX(1rem);
+		
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+		 
+		 
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 h1{
 	color: white;
 	margin: 20px 0px 20px;
@@ -83,7 +123,7 @@ h3{
 	margin-bottom: 50px;
 }
 h4{
-	color: #fcfc;
+	color: white;
 	letter-spacing: 2px;
 	font-size: 20px;
 }
@@ -124,9 +164,9 @@ h4{
 	width: 430px;
 }
 .about-text{
-	width: 700px;
-	font-size: x-large;
-	margin-left: 1%;
+	width: 1500px;
+	font-size: 20px;
+	margin-left: 10%;
 }
 .main{
 	width: 1130px;
@@ -149,11 +189,12 @@ h4{
 	text-transform: capitalize;
 }
 .about-text p{
-	color: #fcfc;
+	color: white;
 	letter-spacing: 1px;
 	line-height: 28px;
-	font-size: 18px;
+	font-size: 30px;
 	margin-bottom: 45px;
+	width: 100%;
 }
 button{
 	background-color:#f9004d;

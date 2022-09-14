@@ -3,7 +3,7 @@
 	margin: 0;
 	font-family: 'Josefin Sans', sans-serif;
 	box-sizing: border-box;
-    overflow: hidden;
+   
 }
 .hero{
 	height: 100vh;
@@ -24,7 +24,7 @@ nav{
     width: 700px;
     height: 700px;
     position: absolute;
-    right: -25%;
+    right: -30%;
     top: 15%;
     
 }
@@ -70,7 +70,45 @@ nav ul li a:hover{
 	position: absolute;
 	top: 50%;
 	left:8%;
-	transform: translateY(-50%);
+	animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+		
+		
+    }
+
+    80% {
+        transform: translateX(1rem);
+		
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+		 
+		 
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 h1{
 	color: white;

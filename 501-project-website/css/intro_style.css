@@ -3,15 +3,14 @@
 	margin: 0;
 	font-family: 'Josefin Sans', sans-serif;
 	box-sizing: border-box;
-    overflow: hidden;
+    
 }
 .hero{
 	height: 100vh;
 	width: 100%;
 	background-color: #000;
 	background-size: cover;
-	background-position: center;
- 
+	background-position: center; 
     
 }
 nav{
@@ -63,8 +62,49 @@ nav ul li a:hover{
 	position: absolute;
 	top: 50%;
 	left:8%;
-	transform: translateY(-50%);
+	animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+		
+		
+    }
+
+    80% {
+        transform: translateX(1rem);
+		
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+		 
+		 
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
 h1{
 	color: white;
 	margin: 20px 0px 20px;
@@ -117,9 +157,10 @@ h4{
 	width: 430px;
 }
 .about-text{
-	width: 700px;
+	width: 1000px;
 	font-size: larger;
-	margin-left: 1%;
+	margin-left: 10%;
+	text-align: justify;
 }
 .main{
 	width: 1130px;
@@ -165,14 +206,13 @@ button:hover{
 }
 
 .guitar{
-    width: 700px;
-    height: 700px;
-    position: absolute;
-	right: -20%;
-    top: 15%;
-	
+	width: 750px;
+	height: 750px;
+	position: absolute;
+	right: -27%;
+	top: 8%;
 }
-
+	
 
 
 .card-text{

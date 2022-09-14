@@ -3,7 +3,7 @@
 	margin: 0;
 	font-family: 'Josefin Sans', sans-serif;
 	box-sizing: border-box;
-	overflow: hidden;
+ 
 }
 .hero{
 	height: 100vh;
@@ -62,8 +62,47 @@ nav ul li a:hover{
 	position: absolute;
 	top: 50%;
 	left:8%;
-	transform: translateY(-50%);
+	animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+		
+		
+    }
+
+    80% {
+        transform: translateX(1rem);
+		
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+		 
+		 
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 h1{
 	color: white;
 	margin: 20px 0px 20px;
@@ -116,11 +155,9 @@ h4{
 	width: 430px;
 }
 .about-text{
-	width: 700px;
+	width: 900px;
 	font-size: larger;
-	margin-right: 20%;
-	
-
+	 
 	
 }
 .main{
@@ -187,7 +224,7 @@ button:hover{
 	
 }
 .card{
-	height: 365px;
+	height: 450px;
 	width: 335px;
 	padding: 20px 35px;
 	background: #191919;
@@ -227,7 +264,7 @@ h5{
 }
 .pra p{
 	color: white;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 27px;
 	margin-bottom: 25px;
 }
@@ -326,3 +363,4 @@ footer p:nth-child(2){
 	bottom: 35px;
 	font-size: 14px; 
 }
+ 

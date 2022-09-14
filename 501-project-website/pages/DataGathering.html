@@ -15,7 +15,7 @@
 
 	<div class="hero">
 
-    <img class="wifi" src="/img/wifi.svg"/>
+    <img class="wifi" src="../img/wifi.svg"/>
 		<nav>
 			<h2 class="logo">Project Data Collection</h2>
 			<ul>
@@ -33,9 +33,8 @@
 			
 			<h1>Data Gathering</h1>
 			<h3>This section focuses on the methods used to gather the data discussed in the "Data" section</h3>
-            <h4>Link to github repo with data + API (when ready)</h4>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with datasets and API scripts</h4>
 
-			
 		</div>
 	</div>
 	<!----Data collected ---->
@@ -44,56 +43,78 @@
 		
 			<div class="about-text">
 				<h2>How was the data collected ?</h2>
-				<p> Each dataset (found in this GitHub repository) was collected from a different source, all of which are explained below: <br>
+        <br>
+				<p> There are currently 4 main datasets that have been gathered for this project so far: <br><br>
+
+          >features_data.csv <br>
+          >music_df.csv <br>
+          >missingyears.csv <br>
+          >missingyears_updated.csv <br><br>
+
+
+          Each dataset was collected from a different source using different methods, all of which are explained below: <br><br>
 
                     1)	Music_df <br>
                     <br>
 
-                        •	Billboard’s Top 100 (1950-2015): This dataset features the yearly top 100 songs (with their respective artist’s names) and was gathered from Reddit’s r/datasets by three GitHub users and posted in their private repository.
+                        _	Billboard’s Top 100 (1950-2015): This dataset features the yearly top 100 songs (with their respective artist’s names) 
+                        and was gathered from Reddit’s r/datasets by three GitHub users and posted in <a href="https://github.com/kevinschaich/billboard " style="color: rgb(39, 160, 204)">their</a>  private repository.
                         <br>
                         <br>
-                        •	These files contain only 2 features per song, its name, and the name of the artist(s) behind it, which by themselves do not serve any valuable purpose. Since maximal analytical depth was one of the project's goals, it was important to gather many categorical and numerical features (all of which are explained in the data tab) of songs that each have a specific meaning and purpose.
+                        _	These files contain only 2 features per song, its name, and the name of the artist(s) behind it, which by themselves do not serve any valuable purpose. Since maximal analytical depth is one of the project's goals, it was important to gather many categorical and numerical features (all of which are explained in the data tab) of songs that each have a specific meaning and purpose.
                         <br>
                         <br>
-                        •	Using Wikia Lyrics, as well as its Python counterpart on GitHub, Heroku API the GitHub users scraped each song's title/artist combination and downloaded the song's full lyrics. (I used a different method for data I collected later, details below)
+                        _	Using Wikia Lyrics, as well as its Python counterpart on GitHub, Heroku API the GitHub users scraped each song's title/artist combination and downloaded the song's full lyrics. (I used a different method for data I collected later, details below)
                         <br>
                         <br>
 
-                        •	Using the Natural Language Toolkit (NLTK) for Python, the GitHub users used the VADER model for parsimonious rule-based sentiment analysis of each song's lyrics. Each song was run through a sentiment analyzer and output an object with data about its sentiment: Negativity, Neutrality, Positivity
+                        _	Using the Natural Language Toolkit (NLTK) for Python, the GitHub users used the VADER model for parsimonious rule-based sentiment analysis of each song's lyrics. Each song was run through a sentiment analyzer and output an object with data about its sentiment: Negativity, Neutrality, Positivity
                         <br>
                         <br>
-                        •	The textstat package in Python was used to calculate a number of aggregate readability metrics associated with each song's lyrics: number of words, number of lines, number of syllables, number of difficult words, fog and flesch index, and f_k_grade.
+                        _	The textstat package in Python was used to calculate a number of aggregate readability metrics associated with each song's lyrics: number of words, number of lines, number of syllables, number of difficult words, fog and flesch index, and f_k_grade.
                         <br>
                         <br>
-                        •	As for the music-related features (danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration) are all features that are given by the Spotify Web API. Another GitHub user (link to repository) compiled all the above features with the Spotify API’s features into one large CSV file, called Music_df in the project’s GitHub repository.
+                        _	As for the music-related features (danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration) are all features that are given by the Spotify Web API. Another GitHub user <a href="https://github.com/RosebudAnwuri/TheArtandScienceofData/tree/master/The%20Making%20of%20Great%20Music" style="color: rgb(39, 160, 204)">(Link to repository)</a> compiled all the above features with the Spotify API’s features into one large CSV file, called Music_df in the project’s GitHub repository.
                         <br>
                         <br>
                        
                      2)	Features_dataset
                      <br>
                      <br>
-                        •	Since Music_df does not have a genre for each song, the three GitHub users mentioned above created a CSV file that associates each artist’s name with a genre, using the MusicBrainz API.
+                        _	Since Music_df does not have a genre for each song, the three GitHub users mentioned above created a CSV file that associates each artist’s name with a genre, using the MusicBrainz API.
                         <br>
                         <br>
-                        •	This dataset’s purpose is to eventually add a “genre” feature to the main dataset using some sort of “join” statement/function. This will be dealt with at the data cleaning stage of the project.
+                        _	This dataset’s purpose is to eventually add a “genre” feature to the main dataset using some sort of “join” statement/function. This will be dealt with at the data cleaning stage of the project.
                         <br>
                         <br>
 
                     3)	Missingyears
                         <br>
                         <br>
-                        •	As mentioned earlier, the music_df contains data for songs between 1950 and 2015, excluding the last 7 years (worth 700 songs) of music. For that reason, I had to do some extra work on my own to get this data as I believe significant changes in music have happened during that time period and it is essential to include it as part of the study.
+                        _	As mentioned earlier, the music_df contains data for songs between 1950 and 2015, excluding the last 7 years (worth 700 songs) of music. For that reason, I had to do some extra work on my own to get this data as I believe significant changes in music have happened during that time period and it is essential to include it as part of the study.
                         <br>
                         <br>
-                        •	The first step was importing Billboard’s Yearly Top 100 chart for the years 2016,2017,2018,2019,2020, and 2021. This was done using Billboard’s “unofficial” API, which was created by the following user and posted on GitHub. The charts for each year were scrapped and then combined using a Python script (found in my repo/add link).
+                        _	The first step was importing Billboard’s Yearly Top 100 chart for the years 2016,2017,2018,2019,2020, and 2021. This was done using Billboard’s “unofficial” API, which was created by <a href="https://github.com/guoguo12/billboard-charts" style="color: rgb(39, 160, 204)">following</a>  user and posted on GitHub. The charts for each year were scrapped and then combined using a Python script (found in my repo).
                         <br>
                         <br>
-                        •	Next, the lyrics for each (newly added) song were gathered using Genius’s  Python API called “lyricsgenius”.
+                        _	Next, the lyrics for each (newly added) song were gathered using Genius’s  Python API called “lyricsgenius”.
                         <br>
                         <br>
-                        •	All the remaining features for the newly added songs are being gathered by the moment and this page will be updated ASAP.
+                        _	This resulted in an updated dataset with all the new music and their respective lyrics. The last missing piece was getting
+                        the songs' audio features.
+
+                        <br>
+                        <br>
                         
+                    4)	Missingyears_updated  
+
+                    <br>
+                    <br>
+
+                    _	I gathered the audio features of newly added songs using the Spotify API and R. This resulted in me now having a dataset identical
+                    to what i have gathered from Github but for the missing years.
                 
+                    _	The next step is cleaing all the data gathered and combining all data into one central data set.
                 
                 </p>
 		
