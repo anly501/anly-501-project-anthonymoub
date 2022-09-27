@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio website</title>
+	<link rel="stylesheet" type="text/css" href="../css/datagath_style.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+	<!----hero Section start---->
+
+	<div class="hero">
+
+    <img class="wifi" src="../img/wifi.svg"/>
+		<nav>
+			<h2 class="logo">Project Data Collection</h2>
+			<ul>
+				<li><a href="./index.html">About Me</a></li>
+				<li><a href="introduction.html">Introduction</a></li>
+				<li><a href="Code.html">Code</a></li>
+				<li><a href="Data.html">Data</a></li>
+				<li><a href="DataGathering.html">Data Gathering</a></li>
+				<li><a href="DataCleaning.html">Data Cleaning</a></li>
+				<li><a href="ExploringData.html">Exploring Data</a></li>
+			</ul>
+		
+		</nav>
+
+		<div class="content">
+			
+			<h1>Data Cleaning</h1>
+			<h3>This section focuses on how the data collected was cleaned</h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with datasets and API scripts</h4>
+
+		</div>
+	</div>
+	<!----Data collected ---->
+	<section class="about">
+		<div class="main">
+		
+			<div class="about-text">
+				<h2>How was the data cleaned and prepared ?</h2>
+        <br>
+				<p> The data cleaning process was done on two seperate files <br><br>
+
+          > Data_cleaning.R: R script focused on cleaning record and labeled data <br>
+          > Cleaning_data.ipynb: Jupyter notebook focused on cleaning text data (in this case lyrics related data) <br>
+          <br><br><br>
+
+          Part One: Data_cleaning.R <br><br>
+
+          After the whole data gathering process, i ended up with 2 main datasets, one for songs prior to 2015 and the other
+          for songs between 2015 and 2021. Before proceeding to the next step which was merging both datasets into one final main
+          dataset, both had to be cleaned individually to be compatible with each other. <br><br>
+
+          The first thing that had to be done was deleting unnecessary columns like: <br><br>
+
+          > X.1: A useless column that was a byproduct from previous code.<br>
+          > spotify_id: This variable served its purpose and was of no use from this point on.<br>
+          > id: A useless column.<br>
+          > uri: A useless column.<br>
+          >analysis_url: A useless column.<br><br>
+
+          After having all unwanted columns dropped, it was time to check the data type of each variable, which would be important
+          at later stages of the project. Running the str() function in R summarizes all this information. <br>
+
+
+          <img class="dc" src="../img/data_types.png"/> <br><br>
+
+        All the data types were correct and as required. The APIs used in the data gathering process of the project could have been responsible for that. <br><br>
+
+        The next step was dealing with missing values,which are present in a couple of entries of the lyrics column.All songs with missing lyrics were
+        dropped as they are a small number (183) out of all the songs gathered, the absence of these songs would have a very small (if any) effect on the analysis,
+        which is why they were dropped.
+
+        <br><br>
+
+        The same data cleaning methods were applied on the old music dataset, and the two datasets were joined together into one final dataset for the Billboard's
+        Top 100 songs from 1950 till 2021. <br><br><br>
+
+
+        Part Two: Cleaning_data.ipynb <br><br>
+
+        As previously mentioned, this notebook mainly focused on dealing with text data and preparing it in a format that is appropriate for further analysis. Just like 
+        any NLP project (or part of a project in this case), one of the first steps is removing stopwords from text since they provide unnecessary noise. The Python NLTK
+        package was used to remove these stopwords from all the lyrics. The stop words removed were any word that belongs to the following: <br><br>
+
+        'i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves',
+        'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves',
+        'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has',
+        'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for'
+        ,'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 
+        'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few',
+        'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don',
+        "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', 
+        "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't",
+        'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't"
+        
+        <br><br>
+
+        Since the analysis was to be done on a per decade basis, the song lyrics data was split into their respective decades: 1950s, 1960s,
+        1970s, 1980s, 1990s, 00s, and 2010s. The python count vectorizor was used on each lyric dataset to get the count per word for each song in 
+        its respective dataset, something which was used later in the exploratory stage of the project. Below is an example of the output of 
+        count vectorization. <br><br>
+
+        <img class="lc" src="../img/lyric_count_90.png"/> <br><br>
+
+
+			</div>
+		</div>
+	
+
+ 
+
+
+</body>
+</html>
