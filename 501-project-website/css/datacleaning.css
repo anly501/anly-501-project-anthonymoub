@@ -63,31 +63,6 @@ nav ul li a:hover{
 	border-radius: 30px;
 	transition: transform .4s; 
 }
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-  float: left;
-  width: 50%;
-  padding: 5px;
-}
-
-/* Clear floats after image containers */
-.wordclouds::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-
-
-
-
-
-
-
-
-
-
 .btn:hover{
 	transform: scale(1.2);
 }
@@ -185,30 +160,14 @@ h4{
 	background-color: #191919;
 }
 .about img{
-	height: 500px;
-	width: 1000px;
+	height: auto;
+	width: 430px;
 }
 .about-text{
 	width: 1500px;
 	font-size: 20px;
 	margin-left: 10%;
 }
-
-
-
-
-.statistics{
-    color: white;
-    letter-spacing: 1px;
-    line-height: 28px;
-    font-size: 20px;
-    margin-bottom: 45px;
-    width: 1500px;
-    padding-left: 6%;
-}
-
-
-
 .main{
 	width: 1130px;
 	max-width: 95%;
@@ -216,6 +175,16 @@ h4{
 	align-items: center;
 	justify-content: space-around;
 }
+
+
+.dc img{
+
+    height: 20px;
+    width: 10px;
+
+}
+
+
 .about-text h2{
 	color: white;
 	font-size: 30px;
@@ -372,15 +341,6 @@ footer p:nth-child(2){
 .social{
 	display: flex;
 	
-    
-}
-
-.musicfeatures img{
-
-    width: 600px;
-    height: 800px;
-  
-
 }
 .social a{
 	width: 45px;

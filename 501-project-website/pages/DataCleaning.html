@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Portfolio website</title>
-	<link rel="stylesheet" type="text/css" href="../css/datagath_style.css">
+	<link rel="stylesheet" type="text/css" href="../css/datacleaning.css">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -66,10 +66,10 @@
           >analysis_url: A useless column.<br><br>
 
           After having all unwanted columns dropped, it was time to check the data type of each variable, which would be important
-          at later stages of the project. Running the str() function in R summarizes all this information. <br>
+          at later stages of the project. Running the str() function in R summarizes all this information. <br><br>
 
 
-          <img class="dc" src="../img/data_types.png"/> <br><br>
+          <img class="dc" src="../img/data_types.png" style="height: 550px ; width: 800px"/> <br><br>
 
         All the data types were correct and as required. The APIs used in the data gathering process of the project could have been responsible for that. <br><br>
 
@@ -80,7 +80,10 @@
         <br><br>
 
         The same data cleaning methods were applied on the old music dataset, and the two datasets were joined together into one final dataset for the Billboard's
-        Top 100 songs from 1950 till 2021. <br><br><br>
+        Top 100 songs from 1950 till 2021. A brief screenshot of how the final dataset looks like: <br><br>
+
+        <img src="../img/finaldf1.png" style="height: 550px ; width: 800px"/> <br><br>
+        <img src="../img/finaldf2.png" style="height: 550px ; width: 800px"/> <br><br><br><br>
 
 
         Part Two: Cleaning_data.ipynb <br><br>
@@ -108,6 +111,9 @@
         count vectorization. <br><br>
 
         <img class="lc" src="../img/lyric_count_90.png"/> <br><br>
+
+        Finally, this script ended up providing me with the lyrics of Billboard's top 100 songs per decade along with basic vector related properties,
+        which are essential for text analysis like word clouds.
 
 
 			</div>
