@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Portfolio website</title>
-	<link rel="stylesheet" type="text/css" href="../css/datagath_style.css">
+	<link rel="stylesheet" type="text/css" href="../css/exploringdata.css">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -51,14 +51,15 @@
           case of this project, around 30 music related variables were gathered for analysis, which made the data exploring process chaotic. For this
           reason, i decided to split the exploration into three seperate parts: <br><br>
 
-          > Analyzing how the music itself (music related features) <br>
+          > Analyzing audio features <br>
           > Analyzing the lyrics <br>
-          > Analyzing the change in the industry as a whole (band types, etc.) <br><br>
+          > Analyzing the industry as a whole (band types, etc.) <br>
+          > Analyzing the statistics behind the features<br><br>
 
 
 
         </p>
-				<h1>Part One: Understanding how music has changed over the years.</h1>
+				<h1>Part One: Understanding how audio features of popular music has changed over the years.</h1>
         <br>
 				<p> As mentioned in the data gathering section, the Spotify API provided with a lot of music related features. As an inintial 
           analysis, the four features picked for analysis (with how Spotify defines them): <br><br>
@@ -79,10 +80,186 @@
 
           Below are four line plots that summarize how these features have changed in Billboard’s top 100 yealry songs ever since the 
           1950s. <br><br>
-         
-		
+
+          <img src="../Plots/musicfeatures.png"> <br><br>
+
+        The most evident thing right upfront is that all of these variables have gone through drastic changes
+        over the years. However, the more interesting thing to note from this graph is the period where trends 
+        shifted from one state to the other. <br><br>
+        
+        Speechiness had very low values for music ever since 1950, where things drastically changed in 1990 and the
+        Billboard saw a seemingly exponential rise in speechiness levels among popular music. This does make sense as 
+        the 90s era is famous for the rise of hip hop (more details on that later). <br><br>
+
+        Durations of popular songs were steadily increasing since the 1960s and peaked in 1990, where it started
+        to drastically decrease to one of the lowest points it has ever been in 2021. The reasons behind this decline
+        might be related to several social factors. For example, the decrease in people's attention spam over the years
+        (more data to be collected on that) might have built this intolerance for longer songs. Another factor that
+        is more recent is TikTok's rise to mainstream media, which might have caused people getting used to quick "snippets" of
+        music that last between 10 and 30 seconds. These are just theories that need more data collection to be properly evaluated. <br><br>
+
+        Instrumentalness of songs seems to be the least volatile among those features, but it also showcased a significant change in the 90s.
+        <br><br>
+
+        Finally, after a small dip around the late 1980s, danceability saw a steady increase again during the 90s. <br><br>
+
+        Another point worth studyuing was the "literacy and intellect" of popular songs, which is why the "difficult words" per songs
+        feature was analyzed below. <br><br> 
+        
+        <img src="../Plots/difficult_words.png"> <br><br>
+
+
+        To support the previous observations, the 90s also seem to have been the era where the number of difficult words per (popular) song
+        drastically increased up until 2005, where the drop has been happening ever since (all most all time low level in 2021). Same as song duration
+        the reasons behind this drop (2005 onwards) might be social in nature where people have started valuing more superficial forms of music and media (more details later).
+
+      
+        The two main takeaways from this graph are: <br><br>
+
+        > Popular music has in fact changed drastically over the years. <br>
+        > The 1990s seem to be the era of the musical revolution. <br><br>
+
+
+
+      <br>
+      <h1>Part Two: Understanding how music genres have changed over the years.</h1>
+
+      <br>
+      <p>  In part one, the plots showed significant changes in the audio features of popular throughout the years. This section will focus on how artists and the genre they offer have also
+        changed over the same timeframe. The significance of such an analysis is the fact that eventually people will listen only to what the artists are making, making the artists (and the 
+        record industry) themselves the trend setters and breakers.</p>
+    
+      
+
+      <img src="../Plots/genre_evolution.png"> <br><br>
+
+      <p>The above plot further supports the idea that the 90s is the decade were significant changes in the music industry happened. Up until that
+        decade, the Billboard's Top 100 chart was almost predominantly rock music, the era of Guns n Roses, Scorpions, Metallica, just to name a few. 
+        Despite the 80s Billboard top 100 chart being 85% taken by rock music, this number dropped to 27% in the 90s. The 90s is what some people refer to
+        as the "beginning of the end" for rock music, as its dominance in the charts being taken over by hip hop, electronic music, and pop music, which 
+        (except for electronic music) have become the dominant genres in the Billboard thrughout the last decade. <br><br>
+
+        Changes of this magnitude do not happen overnight and are not coincidential, so with the proper data and approach, one could understand why the 90s
+        was so revolutionary and what might be the root cause(s) behind this cultural shift in popular music. (More exploration to be done in the 
+        coming weeks).
+      </p>
+
+      <h1>Part Three: Understanding how the lyrics of popular music have changed over the years.</h1> <br><br>
+
+      <p>After understanding how audio features of popular music have changed over the years and having a look at how the industry has changed
+        over time, the next relevant music related data gathered worth analyzing was the lyrics and how they have changed over that timeframe. The 
+        lyrics of a song carry all its meaning, and they are what resonates the most with listeners. In some way, the lyrics that people consume say something
+        about them and their moods,interests,etc. Below are word clouds for the lyrics of popular songs for each dcade from the 1950s until now. Word clouds
+        size words based on their frequencies, meaning the largest word in the word cloud is the one that is found the most number of times in the inputted text,
+        which in this case is a decade's pupular song lyrics. <br><br>
+      </p>
+
+      <div class="wordclouds">
+        <div class="column">
+          <img src="../Plots/wordcloud50s.png" >
+        </div>
+
+        <div class="column">
+          <img src="../Plots/wordcloud60s.png" >
+        </div>
+
+        <div class="column">
+          <img src="../Plots/wordcloud70s.png" >
+        </div>
+
+        <div class="column">
+          <img src="../Plots/wordcloud80s.png" >
+        </div>
+      </div>
+
+        <div class="wordcloud2">      
+        <div class="column">
+          <img src="../Plots/wordcloud90s.png" >
+        </div>
+
+        <div class="column">
+          <img src="../Plots/wordcloud90s.png" >
+        </div>
+
+        <div class="column">
+          <img src="../Plots/wordcloud00s.png" >
+        </div>
+
+        <div class="column">
+          <img src="../Plots/wordcloud2010s.png" >
+        </div>
+      
+          </div>
+
+        <br><br>
+
+        
 			</div>
-		</div>
+  
+		</div> <br><br>
+
+    <div class="wc-analysis">    <p>Despite having very significant differences in audio features and genres within the last 8 decades, the most popular words
+      in lyrics seem to have remained constant over that time period. The word clouds above are almost identical, with the main words
+      in popular music lyrics being "Love" , "Want", "Baby", "Come", "Time".<br><br>
+  
+      This similarity is in fact logical. No matter how much things change in life, one of the few constants is humans' connection to love and intimacy,
+      which are things the vast majority of humans thrive to find, making it logical for songs (and other forms of art) to center around that theme. <br><br>
+
+      Despite the themes and messages conveyed by the lyrics being almost constant, it is very well known that the wording, tone, and overall ways in which 
+      the messages are being conveyed have changed over the years. To elaborate, it has become widely accepted that modern music is much more "vulgar" than
+      older music, with a lot more profanity, racism, and offesnsive language present in lyrics nowadays. Below is a visual observation at how this type of
+      language has found itself into popular music. <br><br>
+
+
+    </p>
+
+    <img src="../Plots/profanity_racism.png"> <br><br>
+
+    <p> Almost all trend shifts seen so far happened in the 1990s, and the rise and prominence of the words "Shit", "F***", "N****", and "B****" in 
+      popular music comes as no exception. This comes in line with previous observations, since these words are mostly found in hip hop and pop music (more data
+      to be added on that later), which have been proven to experiencing a skyrocket rise ever since the 90s.
+      
+
+
+    </p>
+    <br><br>
+
+
+  <h1>Part Three: Analyzing the statistics.</h1> 
+  
+  <br><br>
+
+  <p>All the previous parts served as a good understanding of how the music industry and the music itself have changed since 1950s, but this part
+    will focus more on the statistics aspect of the data, as it is a very important step to properl understand the data and how it could be
+    used for machine learning. <br><br>
+
+    The first step was developing a correlation matrix between all features of the dataset, but this was not visually pleasant at all since we have around 
+    30 variables, resulting in a 30x30 matrix. Consequently, i decided to only include the audio features that have some sort of correlation with each other. 
+    The plot can be found below: <br><br>
+
+    
+  </p>
+
+  <img src="../Plots/correlation_matrix.png"> <br><br>
+
+  <pr>Some of the more obvious relationships conveyed by this plot are: </pr> <br><br>
+
+  > Valence and danceability have a very high positive correlation (0.55): A very logical relationship as valence is defined (by Spotify) as
+  the musical positiveness conveyed by a track, which would definitlwey be high for songs that are "danceable".
+
+  <br><br>
+
+  > Acousticness and (danceability and energy) have a high negative correlation (-0.26 and -0.55): Since acoustic tracks are calmer in nature and not as loud
+  as other tracks, they definitely tend to be less danceable and have less energy.
+
+  <br><br>
+
+  Generally, all relationships in this matrix fall within the realm of common sense and mathematically 
+  verified some assumptions about music i had.
+
+
+  </div>
+
 	
 
  
