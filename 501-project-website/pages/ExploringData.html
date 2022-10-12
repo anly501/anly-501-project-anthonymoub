@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Portfolio website</title>
-	<link rel="stylesheet" type="text/css" href="../css/exploringdata.css">
+    <head>
+        <title>Portfolio website</title>
+        <link rel="stylesheet" type="text/css" href="../css/exploringdata.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-<body>
-	<!----hero Section start---->
-
-	<div class="hero">
+<div class="hero">
 
     <img class="wifi" src="../img/wifi.svg"/>
-		<nav>
-			<h2 class="logo">Exploring data</h2>
-			<ul>
+        <nav>
+            <h2 class="logo">Exploring data</h2>
+            <ul>
         <li><a href="../index.html">About Me</a></li>
-				<li><a href="introduction.html">Introduction</a></li>
-				<li><a href="Code.html">Code</a></li>
-				<li><a href="Data.html">Data</a></li>
-				<li><a href="DataGathering.html">Data Gathering</a></li>
-				<li><a href="DataCleaning.html">Data Cleaning</a></li>
-				<li><a href="ExploringData.html">Exploring Data</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="Code.html">Code</a></li>
+                <li><a href="Data.html">Data</a></li>
+                <li><a href="DataGathering.html">Data Gathering</a></li>
+                <li><a href="DataCleaning.html">Data Cleaning</a></li>
+                <li><a href="ExploringData.html">Exploring Data</a></li>
+                <li><a href="naivebayes.html">Naive Bayes</a></li>
 
-			</ul>
-		
-		</nav>
+            </ul>
+        
+        </nav>
 
-		<div class="content">
-			
-			<h1>Exploring Data</h1>
-			<h3>This section focuses on exploring the different features in the data gathered from a visual
+        <div class="content">
+            
+            <h1>Exploring Data</h1>
+            <h3>This section focuses on exploring the different features in the data gathered from a visual
         and statistical perspective.
-      </h3>
+        </h3>
             <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with scripts and saved plots.</h4>
 
-		</div>
-	</div>
-	<!----Data collected ---->
-	<section class="about">
-		
-			<div class="about-text">
+        </div>
+    </div>
+
+    <section class="about"> 
+    <div class="about-text">
 
         <p>    Exploring data is a huge process and takes a lot of time and digging into all the variables in the datasets gathered. In the 
           case of this project, around 30 music related variables were gathered for analysis, which made the data exploring process chaotic. For this
@@ -80,7 +78,7 @@
           Below are four line plots that summarize how these features have changed in Billboard’s top 100 yealry songs ever since the 
           1950s. <br><br>
 
-          <img src="../Plots/musicfeatures.png"> <br><br>
+          <img src="../Plots/musicfeatures.png" style="height: 600px;width: 1200px"> <br><br>
 
         The most evident thing right upfront is that all of these variables have gone through drastic changes
         over the years. However, the more interesting thing to note from this graph is the period where trends 
@@ -153,132 +151,101 @@
         which in this case is a decade's pupular song lyrics. <br><br>
       </p>
 
-      <div class="layout">
-      <div class="wordclouds">
-          
-            
-              <img src="../Plots/wordcloud50s.png" >
-            
-            
-              <img src="../Plots/wordcloud60s.png" >
-            
-            
-              <img src="../Plots/wordcloud70s.png" >
-             
-           
-             
-         
-             
-             
-              
-           
-
-      </div>
-
-    <div class="wordclouds">
-        <img src="../Plots/wordcloud80s.png" >
-            
-           
-             
-        <img src="../Plots/wordcloud90s.png" >
-       
-    
-   
-      
-        <img src="../Plots/wordcloud00s.png" >
-    </div>
-    </div>
-      <!-- <img src="../Plots/wordcloud2010s.png" > -->
-             
-        <br><br>
-
         
 		</div>
-  
-		</div> <br><br>
+<div class="grid">
+    <img src="../Plots/wordcloud50s.png">
+    <img src="../Plots/wordcloud60s.png">
+    <img src="../Plots/wordcloud70s.png">
+    <img src="../Plots/wordcloud80s.png">
+    <img src="../Plots/wordcloud90s.png">
+    <img src="../Plots/wordcloud00s.png">
+</div>
+<br><br><br>
+<div class="statistics">    <p>Despite having very significant differences in audio features and genres within the last 8 decades, the most popular words
+    in lyrics seem to have remained constant over that time period. The word clouds above are almost identical, with the main words
+    in popular music lyrics being "Love" , "Want", "Baby", "Come", "Time".<br><br>
 
-    <div class="statistics">    <p>Despite having very significant differences in audio features and genres within the last 8 decades, the most popular words
-      in lyrics seem to have remained constant over that time period. The word clouds above are almost identical, with the main words
-      in popular music lyrics being "Love" , "Want", "Baby", "Come", "Time".<br><br>
-  
-      This similarity is in fact logical. No matter how much things change in life, one of the few constants is humans' connection to love and intimacy,
-      which are things the vast majority of humans thrive to find, making it logical for songs (and other forms of art) to center around that theme. <br><br>
+    This similarity is in fact logical. No matter how much things change in life, one of the few constants is humans' connection to love and intimacy,
+    which are things the vast majority of humans thrive to find, making it logical for songs (and other forms of art) to center around that theme. <br><br>
 
-      Despite the themes and messages conveyed by the lyrics being almost constant, it is very well known that the wording, tone, and overall ways in which 
-      the messages are being conveyed have changed over the years. To elaborate, it has become widely accepted that modern music is much more "vulgar" than
-      older music, with a lot more profanity, racism, and offesnsive language present in lyrics nowadays. Below is a visual observation at how this type of
-      language has found itself into popular music. <br><br>
-
-
-    </p>
-
-    <img src="../Plots/profanity_racism.png"> <br><br>
-
-    <p> Almost all trend shifts seen so far happened in the 1990s, and the rise and prominence of the words "Shit", "F***", "N****", and "B****" in 
-      popular music comes as no exception. This comes in line with previous observations, since these words are mostly found in hip hop and pop music (more data
-      to be added on that later), which have been proven to experiencing a skyrocket rise ever since the 90s.
-      
+    Despite the themes and messages conveyed by the lyrics being almost constant, it is very well known that the wording, tone, and overall ways in which 
+    the messages are being conveyed have changed over the years. To elaborate, it has become widely accepted that modern music is much more "vulgar" than
+    older music, with a lot more profanity, racism, and offesnsive language present in lyrics nowadays. Below is a visual observation at how this type of
+    language has found itself into popular music. <br><br>
 
 
-    </p>
-    <br><br>
 
+  </p>
+  <br>
+  <img src="../Plots/profanity_racism.png"> <br><br>
 
-    <h2>Part Four: Analyzing the statistics.</h2> 
+  <p> Almost all trend shifts seen so far happened in the 1990s, and the rise and prominence of the words "Shit", "F***", "N****", and "B****" in 
+    popular music comes as no exception. This comes in line with previous observations, since these words are mostly found in hip hop and pop music (more data
+    to be added on that later), which have been proven to experiencing a skyrocket rise ever since the 90s.
     
-    <br><br>
-
-    <p>All the previous parts served as a good understanding of how the music industry and the music itself have changed since 1950s, but this part
-      will focus more on the statistics aspect of the data, as it is a very important step to properl understand the data and how it could be
-      used for machine learning. <br><br>
-
-      The first step was developing a correlation matrix between all features of the dataset, but this was not visually pleasant at all since we have around 
-      30 variables, resulting in a 30x30 matrix. Consequently, i decided to only include the audio features that have some sort of correlation with each other. 
-      The plot can be found below: <br><br>
-
-      
-    </p>
-
-    <img src="../Plots/correlation_matrix.png"> <br><br>
-
-    <p>Some of the more obvious relationships conveyed by this plot are: </p> <br><br>
-
-    > Valence and danceability have a very high positive correlation (0.55): A very logical relationship as valence is defined (by Spotify) as
-    the musical positiveness conveyed by a track, which would definitlwey be high for songs that are "danceable".
-
-    <br><br>
-
-    > Acousticness and (danceability and energy) have a high negative correlation (-0.26 and -0.55): Since acoustic tracks are calmer in nature and not as loud
-    as other tracks, they definitely tend to be less danceable and have less energy.
-
-    <br><br>
-
-    Generally, all relationships in this matrix fall within the realm of common sense and mathematically 
-    verified some assumptions about music i had. <br><br>
-
-    Next, i used box plots for the features used in the correlation heatmap to get a better sense of the statistics behind each feature individually.<br><br>
-
-    <img src="../Plots/box_plots.png"> <br><br>
-
-    First of all, all of the features (that have correlations with each other) move very steadily together. Unlike
-    other uncorrelated variables (speechiness, duration, etc.) which have been previously visualized to have experienced drastic changes over the years, correlated variables
-    moved together in a much more stable manner, the min max and mean of these variables seem to have move very steadily. A possible indication from this is the fact
-    that these are the 6 most important variables when it comes to making a song popular, and all the other variables change along with time and genre.
-    <br><br>
-
-    Second of all, the long whiskers from all box plots indicate high variability within the variables, which might be a custom to having different genres
-    within a decade (Example: jazz and disco music have very different danceability values) <br><br>
-
-    Finally, the box plots indicate a significant presence of outliers in variables like "Acousticness", "Difficult words", and "Loudness", which might
-    have had an impact on correlation values and might also have an impact at later stages like machine learning, where they might be dealt with at that stage.
 
 
-  </div>
-
-	
-
- 
+  </p>
+  <br><br>
 
 
-</body>
+  <h2>Part Four: Analyzing the statistics.</h2> 
+  
+  <br><br>
+
+  <p>All the previous parts served as a good understanding of how the music industry and the music itself have changed since 1950s, but this part
+    will focus more on the statistics aspect of the data, as it is a very important step to properl understand the data and how it could be
+    used for machine learning. <br><br>
+
+    The first step was developing a correlation matrix between all features of the dataset, but this was not visually pleasant at all since we have around 
+    30 variables, resulting in a 30x30 matrix. Consequently, i decided to only include the audio features that have some sort of correlation with each other. 
+    The plot can be found below: <br><br>
+
+    
+  </p>
+  
+  <img src="../Plots/correlation_matrix.png" > <br><br>
+
+  <p>Some of the more obvious relationships conveyed by this plot are: </p> <br><br>
+
+  > Valence and danceability have a very high positive correlation (0.55): A very logical relationship as valence is defined (by Spotify) as
+  the musical positiveness conveyed by a track, which would definitlwey be high for songs that are "danceable".
+
+  <br><br>
+
+  > Acousticness and (danceability and energy) have a high negative correlation (-0.26 and -0.55): Since acoustic tracks are calmer in nature and not as loud
+  as other tracks, they definitely tend to be less danceable and have less energy.
+
+  <br><br>
+
+  Generally, all relationships in this matrix fall within the realm of common sense and mathematically 
+  verified some assumptions about music i had. <br><br>
+
+  Next, i used box plots for the features used in the correlation heatmap to get a better sense of the statistics behind each feature individually.<br><br>
+
+  <img src="../Plots/box_plots.png"> <br><br>
+
+  First of all, all of the features (that have correlations with each other) move very steadily together. Unlike
+  other uncorrelated variables (speechiness, duration, etc.) which have been previously visualized to have experienced drastic changes over the years, correlated variables
+  moved together in a much more stable manner, the min max and mean of these variables seem to have move very steadily. A possible indication from this is the fact
+  that these are the 6 most important variables when it comes to making a song popular, and all the other variables change along with time and genre.
+  <br><br>
+
+  Second of all, the long whiskers from all box plots indicate high variability within the variables, which might be a custom to having different genres
+  within a decade (Example: jazz and disco music have very different danceability values) <br><br>
+
+  Finally, the box plots indicate a significant presence of outliers in variables like "Acousticness", "Difficult words", and "Loudness", which might
+  have had an impact on correlation values and might also have an impact at later stages like machine learning, where they might be dealt with at that stage.
+
+
+</div>
+
+</section>
+
+
+
+
+
+
 </html>

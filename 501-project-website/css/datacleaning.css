@@ -21,14 +21,27 @@ nav{
 	padding-right: 8%;
 }
 
-.wifi{
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    right: -23%;
-    top: 15%;
+@media only screen and (max-width: 1700px){
+	.wifi{
+		width: 600px;
+		height: 600px;
+		position: absolute;
+		right: -23%;
+		top: 22%;
+		
+	}
+	}
 	
-}
+@media only screen and (min-width: 1800px){
+	.wifi{
+		width: 800px;
+		height: 800px;
+		position: absolute;
+		right: -23%;
+		top: 15%;
+		
+	}
+	}
 .logo{
 	color: white;
 	font-size: 35px;

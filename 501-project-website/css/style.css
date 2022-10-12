@@ -244,17 +244,35 @@ button:hover{
 }
 
 
-.dot {
-	height: 600px;
-	width: 600px;
-	background-color: white;
-	border-radius: 50%;
-	display: inline-block;
-	position: absolute;
-	right: -20%;
-	top: 22%;
-  }
 
+  @media only screen and (max-width: 1700px){
+	.dot{
+		width: 600px;
+		height: 600px;
+		background-color: white;
+		position: absolute;
+		border-radius: 50%;
+		display: inline-block;
+		position: absolute;
+		right: -23%;
+		top: 15%;
+		
+	}
+	}
+	
+	@media only screen and (min-width: 1800px){
+		.dot{
+			width: 800px;
+			height: 800px;
+			position: absolute;
+			border-radius: 50%;
+			background-color: white;
+			display: inline-block;
+			right: -23%;
+			top: 15%;
+			
+		}
+		}
 
 
 h5{

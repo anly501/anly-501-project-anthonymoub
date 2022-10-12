@@ -20,15 +20,28 @@ nav{
 	padding-left: 8%;
 	padding-right: 8%;}
 
-.code{
-    width: 700px;
-    height: 700px;
-    position: absolute;
-    right: -30%;
-    top: 15%;
-    
-}
 
+@media only screen and (max-width: 1700px){
+	.code{
+		width: 600px;
+		height: 600px;
+		position: absolute;
+		right: -25%;
+		top: 15%;
+		
+	}
+	}
+	
+	@media only screen and (min-width: 1800px){
+		.code{
+			width: 800px;
+			height: 800px;
+			position: absolute;
+			right: -26%;
+			top: 15%;
+			
+		}
+		}
 .logo{
 	color: white;
 	font-size: 35px;

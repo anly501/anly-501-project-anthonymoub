@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio website</title>
+        <link rel="stylesheet" type="text/css" href="../css/exploringdata.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
+
+<div class="hero">
+
+    <img class="wifi" src="../img/wifi.svg"/>
+        <nav>
+            <h2 class="logo">Naive Bayes</h2>
+            <ul>
+        <li><a href="../index.html">About Me</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="Code.html">Code</a></li>
+                <li><a href="Data.html">Data</a></li>
+                <li><a href="DataGathering.html">Data Gathering</a></li>
+                <li><a href="DataCleaning.html">Data Cleaning</a></li>
+                <li><a href="ExploringData.html">Exploring Data</a></li>
+                <li><a href="naivebayes.html">Naive Bayes</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="content">
+            
+            <h1>Naive Bayes</h1>
+            <h3>This section focuses explaining how Naive Bayes was used in this project and whether it was a useful method.      </h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with python and R scripts.</h4>
+
+        </div>
+    </div>
+
+    <section class="about"> 
+    <div class="about-text">
+
+        <p>   Naive Bayes is a well known classification algorithm. In short, classification algorithms predict the class of given (inputted) data. Examples
+            of classification problems are: Detecting in an email is spam or not, detecting if a patient will have cancer, and much more. classification
+            can be better understood in the below figure: <br><br>
+
+        <img src="../img/Classification.png" style="height: 600px;width: 700px"> <br><br>
+
+        In the diagram above, there are two classes within the data, class A and class B (For example, these classes could be class male and class).
+        In brief, the algorithms job is to fit a line that perfeclty distinguishes both classes from each other within the feature space (features X and Y in the case 
+        of the above diagram).<br><br>
+
+        Just like many machine learning problems, classification has many algorithms that do the job, each with its own set of assumptions and functionalities. This section
+        will cover how one of these algorithms, called Naive Bayes, was used in this project. <br><br>
+
+        Naive Bayes is a classification algorithm based on Bayes’ Theorem with an assumption of independence among predictors. In simple terms, a Naive Bayes classifier assumes that the 
+        presence of a particular feature in a class is unrelated to the presence of any other feature. This is the main reason why i had the hypothesis that this algorithm
+        will not perform that well since the "Exploring Data" section of this project has proven that several song features are highly correlated with each other and 
+        are far from being independent. <br><br>
+
+        There are several type of Naive Bayes algorithms, including: <br><br>
+
+        > Gaussian Naive Bayes: This type of Naive Bayes is used when variables are continuous in nature.
+        It assumes that all the variables have a normal distribution.<br>
+        > Multinomial Naive Bayes: This is used when the features represent the frequency of something. This algorithm is mostly used in cases with text features.<br>
+        > Bernoulli Naive Bayes: This is used when features are binary. <br><br>
+
+        Since my project had both text data (lyrics) and record/numerical data, Gaussian and Multinomial naive bayes were both used.
+
+
+        </p>
+				<h2>Part One: Multinomial Naive Bayes</h2>
+        <br>
+				<p> The goal of this model was to try and predict what era a song belonged to based on its lyrics (Song X belongs to one of [50s,60s,70s,...,2010s]).
+           
+          My personal hypotheis was that such a model would fail, as the "Exploring Data" part of this project proved that there is no significant change behind the main messages
+                    songs carried. The only major difference between eras when it came to lyrics turned out to be the pevalence of racist words and profanity,
+                    something which might or might not warrant the use of Naive Bayes. The only way to test my hypothesis was to use the model and see for myself.   <br><br>
+
+                    The first step to prepare the data for Naive Bayes was filtering down our target variable (year/era of a song) to a couple of classes only. For example,
+                    a song belonging to 1989 would be given the label "80s", one belonging to 2004 woullld be labeled as "90s", etc. Doing this reduced the target variable to 
+                    7 classes: "50s" , "60s", "70s", "80s", "90s", "00s", "2010s". <br><br>
+
+                    Next, stop words had to be removed, something which was already done in the "Data Cleaning" section of the project. Stop words introduce unnecesarry biases
+                    to the model and might skew the results while not having any meaning whatsoever. Stopwords include words like 'i', 'me', 'my', 'myself', 'we', 'our', 'ours',
+                    'ourselves', 'you', etc. <br><br>
+
+                    One of the necessary steps was assigning a numeric value to each class in the dataset. For example, "50s" was assigned
+                    the value 0, "60s" was assigned value 1, and so on. This is a necessary step to facilitate the classification process for the developed models. <br><br>
+
+                    The last cleaning step was using a count vectorizor algorithm on the lyrics data. In short, count vectorizor is an algorithm that converts text to numerical
+                    data, since machines cannot understand characters and words. Below is a brief illustration of the concept: <br><br> 
+
+                    <img src="../img/CountVectorizor.png" style="height: 200px;width: 600px"> <br><br>
+
+                    The above illustration shows how CountVectorizor breaks down a text sentence to an array with each word associated with a count value. The same logic was applied to the 
+                    lyrics data to have it ready for machine learning. <br><br>
+
+                    The final step before modeling was to split the data into testing and training sets, which is a crucial step in any machine learning project. Training data is the initial 
+                    dataset you use to teach a machine learning application to recognize patterns , while testing data is used to evaluate the trained model's accuracy. The train-test split I 
+                    used was 80-20, meaning 80% of the data was used to train the model, while 20% was used to test it.<br><br>
+
+                    As previously mentioned, since the problem at hand dealt with text data and classification of text data, the chosen model was Multinomial Naive Bayes. Using Multinomial
+                    Naive Bayes to classify a song's decade resulted in a 40% accuracy, which might or might not be considered as low, depending on the use case. Before going more into 
+                    any sort of result analysis, it was important to have a baseline model to compare this model to. A baseline model is the worst possible model performance for the given 
+                    problem, and it is nothing more than randomly assigning a class to an entry without consideration for any factor. For this 7 class classification model, the baseline
+                    model would have a 14% classification accuracy (1/7 = 0.14).<br><br>
+
+                    <img src="../Plots/multinom_performance.png" style="height: 600px;width: 800px"> <br><br>
+
+                    In practice, my Multinomial Naive Bayes model performs twice as good as the worst classifier, which indicates that it does somewhat work (or at least the logic
+                    for it to work is there). However, a 40% classification accuracy might be very low if this model is to be deployed in some use case. For example, is a recommendation
+                    engine is being built using this model, 40% accuracy means less than half of recommended content is of relevance to the user, leading to a very weak recommendation engine.
+
+                    <br><br>
+
+                    Apart from accuracy, another important thing to look at when it comes to classification is the confusion matrix. In its essence, a confusion matrix shows the ways in which a classification model
+                    is confused when it makes predictions, which is done by showing the he number of correct and incorrect predictions for each class. Below is the confusion matrix for this Naive
+                    Bayes model: <br><br>
+
+                    <img src="../Plots/confusion_matrix.png" style="height: 600px;width: 800px"> <br><br>
+
+                    The above matrix shows that the 80s and the 2010s were the eras that were best predicted by the model, with all the remaining eras having predictability ranging from negligible 
+                    to average at best. From a musical perspective, this might be due to the fact that music style was pretty much etablished during these era and have come either directly before
+                    a cultural change in music or long after one. The 80s is the decade directly prior to the 90s, which was proven to be the era with the biggest shift in music (more details in 
+                    the EDA section), and music could have been settled down by then (1950s till that point). As for the 2010s, which is 2 decades after this huge cultural shift,  music might have settled to its new style by then
+                    after adopting to the new shifts in trends. <br><br>
+
+                    The above hypothesis would gain more credibility if similar results were obtained by using musical features to build a classifier, as musical features have a much higher
+                    impact on the era a song was released than lyrics. This was done using a Gaussian Naive Bayes classifier and is explained below. <br><br>
+
+                    <h2>Part Two: Gausian Naive Bayes</h2>
+                    <h2>Conclusion</h2>
+
+                   
+          
+
+  
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+</html>
