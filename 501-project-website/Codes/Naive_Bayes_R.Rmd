@@ -1,0 +1,233 @@
+---
+title: "Naive_bayes_R-AnthonyMoubarak"
+output: html_document
+date: "2022-10-13"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Developing a Naive Bayes model to classify song era
+
+This section focuses on building a Naive Bayes classification model that will be used to predict in what era (50s,60s,70s, all the way up to 2010s) a song was released in according to multiple music related features.
+
+```{r}
+# Import the data 
+
+df <- read.csv('/Users/anthonymoubarak/Desktop/anly-501-project-anthonymoub/501-project-website/Data/final_df.csv')
+
+# Change the year column from showcasing a year to showcase a decade (ex: 1967 --> 60s)
+
+for (i in 1:nrow(df)) {
+  
+    decade <- df$year[i]
+
+    if (decade <1960) {
+        df$year[i] = '50s'}
+    
+    else if (decade <1970){
+        df$year[i] = '60s'}
+    
+    else if (decade <1980){
+        df$year[i] = '70s'}
+
+    else if (decade <1990) {
+        df$year[i] = '80s'}
+
+    else if (decade <2000) {
+        df$year[i] = '90s'}
+
+    else if (decade <2010) {
+        df$year[i] = '00s'}
+    
+    else {
+        df$year[i] = '2010s'}
+}
+
+
+```
+
+```{r}
+# Split the data into training and testing sets 
+
+#Setting seed ensures that you get the same result if you start with that same seed each time you run the same process
+
+set.seed(1234)
+
+
+#We split the data into 2 parts. First part consisting 90% of the data will be used as training set and the other 10% will be used as testing set.
+
+index = sample(2,nrow(df),prob = c(0.9,0.1),replace=TRUE) 
+
+
+#training set
+
+train = df[index==1,]
+
+
+
+#testing set
+
+test = df[index==2,]
+
+
+```
+
+### Method 1: Use all numerical features of the dataset in standard format to train the model
+
+```{r}
+### Train the Gaussian Naive Bayes
+library(naivebayes)
+# Normalize training and testing data
+X_train <- train[, !names(train) %in% c("X" , "lyrics", "title" , "artist" , "year")]
+y_train <- train[['year']]
+
+X_test <- test[, !names(test) %in% c("X" , "lyrics", "title" , "artist", "year")]
+y_test <- test[['year']]
+
+gnb1 <- gaussian_naive_bayes(x = data.matrix(X_train), y = y_train)
+
+ypred <- (predict(gnb1, newdata = data.matrix(X_test), type = "class")) 
+
+
+```
+
+```{r}
+# Testing accuracy of this method
+accuracy_method1 <- round((sum(ypred==y_test)/length(y_test))*100 , digits = 0)
+paste("Method 1 accuracy: " , accuracy_method1, "%")
+```
+
+### Method 2: Normalize X
+
+Since one of Gaussian Naive Bayes's main assumptions is the normality of data, this method focuses on converting the numerical features to a normal scale and check whether or not this improves the model's performance.
+
+```{r}
+# Define the columns to be normalized (all but year)
+
+
+cols <- c("num_syllables" , "pos", "fog_index" ,"flesch_index", "num_words" , "num_lines" ,"f_k_grade" , "difficult_words" , "neg" ,"neu" ,"compound" , "danceability" ,"energy" ,"key" , "loudness"  ,"mode" ,  "speechiness" ,"acousticness" ,"instrumentalness","liveness" , "valence" , "tempo" ,"duration_ms" , "time_signature" )
+
+# Create new training and testing sets that are normalized 
+X_train2 <- train[, !names(train) %in% c("X" , "lyrics", "title" , "artist" , "year")]
+y_train2 <- train[['year']]
+
+X_test2 <- test[, !names(test) %in% c("X" , "lyrics", "title" , "artist", "year")]
+y_test2 <- test[['year']]
+
+
+X_train2[cols] <- lapply(X_train2[cols], function(x) c(scale(x)))
+X_test2[cols] <- lapply(X_test2[cols], function(x) c(scale(x)))
+
+gnb2 <- gaussian_naive_bayes(x = data.matrix(X_train2), y = y_train2)
+ypred_2 <- (predict(gnb2, newdata = data.matrix(X_test2), type = "class")) 
+sum(ypred_2==y_test2)/length(y_test2)
+```
+
+```{r}
+# Testing accuracy of this method
+accuracy_method2 <- round((sum(ypred_2==y_test2)/length(y_test2))*100 , digits = 0)
+paste("Method 2 accuracy: " , accuracy_method2, "%")
+```
+
+Normalizing features does not seem to cause any accuracy improvements. The next method will be dropping dependent variables.
+
+### Method 3: Dropping dependent variables
+
+Since another Gaussian Naive Bayes major assumption is the independence of features, this method focuses on dropping all features that have some correlation with each other (based on correlation heat map done previously in the project)
+
+Below is the correlation heatmap previously computed for this dataset:
+
+![](/Users/anthonymoubarak/Desktop/anly-501-project-anthonymoub/501-project-website/Plots/correlation_matrix.png){height= "75%" , width="50%"}
+
+The above matrix shows that all of these features have some form of correlation with 1 or more features, which is why all of them will be dropped as they are far from being "independent", which is the essence of naive bayes.
+
+```{r}
+# The correlated features are :
+# "danceability" , "energy" , "valence", "loudness" , "difficult_words", "acousticness"
+
+# Rebuild the NB model with the alternate features 
+
+X_train3 <- train[, !names(train) %in% c("X" , "lyrics", "title" , "artist","danceability" , "energy" , "valence", "loudness" , "difficult_words", "acousticness")]
+y_train3 <- train[['year']]
+
+X_test3  <- test[, !names(test) %in% c("X" , "lyrics", "title" , "artist","danceability" , "energy" , "valence", "loudness" , "difficult_words", "acousticness")]
+y_test3 <- test[['year']]
+
+# Normalize the new train and testing sets 
+
+new_cols <- c("num_syllables" , "pos", "fog_index" ,"flesch_index", "num_words" , "num_lines" ,"f_k_grade"  , "neg" ,"neu" ,"compound"  ,"key" ,"mode" ,  "speechiness" ,"instrumentalness","liveness"  , "tempo" ,"duration_ms" , "time_signature" )
+
+
+X_train3[cols] <- lapply(X_train3[new_cols], function(x) c(scale(x)))
+X_test3[cols] <- lapply(X_test3[new_cols], function(x) c(scale(x)))
+
+
+gnb3 <- gaussian_naive_bayes(x = data.matrix(X_train3), y = y_train3)
+ypred_3 <- (predict(gnb3, newdata = data.matrix(X_test3), type = "class")) 
+
+
+```
+
+```{r}
+# Testing accuracy of this method
+accuracy_method3 <- round((sum(ypred_3==y_test3)/length(y_test3))*100 , digits = 0)
+paste("Method 3 accuracy: " , accuracy_method3, "%")
+```
+
+As seen by this method, dropping all dependent features more than doubles the classification accuracy to 86%, which is as good of an improvement as could be. The only thing left to do is create a random classifier that gives the worst case accuracy for us to use as a baseline to compare to all three methods to.
+
+```{r}
+# Create a random classifier
+
+random_predictions <- c()
+decades <- c('50s' , '60s' , '70s' , '80s' , '90s' , '00s' , '2010s')
+for (i in 1:nrow(df)) {
+  random_predictions <- append(random_predictions , sample(decades , 1))
+}
+
+# Accuracy 
+accuracy_random_classifier <- round((sum(random_predictions == df$year)/length(df$year))*100 , digits = 0)
+paste("Random classifier accuracy: " , accuracy_random_classifier, "%")
+```
+
+## Result analysis
+
+```{r}
+# Plotting results of three different methods 
+library(ggplot2)
+Models <- c("Standard model", "Normalized features model", "Dropped dependent features model" , "Random classifier")
+Accuracy <- c(accuracy_method1 , accuracy_method2, accuracy_method3, accuracy_random_classifier)
+
+df_results <- data.frame(Models , Accuracy)
+
+ggplot(df_results, aes(x=Models, y=Accuracy)) + 
+  geom_bar(stat = "identity" , fill=rgb(0.1,0.4,0.5,0.7) ) + ggtitle('Classification accuracies of different Naive Bayes models') +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_discrete(labels = function(x) 
+    stringr::str_wrap(x, width = 15))
+ggsave("/Users/anthonymoubarak/Desktop/models.png")
+```
+
+```{r}
+# Confusion matrix (for the best model)
+library(caret)
+cfm <- confusionMatrix(ypred_3, as.factor(y_test3))
+
+ggplotConfusionMatrix <- function(m){
+  p <-
+    ggplot(data = as.data.frame(m$table) ,
+           aes(x = Reference, y = Prediction)) +
+    geom_tile(aes(fill = log(Freq)), colour = "white") +
+    scale_fill_gradient(low = "white", high = "steelblue") +
+    geom_text(aes(x = Reference, y = Prediction, label= Freq)) +
+    theme(legend.position = "none") +
+    ggtitle("Confusion matrix for best model") + theme(plot.title = element_text(hjust = 0.5))
+
+  return(p)
+}
+
+ggplotConfusionMatrix(cfm)
+ggsave("/Users/anthonymoubarak/Desktop/confusion_matrix_R.png")
+```

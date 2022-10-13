@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Portfolio website</title>
-        <link rel="stylesheet" type="text/css" href="../css/exploringdata.css">
+        <link rel="stylesheet" type="text/css" href="../css/naivebayes.css">
     
         <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -42,23 +42,21 @@
     <section class="about"> 
     <div class="about-text">
 
-        <p>   Naive Bayes is a well known classification algorithm. In short, classification algorithms predict the class of given (inputted) data. Examples
-            of classification problems are: Detecting in an email is spam or not, detecting if a patient will have cancer, and much more. classification
+        <p>   Naive Bayes is a well known classification algorithm. In short, classification algorithms predict the class of given (input) data. Examples
+            of classification problems are: Detecting if an email is spam or not, detecting if a patient will have cancer (or any other disease), and much more. Classification
             can be better understood in the below figure: <br><br>
 
         <img src="../img/Classification.png" style="height: 600px;width: 700px"> <br><br>
 
-        In the diagram above, there are two classes within the data, class A and class B (For example, these classes could be class male and class).
-        In brief, the algorithms job is to fit a line that perfeclty distinguishes both classes from each other within the feature space (features X and Y in the case 
+        In the diagram above, there are two classes within the data, class A and class B (For example, these classes could be class male and class female).
+        In brief, the algorithm's job is to fit a line that perfectly distinguishes both classes from each other within the feature space (features X and Y in the case 
         of the above diagram).<br><br>
 
-        Just like many machine learning problems, classification has many algorithms that do the job, each with its own set of assumptions and functionalities. This section
+        Just like all machine learning problems, classification has many algorithms that do the job, each with its own set of assumptions and functionalities. This section
         will cover how one of these algorithms, called Naive Bayes, was used in this project. <br><br>
 
         Naive Bayes is a classification algorithm based on Bayes’ Theorem with an assumption of independence among predictors. In simple terms, a Naive Bayes classifier assumes that the 
-        presence of a particular feature in a class is unrelated to the presence of any other feature. This is the main reason why i had the hypothesis that this algorithm
-        will not perform that well since the "Exploring Data" section of this project has proven that several song features are highly correlated with each other and 
-        are far from being independent. <br><br>
+        presence of a particular feature in a class is unrelated to the presence of any other feature. <br><br>
 
         There are several type of Naive Bayes algorithms, including: <br><br>
 
@@ -75,16 +73,16 @@
         <br>
 				<p> The goal of this model was to try and predict what era a song belonged to based on its lyrics (Song X belongs to one of [50s,60s,70s,...,2010s]).
            
-          My personal hypotheis was that such a model would fail, as the "Exploring Data" part of this project proved that there is no significant change behind the main messages
-                    songs carried. The only major difference between eras when it came to lyrics turned out to be the pevalence of racist words and profanity,
+          My personal hypothesis was that such a model would not perform that well, as the "Exploring Data" part of this project proved that there is no significant change behind the main messages
+                    songs carried. The only major difference between eras when it came to lyrics turned out to be the prevalence of racist words and profanity,
                     something which might or might not warrant the use of Naive Bayes. The only way to test my hypothesis was to use the model and see for myself.   <br><br>
 
                     The first step to prepare the data for Naive Bayes was filtering down our target variable (year/era of a song) to a couple of classes only. For example,
-                    a song belonging to 1989 would be given the label "80s", one belonging to 2004 woullld be labeled as "90s", etc. Doing this reduced the target variable to 
+                    a song belonging to 1989 would be given the label "80s", one belonging to 2004 would be labeled as "90s", etc. Doing this reduced the target variable to 
                     7 classes: "50s" , "60s", "70s", "80s", "90s", "00s", "2010s". <br><br>
 
-                    Next, stop words had to be removed, something which was already done in the "Data Cleaning" section of the project. Stop words introduce unnecesarry biases
-                    to the model and might skew the results while not having any meaning whatsoever. Stopwords include words like 'i', 'me', 'my', 'myself', 'we', 'our', 'ours',
+                    Next, stop words had to be removed, something which was already done in the "Data Cleaning" section of the project. Stop words introduce unnecessary biases
+                    to the model and might skew the results while not having any meaning whatsoever. Stop words include words like 'i', 'me', 'my', 'myself', 'we', 'our', 'ours',
                     'ourselves', 'you', etc. <br><br>
 
                     One of the necessary steps was assigning a numeric value to each class in the dataset. For example, "50s" was assigned
@@ -123,7 +121,7 @@
                     <img src="../Plots/confusion_matrix.png" style="height: 600px;width: 800px"> <br><br>
 
                     The above matrix shows that the 80s and the 2010s were the eras that were best predicted by the model, with all the remaining eras having predictability ranging from negligible 
-                    to average at best. From a musical perspective, this might be due to the fact that music style was pretty much etablished during these era and have come either directly before
+                    to average at best. From a musical perspective, this might be due to the fact that music style was pretty much established during these era and have come either directly before
                     a cultural change in music or long after one. The 80s is the decade directly prior to the 90s, which was proven to be the era with the biggest shift in music (more details in 
                     the EDA section), and music could have been settled down by then (1950s till that point). As for the 2010s, which is 2 decades after this huge cultural shift,  music might have settled to its new style by then
                     after adopting to the new shifts in trends. <br><br>
@@ -131,8 +129,68 @@
                     The above hypothesis would gain more credibility if similar results were obtained by using musical features to build a classifier, as musical features have a much higher
                     impact on the era a song was released than lyrics. This was done using a Gaussian Naive Bayes classifier and is explained below. <br><br>
 
-                    <h2>Part Two: Gausian Naive Bayes</h2>
+                    <h2>Part Two: Gaussian Naive Bayes</h2> <br><br> 
+                    <p>
+                    Despite having a hypothesis that lyrics of a song do not have much predictive ability, my second hypothesis was that musical features of music actually do. This is 
+                    mainly due to the drastic changes in music features per decade ever since the 1950s. To test this hypothesis, a Naive Bayes model called "Gaussian Naive Bayes" was trained
+                    on the audio features of songs and lyrics were disregarded. Gaussian Naive Bayes is different from Multinomial Naive Bayes in the sense that the features it is trained on 
+                    are continuous in nature (features in Multinomial Naive Bayes are discrete). The main assumptions behind Gaussian Naive Bayes are that the continuous features
+                    are normally distributed and that they are independent from each other (meaning there is no/low correlation between features x1,x2,...xn). <br><br>
+                    Note: Similar to what was done in the multinomial naive bayes, the data was split into training and testing sets.<br><br>
+
+                    I approached this problem by developing three separate gaussian naive bayes models:<br><br>
+
+                    1. Standard model: Trained the model on all available continuous features without normalizing them. <br>
+                    2. Normalized features model: Trained the model on all available continuous features after normalizing them. <br>
+                    3. Dropped dependent features model: Trained the model on normalized continuous features after dropping the dependent features. Any
+                    feature with some sort of correlation with another feature was dropped (refer to correlation heatmap in the EDA tab). <br>
+                    <br>
+                    
+                    The reason I split the work into three methods is to properly understand what factors have a direct improvement on
+                    the model accuracies and which ones do not. Models 2 and 3 are in accordance with Naive Bayes's assumptions, where model
+                    2 makes sure the input data is normally distributed and model 3 makes sure all features in that input data are independent
+                    from each other, both of which are major assumptions of the Naive Bayes algorithm.
+
+                    <br><br>
+
+                    Similar to what was done with the trained multinomial classifier, all of these models were also compared to a baseline model,
+                    which was also a random classifier that had a 14% accuracy.
+
+                    <br><br>
+
+                    <img src="../Plots/model_comparisons_R.png" style="height: 600px;width: 800px"> <br><br>
+                    <br><br>
+
+                    The most noticeable thing from the above results is that dropping all dependent variables from the input data
+                    more than doubles the accuracy from about 40% to 86%. This showcases the power and influence behind Naive Bayes's
+                    assumption that all features are independent. <br><br>
+
+                    Another important point conveyed by the bar plot is that all models (even models 1 and 2 which are inferior to model 3)
+                    outperform the worst case random classifier by far, meaning that any Naive Bayes model on this data would be more than twice
+                    as good as randomly guessing or assigning classes to the data. <br><br>
+
+                    Finally, a confusion matrix was built on model 3 (which was the best model) to see how did the predicted vs actual values
+                    differed when using the model. <br><br>
+
+                    <img src="../Plots/confusion_matrix_R.png" style="height: 600px;width: 800px"> <br><br>
+
+                    The above confusion matrix reflects the models high classification accuracy with most songs' eras
+                    properly predicted. The only decade with some sort significant of significant error is the 2010s, where
+                    several songs in this decade were classified as 80s songs. This fact is interesting considering the first
+                    Naive Bayes model trained on lyrics, which has a much lower accuracy, had the 80s as the decade with the 
+                    most correct predictions, something that alludes to the idea that lyrics and audio features are completely independent
+                    from each other when it comes to classifying a song's era. 
+                    
+
+                  </p>
+
                     <h2>Conclusion</h2>
+
+                    <p>Overall, the use of Naive Bayes proved to be very accurate for classifying a song's era only when using audio features
+                      and not lyrics of songs. Moreover, the work done using this method reemphasized to me the importance of the independence
+                      of features assumption it relies on and how important in general model assumptions are and how significant of an impact they could
+                      have on the results.
+                    </p>>
 
                    
           
