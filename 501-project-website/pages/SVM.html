@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio website</title>
+        <link rel="stylesheet" type="text/css" href="../css/SVM.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
+
+<div class="hero">
+
+    <img class="wifi" src="../img/wifi.svg"/>
+        <nav>
+            <h2 class="logo">Support Vector Machines</h2>
+            <ul>
+        <li><a href="../index.html">About Me</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="Code.html">Code</a></li>
+                <li><a href="Data.html">Data</a></li>
+                <li><a href="DataGathering.html">Data Gathering</a></li>
+                <li><a href="DataCleaning.html">Data Cleaning</a></li>
+                <li><a href="ExploringData.html">Exploring Data</a></li>
+                <li><a href="naivebayes.html">Naive Bayes</a></li>
+                <li><a href="Decision_tree.html">Decision Tree</a></li>
+				<li><a href="SVM.html">SVM</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="content">
+            
+            <h1>Support Vector Machines</h1>
+            <h3>This section focuses explaining how Support Vector Machines were used in this project and whether it was a useful method.      </h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with python and R scripts.</h4>
+
+        </div>
+    </div>
+
+    <section class="about"> 
+    <div class="about-text">
+
+      <h2>Model introduction</h2> <br>
+
+        <p>   The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space(N — the number of features) 
+      that distinctly classifies the data points. To explain the concept in an easy to understand manner, the following is a definition and example from
+      <a href="https://monkeylearn.com/blog/introduction-to-support-vector-machines-svm/"style="color: rgb(39, 160, 204)">Monkeylearn.com</a> <br><br>
+
+      Let’s imagine we have two tags: red and blue, and our data has two features: x and y. We want a classifier that, given a pair of (x,y) coordinates, 
+      outputs if it’s either red or blue. We plot our already labeled training data on a plane: <br><br>
+
+      <img src="../img/SVM_ex.png" style="height: 600px;width: 700px"> <br><br>
+
+      A support vector machine takes these data points and outputs the hyperplane (which in two dimensions it’s simply a line) that best separates the tags.
+      This line is the decision boundary: anything that falls to one side of it we will classify as blue, and anything that falls to the other as red. (Seen in
+      example below) <br><br>
+
+      <img src="../img/SVM_ex2.png" style="height: 600px;width: 700px">
+
+      <br><br>
+
+        This is a very simple explanation of the algorithm but the logic is the same when applied on larger datasets with more than 1 variable that might also
+        have non linear relationships between features. To accommodate with these non linear relationships, SVM has several "kernels" that could be used. A great resource
+        to properly understand what are these kernels and how do they work from a mathematical perspective is 
+        <a href="https://medium.com/geekculture/kernel-methods-in-support-vector-machines-bb9409342c49"style="color: rgb(39, 160, 204)">the following link.</a> <br><br> 
+
+        <h2>Model use in the project</h2>
+
+        <p>
+
+        SVM’s purpose in this project is similar to decision trees’ purpose, predicting whether or not a song would a user’s playlist (mine in this case). However, the difference
+        between both models is in the input variables where I previously used audio features for the decision tree and random forest models whereas in this case, I used text data
+        and the form of song lyrics to predict whether a song would make it to the playlist (i.e be recommended) or not. Essentially, the goal of this problem was to understand whether
+        lyrics of songs have any predictive ability when it comes to predicting whether a user would like a certain song.  <br><br>
+
+
+        <h2>Data Collection and EDA</h2>
+
+        <p> Similar to what was done in the Decision Tree section, additional playlists were gathered  and joined with my playlist to have a final data set with a good mix of 1s and 0s,
+          which represent in playlist and not in playlist respectively. Next a Python script was developed to gather the lyrics of all newly added songs since lyrics is the only input
+          variable the model was to build on. Finally, since the input variable is text data count vectorizer (previously used and defined in the Data Cleaning tab) was used to transform 
+          the data into the appropriate format for modeling. <br><br>
+
+        <h2>Building the SVM model</h2>
+        <p>  As discussed in the start of this section where SVM was defined and introduced, most data sets do not have linear relationships between data points which is why fitting a 
+          linear hyperplane would not always be the best-case fit for the problem. For this reason, there are multiple so-called kernels for SVM which are used in these cases where the
+           most popular are RBF, polynomial, and sigmoid. To properly understand which one best fits my data I fit it all these four models using Python’s sklearn package and compared 
+           their training and testing accuracies which can be seen below:  <br><br>
+
+           <img src="../Plots/SVM_models.png" style="height: 650px;width: 950px"> <br><br>
+
+           In terms of accuracy almost all kernels perform better than the baseline model (which has an accuracy of 50%). Specifically, the RBF and linear kernels perform the best in terms
+            of accuracy (90+% testing accuracy) but the gap between training and testing accuracy is lower for RBF kernel which indicates a lesser tendency to overfit. For this reason, 
+            I decided to choose the RBF kernel as the SVM model I want to optimize and use for classification. <br><br>
+
+        <h2>Optimizing the SVM model</h2>
+        <p> As discussed in the preceding section, the RBF kernel gave the best SVM model for my project, which is why decided to use it as the model to further optimize. Optimizing SVM
+           models usually means taking multiple kernels along with multiple hyperparameter values and seeing how the accuracies change for each possible combination. For this case I decided
+          to stick to one kernel (RBF) and try multiple C values between 0.1 and 10. A very good explanation of what the C hyperparameter is and does for the SVM model can be 
+          found in <a href="https://towardsdatascience.com/hyperparameter-tuning-for-support-vector-machines-c-and-gamma-parameters-6a5097416167"style="color: rgb(39, 160, 204)">the following link.</a> <br><br> 
+
+          THe optimization was done using Python's GridSearch package, which fits the different options and returns the final "best" fit.In my case the best fit turned out to be for a C
+           value equal to 10, which I later used to rebuild a new model that will act as my final SVM model. <br><br>
+           
+           
+           Running the final SVM model gave the best accuracy so far of 92% which does make sense considering optimization mainly focuses on improving a pre-built model.
+           The final model’s confusion matrix can be seen below: <br><br>
+
+           <img src="../Plots/Optimized_SVM.png" style="height: 650px;width: 950px"> <br><br>
+
+           The confusion matrix shows that for the most part the model perfectly predicts the true positives and true negatives for this problem. <br><br>
+
+    
+        </p>
+				<h2>Conclusion</h2>
+        <br>
+				<p>  All in all, SVM classification using text and lyrics data of songs proved to be a good method to predict whether a song would make a certain a user's playlist, 
+          which shows the predictive ability that lyrics of songs have. From a social perspective this indicates that most people’s music tastes could be easily differentiated
+           by the lyrics of songs they listen to. Whether or not SVM is superior to decision trees (which was used previously) for this project is yet to be seen and could be 
+           properly understood once both of them are used in a production environment
+
+                  </p>
+
+                   
+        
+</div>
+
+</section>
+
+
+
+
+
+
+</html>

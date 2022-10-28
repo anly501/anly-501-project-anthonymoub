@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio website</title>
+        <link rel="stylesheet" type="text/css" href="../css/Decision_tree.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
+
+<div class="hero">
+
+    <img class="wifi" src="../img/wifi.svg"/>
+        <nav>
+            <h2 class="logo">Decision Tree</h2>
+            <ul>
+        <li><a href="../index.html">About Me</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="Code.html">Code</a></li>
+                <li><a href="Data.html">Data</a></li>
+                <li><a href="DataGathering.html">Data Gathering</a></li>
+                <li><a href="DataCleaning.html">Data Cleaning</a></li>
+                <li><a href="ExploringData.html">Exploring Data</a></li>
+                <li><a href="naivebayes.html">Naive Bayes</a></li>
+                <li><a href="Decision_tree.html">Decision Tree</a></li>
+				<li><a href="SVM.html">SVM</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="content">
+            
+            <h1>Decision Trees</h1>
+            <h3>This section focuses on explaining how Decision Trees were used in this project.  </h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with python and R scripts.</h4>
+
+        </div>
+    </div>
+
+    <section class="about"> 
+    <div class="about-text">
+
+        <h2>Model introduction</h2> <br>
+        <p>   A decision tree is a type of supervised machine learning algorithm used to categorize or make predictions based on how 
+            a previous set of questions were answered. The model is a form of supervised learning, meaning that the model is
+             trained and tested on a set of data that contains the desired categorization.The decision tree is like a tree with nodes. 
+             The branches depend on a number of factors. It splits data into branches like these till it achieves a threshold value.
+             <br><br>
+             A simple example to further understand decision trees is predicting whether or not a person will show up to an outdoor football
+             game based on several whether related factors. The example is visualized below: <br><br>
+
+        <img src="../img/Decision_tree.png" style="height: 600px;width: 700px"> <br><br>
+
+        As we move down the hierarchical structure of the tree (top to bottom), more information is gained and the ability to predict
+        the outcome becomes easier. The above example is a tree that has a depth of 2 (representing only 2 questions asked), but other problems
+        (like my project which is discussed in the next paragraphs) are harder to solve and have many more variables, which consequently cause the
+        tree to go deeper.<br><br>
+    
+
+        </p>
+				<h2>Model use in the project</h2>
+        <br>
+				<p> Unlike the Naive Bayes model, which was used to predict a song's era (50s,60s,70s, etc.), I decided to use decision trees
+                    for a different more impactful purpose. I used decision trees to predict whether or not a certain song would make it to a user's 
+                    playlist based on their Spotify playlist (this user was me at this stage of the project). Also, at the end of this page is a section called
+                    'Model impacts' which discusses how this model could be used in a production environment and what problem does it solve. <br><br>
+
+                    Briefly, this is how the model's logic works:: <br><br>
+
+                    <img src="../img/Classifier_logic.png" style="height: 170px;width: 800px"> <br><br>
+
+                    The decision tree algorithm works in the following steps:<br><br>
+
+                    > User (me in this case) inputs Spotify playlist. <br>
+                    > Spotify API returns the musical features for each song (all found under the Data tab). <br>
+                    > Only numeric features are kept <br>
+                    > Playlist songs are labelled with 1 (representing in playlist) <br>
+                    > Additional songs that are not in the playlist are added and labelled with 0 (not in playlist) <br>
+                    > Fitted model is used to predict if other songs (not in dataset) would or would not be recommended (1 or 0). <br><br>
+
+                    Below is an explanation on how all of this was done on my Spotify playlist.<br><br> </p>
+
+                <h2>Data Collection and EDA</h2>
+
+                <p> Since the problem statement for this section changed, I needed to gather additional data to accommodate for that
+                  and gather additional data that fits the new problem. As previously mentioned, the goal of this section was to build
+                  a classifier (recommender) that predicts whether or not a certain song would make it to my playlist based on several  
+                  audio related features. To do so, i combined my own playlist with 3 other playlists full of songs that are not in my playlist to have
+                  a final playlist that has mix of in playlist (i.e would be recommended to me) songs and not in playlist (i.e not recommended) songs.
+
+                  <br><br>
+
+                  For reference, I am a huge rock and metal fan and my 1000+ song playlist reflects that (seen in the graph below), which is why I gathered
+                  Rnb, hip hop, and techno playlists, since they are very different from the type of music i listen to. <br><br>
+                  
+                  
+                  <img src="../Plots/Anthony_playlist.png" style="height: 550px;width: 750px"> <br><br>
+                  
+                  After combining all the playlists, the final playlist/dataset has the following distribution of classes: <br><br>
+
+                  <img src="../Plots/playlist_class_distribution.png" style="height: 550px;width: 550px"> <br><br>
+
+                  As the graph indicates, the dataset is well balanced between both classes and was a good dataset to
+                  start modeling on. The last exploratory step before modeling was understanding which features differ
+                  between classes and in what way, serving as a basic feature selection method to improve any model's 
+                  predictive ability. The distribution plots of all the dataset's features in both playlists can be visualized below: <br><br>
+                  
+                  <img src="../Plots/Feature_dist_plot.png" style="height: 950px;width: 950px"> <br><br>
+
+                  The most main takeaways from the above distribution plots are: <br><br>
+                  > The features where there barely are any differences between both playlists are Liveness, Duration (ms), Key, and mode. These features
+                  were dropped to avoid unnecessary variables in my model. <br>
+                  > The biggest differences between playlists come from valence, danceability, energy, and speechiness. <br>
+                  > The remaining features moderately differ between both playlists might or might not have a significant impact.<br><br>
+                 
+            
+                  </p>
+                   
+                  <h2>Building a decision tree</h2>
+
+                  <p> Just like what was done with Naive Bayes, the first step was splitting the data into training and testing data (80% train, 20% test). Next, 
+                    Python's sklearn library was used to build a decision tree model on the training and later use it on the testing data to check the accuracy. One of the main
+                    disadvantages of decision trees is tendency for overfitting. <br><br>
+
+                    Overfitting refers to the condition when the model completely fits the training data but fails to generalize the testing unseen data. Overfit 
+                    condition arises when the model memorizes the noise of the training data and fails to capture important patterns. A perfectly fit decision tree 
+                    performs well for training data but performs poorly for unseen test data. <br><br>
+
+                    There are many ways to avoid an overfit decision tree, one of which is calculating the training and testing accuracies for different values of max_depth 
+                    and get the optimal point accordingly. Max_depth is a decision tree hyperparameter that controls the maximum depth of the tree that will be created and the 
+                    optimal point is the depth level at which the training error monotonously increases and testing error monotonously decreases after that depth. <br><br>
+
+                    The max_depth vs training/validation error relationship can be seen in the graph below: <br><br>
+
+                    <img src="../Plots/max_depth.png" style="height: 550px;width: 750px"> <br><br>
+
+                    The graph indicates to us that a max depth of n = 6 is the best option for the decision tree we have built as any depth after that 
+                    will cause the model to over fit and perform poorly with data other than the training data. The fact that after n = 6 the training 
+                    error keeps on increasing while the testing keeps on decreasing validates that idea.<br><br>
+
+                    After getting the optimal max_depth for our decision tree (which was 6), the next step was fitting a decision tree with this value of max depth and 
+                    testing several of its metrics, which are detailed below: <br><br> </p>
+
+
+                    <div class="grid">
+                      <img src="../Plots/Opt_model_train.png" style="height: 350px;width: 450px">  
+
+                      <img src="../Plots/Opt_model_test.png" style="height: 350px;width: 450px">  
+                    </div>
+                    <br><br>
+
+                    <p> The confusion matrixes of the training data and testing data perfectly represent the model's performance, where the it 
+                    does not mislabel any data point (except for 1) when used on the training data and mislabels some points when used on the testing data. This 
+                    is further validated by the metrics below: <br><br>
+
+                    --- TRAINING --- <br>
+
+                    ACCURACY: 0.9995247148288974<br>
+                    NEGATIVE RECALL: 0.7154953429297206<br>
+                    POSITIVE RECALL: 0.6237989652623799<br>
+                    NEGATIVE PRECISION: 0.6240768094534712<br>
+                    POSITIVE PRECISION: 0.7152542372881356<br><br>
+
+                    --- TESTING --- <br>
+
+                    ACCURACY: 0.8954372623574145<br>
+                    NEGATIVE RECALL: 0.625<br>
+                    POSITIVE RECALL: 0.9553752535496958<br>
+                    NEGATIVE PRECISION: 0.7142857142857143<br>
+                    POSITIVE PRECISION: 0.9345238095238095 <br><br>
+
+                    Below are the definitions of each of the above metrics:<br><br>
+
+                    > Accuracy: % of correct predictions. <br>
+                    > Precision: The precision of a model describes how many detected items are truly relevant. It is calculated by dividing the true positives by overall
+                     positives. <br>
+                    > Recall: Recall is a measure of how many relevant elements were detected. Therefore it divides true positives by the number of relevant elements. <br><br>
+
+                    My model performed very well in terms of accuracy (99% training and 89% testing) and precision (93% for test set), indicating that the model has good predictive 
+                    ability when it comes to predicting true positives. In production terms, my model has a good chance of detecting whether a song will actually make a playlist 
+                    and the mistakes would occur by not recommending what would have been a recommended worthy song (low negative recall score). <br><br>
+
+                    The final decision tree can be visualized below: <br><br>
+
+                    <img src="../Plots/Decision_tree.png" style="height: 550px;width: 1000px"> <br><br>
+
+                     
+
+                    <h2>Random Forest</h2> <br><br> 
+
+
+                    <img src="../img/Random_forest.png" style="height: 400px;width: 800px"> <br><br>
+
+
+                    <p> Essentially, a random forest is an algorithm which combines the output of multiple decision trees to reach a single result using ensemble methods. Everything I had 
+                      done so far and explained above is used one single decision tree as my classifier, which has 2 main disadvantages: <br><br>
+
+                      1. A small change in the data can cause massive change in the structure of the decision tree, as it is very dependent on where the first split occurs. This causes
+                      the model to be highly unstable. <br>
+                      2. Decision trees have a tendency to over fit. <br><br>
+
+                      Random forests compensate for these disadvantages by training multiple decision trees (at different splits) and generate a single result out of all of them. Also,
+                      random forests have a built in feature selection process that makes sure only relevant features are used by the model.<br>
+
+                      The random forest model gave me a final 100% training accuracy and a 92% testing accuracy, both of which were an improvement from my optimized decision tree.
+
+                  </p>
+
+                    <h2>Conclusion</h2> <br><br>
+                    <p> 
+                    Overall, the use of decision trees and random forests was a success, were they where both able to accurately (90% +) classify a song as recommended or not recommended
+                    to my playlist based on the playlist itself. The use cases and production environment in which these models could be used in are discussed in the 'Implementation' tab.
+                    (The tab has still not been developed at this stage of the project)
+              
+
+                    
+                    </p>
+
+                   
+          
+
+  
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+</html>
