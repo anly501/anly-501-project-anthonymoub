@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio website</title>
+        <link rel="stylesheet" type="text/css" href="../css/Clustering.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
+
+<div class="hero">
+
+    <img class="wifi" src="../img/wifi.svg"/>
+        <nav>
+            <h2 class="logo">Clustering</h2>
+            <ul>
+        <li><a href="../index.html">About Me</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="Code.html">Code</a></li>
+                <li><a href="Data.html">Data</a></li>
+                <li><a href="DataGathering.html">Data Gathering</a></li>
+                <li><a href="DataCleaning.html">Data Cleaning</a></li>
+                <li><a href="ExploringData.html">Exploring Data</a></li>
+                <li><a href="naivebayes.html">Naive Bayes</a></li>
+                <li><a href="Decision_tree.html">Decision Tree</a></li>
+                <li><a href="SVM.html">SVM</a></li>
+				<li><a href="Clustering.html">Clustering</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="content">
+            
+            <h1>Clustering</h1>
+            <h3>This section focuses explaining how clustering was used in this project and for what purpose.      </h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with python scripts.</h4>
+
+        </div>
+    </div>
+
+    <section class="about"> 
+    <div class="about-text">
+
+      <h2>Introduction</h2> <br>
+
+        <p>  Clustering is a type of unsupervised learning method. An unsupervised learning method is a method in which we draw references from datasets consisting of input data without labeled responses.
+             Generally, it is used as a process to find meaningful structure, explanatory underlying processes, generative features, and groupings inherent in a set of
+            examples. <br><br> 
+
+            Clustering is the task of dividing the population or data points into a number of groups such that data points in the same groups are more similar to other data points in the same group and 
+            dissimilar to the data points in other groups. It is basically a collection of objects on the basis of similarity and dissimilarity between them. <br><br> 
+
+            For example The data points in the graph below clustered together can be classified into one single group. We can distinguish the clusters, and we can identify
+             that there are 3 clusters in the below picture. <br><br>
+
+             <img src="../img/Clustering.png" style="height: 300px;width: 800px"> <br><br>
+
+             Some examples of clustering in real world applications are : <br><br> 
+
+                > E commerce: Consumers of a certain e commerce shop could belong to clusters like college student low spender, family member high spender, etc.<br><br>
+                > Streaming: Viewers could be clustered into high usage viewers, low usage viewers, etc. <br><br>
+                > Sports: Clustering a team of players into different groups based on their attributes, strengths, weaknesses, etc. <br><br>
+
+                And many more ! <br><br> 
+            
+            In this project's case, clustering was used to understand whether or not there are certain groupings in popular music and how have these
+            groupings changed over time. Similar to what was done previously in the project, the dataset used was the Billboard’s Hot 100 songs from the 
+            1950s up until the 2010s. Since this project has already established how drastic popular music has changed over the decades (especially the 90s), 
+            my theory was that any grouping found in the data will also have changed and evolved over time. <br><br>
+            
+            </p>
+
+                <h2>Clustering methods</h2> <br><br>
+
+                <p> 
+
+                Just like any machine learning method, clustering has several algorithms that do the job, including KMeans clustering, DBSCAN clustering, and 
+                hierarchical clustering. <br><br>
+
+                <h3>1. K Means Clustering</h3> <br>
+
+                <p> 
+                "K-means is a centroid-based clustering algorithm, where we calculate the distance between each data point and a centroid to assign it to a cluster. 
+                The goal is to identify the K number of groups in the dataset. It is an iterative process of assigning each data point to the groups and slowly data points get 
+                clustered based on similar features. The objective is to minimize the sum of distances between the data points and the cluster centroid, to identify the correct
+                group each data point should belong to. Here, we divide a data space into K clusters and assign a mean value to each. The data points are placed in the 
+                clusters closest to the mean value of that cluster. There are several distance metrics available that can be used to calculate the distance." -  <a href="https://neptune.ai/blog/k-means-clustering"style="color: rgb(39, 160, 204)">Source</a>  
+
+                <br><br>
+
+                Below is a visual look at how K means clustering works: <br><br>
+
+                <img src="../img/Kmeans.png" style="height: 400px;width: 700px"> <br><br>
+
+
+                <h3>2. DBSCAN Clustering</h3> <br>
+                <p>  
+
+                DBSCAN clustering works like any other clustering algorithm but comes in superior to other methods when the data comes with clusters of 
+                varying densities, which would make it hard to be clustered using centroid based techniques. Below is a good visual representation: <br><br>
+
+                <img src="../img/DBSCAN1.png" style="height: 400px;width: 450px"> <br><br>
+
+                The data above is fit using DBSCAN, where each cluster has  donut shape. Clustering this data using Kmeans or hierarchical clustering would have resulted 
+                in the following: <br><br>
+
+                <img src="../img/DBSCAN2.png" style="height: 400px;width: 800px"> <br><br>
+
+                <h3>3. Hierarchical Clustering</h3> <p> 
+
+                "Hierarchical clustering starts by treating each observation as a separate cluster. Then, it repeatedly executes the following two steps: 
+                (1) identify the two clusters that are closest together, and (2) merge the two most similar clusters. This iterative process continues until all 
+                the clusters are merged together. This is illustrated in the diagrams below. " - <a href="https://www.displayr.com/what-is-hierarchical-clustering/"style="color: rgb(39, 160, 204)">Source</a>  
+
+                <br><br>
+
+                <img src="../img/HC.png" style="height: 800px;width: 400px"> 
+
+                <h2>Clustering in this project</h2> <br> <p>  
+
+                The first model I ran was for demonstration purposes to further understand how clustering works on my data. The two variables/features from my dataset I decided to use 
+                were speechiness and instrumentalness, just to see if there are any significant clusters/groups that would form. The model I chose was KMeans with a number of clusters k
+                equal to 3 (for demonstration purposes only). The results can be visualized below: <br><br>
+
+                <img src="../Plots/Kmeans_results.png" style="height: 400px;width: 800px"> <br><br>
+
+                It can be observed from the plot on the left that there is some sort of an inverse relationship between speechiness and instrumentalness, where songs with high speechiness
+                 have low instrumentalness and vice versa, which would initially indicate that there might be some clear grouping/clustering on this data. In fact, after fitting the data
+                 to a K means model, the data is perfectly grouped into three separate clusters that are characterized by high speechiness and low instrumentalness, high instrumentalists 
+                 and low speechiness, and the third group/cluster that is somewhere in between. <br><br>
+
+                 The above example was just a representation of how clustering would work on my data but since my dataset has more than just two features I developed three different 
+                 clustering models using all of the features. All the audio related numerical features in the data set were used and standardized (to avoid weighing some parameters more than others).
+
+                 <br><br> 
+
+                 The same data was used to train three seperate models: Kmeans, DBSCAN, and hierarchical clustering. Each model was optimized and tuned based on its specific requirements
+                 and hyperparameters, all of which are explained below. <br><br>
+                 
+                 <h2> K means</h2> <br>
+
+                 <p> One of the most common ways to choose K (the number of clusters) when training a K means model is using an elbow method.  It consists in the interpretation of a 
+                    line plot with an elbow shape. The number of clusters is where the elbow bends. The x axis of the plot is the number of clusters, and the y axis is inertia and
+                     distortion values for each number of clusters. A good model is one with a low inertia and a low number of clusters. <br><br>
+
+
+                     Inertia measures how well a dataset was clustered by K-Means. It is calculated by measuring the distance between each data point and its centroid, squaring this 
+                     distance, and summing these squares across one cluster. As for distortion, it is the average of the euclidean squared distance from the centroid of the respective
+                    clusters. <br> 
+
+                    That being said, i ran a script that calculates the intertia and distortion values for every k value and plotted the results. <br><br>
+
+
+                    <img src="../Plots/elbow_plot.png" style="height: 400px;width: 600px"> <br><br>
+
+                    Using the elbow method, the elbow happens at k = 3, hence making it the best k value to proceed with.
+
+                    <h2> DBSCAN </h2> <br>
+                    <p> 
+
+                    For DBSCAN, the hyperparameter that should be optimized to give the best possible model is epsilon. In simple terms, epsilon is the local radius for expanding clusters. 
+                    Rather than using distortion or inertia to optimize the model, DBSCAN focuses on optimizing the silhouette score, which is a measure of how similar an object is to its
+                     own cluster (cohesion) compared to other clusters (separation). <br><br>
+
+                     <img src="../Plots/DBSCAN_elbow.png" style="height: 400px;width: 600px"> <br><br>
+
+                     Using an elbow method on the above plot we could determine that the optimal value of epsilon is 6, which was the value I used to build the DBSCAN model.
+
+                     <h2> Hierarchical </h2> <br>
+                     <p> The third and final model used was hierarchical clustering. Similar to K means, hierarchical clustering focuses on optimizing the number of clusters used. Silhouette 
+                        score is the main metric to optimize  in hierarchical clustering. <br><br>
+
+                        <img src="../Plots/HC_elbow.png" style="height: 400px;width: 600px"> <br><br>
+
+                        The elbow method indicates that a number of clusters equal to 2 is the best option for this model. Another way of validating this conclusion in hierarchical 
+                        clustering is using a dendogram. In a dendoogram, a clade is a branch, and the the clades are arranged according to how similar (or dissimilar) they are. 
+                        Clades that are close to the same height are similar to each other; clades with different heights are dissimilar — the greater the difference in height, the more
+                        dissimilarity. The number of clusters is found when plotting a horizontal line on the dendogram to minimize the vertical distance between clades. <br><br>
+
+                        <img src="../Plots/dendogram.png" style="height: 500px;width: 700px"> <br><br>
+                        The above dendogram confirms the previously concluded claim that 2 is the optimal number of clusters for this model. <br>
+
+
+                        <h2> Feature selection and optimal model  </h2> 
+                        <br>
+                        <p>     
+
+                        Since my data set had more than 20 numerical features, I decided to run some sort of feature selection method to reduce the dimensionality of the data since
+                         I was sure that some of the variables did not have any significance on the clustering. The main idea behind my feature selection strategy was to run subsets
+                         of features (using K means) and calculate the inertia values for each subset, and pick the subset with the lowest inertia value. The subset of features with the
+                          lowest inertia value ended up being: <br><br>
+
+                        'num_lines', 'difficult_words', 'valence', 'duration_ms' <br><br>
+
+                        Note: Not all subset features were created since there was a huge number of possible subsets that would have taken a lot more computational time this was just a demonstration of the logic and method <br><br>
+
+                        Since K means was the algorithm used to do the feature selection I stuck with it (also because it was the easiest to use) , I used it to create the optimal model 
+                        on the optimal subset of features with the K value equal to three, which was previously established as the best option. This model was used to cluster all the 
+                        initial data set and the results were appended to this data set in a column called clusters.
+
+
+                        <br><br>
+
+                        <h2> Result Analysis  </h2> <br> 
+
+                        <p>  
+
+                        The most important part of this section in the project was to analyze the results and see whether or not there is a significant/interesting grouping going on in
+                         the data set and how this has changed over time since my initial theory was that a lot of cluster changes have occurred over time. <br><br>
+
+                         <img src="../Plots/Results.png" style="height: 500px;width: 700px"> <br><br>
+
+                         The above plot confirms my initial speculation that time has a huge impact on cluster distribution where the 90s, which was already established in the EDA section
+                        of this project as the most important decade in terms of change in the industry, was the first decade where cluster 0 had more songs in the charts more than
+                         cluster 1. Moreover, cluster two had no appearance in the chart whatsoever up until the 2010s  which also supports the idea that music tastes and popularity
+                        is very time and era dependent. <br><br> 
+
+                        As for what differentiates the clusters from each other, below is a radar chart that explains the differences: <br><br>
+
+
+                        <img src="../Plots/cluster_comp.png" style="height: 700px;width: 700px"> <br><br>
+
+                        The biggest difference that is obvious from the radar chart above is cluster zeros very low tempo compared to clusters one and two as well as it's much higher 
+                        valence than clusters one and two. Another major differentiator is danceability, where cluster 2 is significantly higher than the other two. <br><br>                 
+
+				<h2>Conclusion</h2>
+        <br>
+				<p>  All in all whether or not the clustering results I got from the model I used are the best and most accurate results for grouping my data is something that is 
+                    hard to determine at first but what is clear and definitely certain is the fact that popular music (and music in general) is very “groupable” since there are a
+                     lot of features for each song out there, and that all of these groups vary through time.
+
+                  </p>
+
+                   
+        
+</div>
+
+</section>
+
+
+
+
+
+
+</html>
