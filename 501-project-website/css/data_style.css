@@ -24,10 +24,10 @@ nav{
 
 @media only screen and (max-width: 1700px){
 	.data{
-		width: 550px;
-		height: 550px;
+		width: 600px;
+		height: 600px;
 		position: absolute;
-		right: -28%;
+		right: -23%;
 		top: 22%;
 		
 	}
@@ -38,7 +38,7 @@ nav{
 		width: 800px;
 		height: 800px;
 		position: absolute;
-		right: -26%;
+		right: -23%;
 		top: 15%;
 		
 	}

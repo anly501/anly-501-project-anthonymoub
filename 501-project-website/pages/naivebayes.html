@@ -13,7 +13,7 @@
 
 <div class="hero">
 
-    <img class="wifi" src="../img/wifi.svg"/>
+    <img class="wifi" src="../img/icons8-abacus.svg"/>
         <nav>
             <h2 class="logo">Naive Bayes</h2>
             <ul>
@@ -28,6 +28,8 @@
                 <li><a href="Decision_tree.html">Decision Tree</a></li>
 				        <li><a href="SVM.html">SVM</a></li>
                 <li><a href="Clustering.html">Clustering</a></li>
+                <li><a href="ARM.html">ARM and Networking</a></li>
+                <li><a href="Conclusions.html">Conclusions</a></li>
 
             </ul>
         
@@ -36,8 +38,8 @@
         <div class="content">
             
             <h1>Naive Bayes</h1>
-            <h3>This section focuses on explaining how Naive Bayes was used in this project and whether it was a useful method.      </h3>
-            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with python and R scripts.</h4>
+            <h3>This section focuses on explaining how Naive Bayes was used in this project.      </h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with Python and R scripts.</h4>
 
         </div>
     </div>
@@ -51,9 +53,13 @@
             of classification problems are: Detecting if an email is spam or not, detecting if a patient will have cancer (or any other disease), and much more. Classification
             can be better understood in the below figure: <br><br>
 
-        <img src="../img/Classification.png" style="height: 600px;width: 700px"> <br><br>
+        <figcaption></figcaption>   
+        <img src="../img/Classification.png" style="height: 600px;width: 700px">  
+        <figcaption>Illustration 1 -Naive Bayes explanation</figcaption> <br>  <p>  
+         
+        
 
-        In the diagram above, there are two classes within the data, class A and class B (For example, these classes could be class male and class female).
+        In the illustration above, there are two classes within the data, class A and class B (For example, these classes could be class male and class female).
         In brief, the algorithm's job is to fit a line that perfectly distinguishes both classes from each other within the feature space (features X and Y in the case 
         of the above diagram).<br><br>
 
@@ -65,10 +71,10 @@
 
         There are several type of Naive Bayes algorithms, including: <br><br>
 
-        > Gaussian Naive Bayes: This type of Naive Bayes is used when variables are continuous in nature.
+        &#x2022; Gaussian Naive Bayes: This type of Naive Bayes is used when variables are continuous in nature.
         It assumes that all the variables have a normal distribution.<br>
-        > Multinomial Naive Bayes: This is used when the features represent the frequency of something. This algorithm is mostly used in cases with text features.<br>
-        > Bernoulli Naive Bayes: This is used when features are binary. <br><br>
+        &#x2022; Multinomial Naive Bayes: This is used when the features represent the frequency of something. This algorithm is mostly used in cases with text features.<br>
+        &#x2022; Bernoulli Naive Bayes: This is used when features are binary. <br><br>
 
         Since my project had both text data (lyrics) and record/numerical data, Gaussian and Multinomial naive bayes were both used.
 
@@ -96,7 +102,10 @@
                     The last cleaning step was using a count vectorizor algorithm on the lyrics data. In short, count vectorizor is an algorithm that converts text to numerical
                     data, since machines cannot understand characters and words. Below is a brief illustration of the concept: <br><br> 
 
-                    <img src="../img/CountVectorizor.png" style="height: 200px;width: 600px"> <br><br>
+                    <figcaption></figcaption>
+                    <img src="../img/CountVectorizor.png" style="height: 200px;width: 600px">  
+                    <figcaption>Illustration 2 -Count vectorizor explanation</figcaption> <br><br>  <p> 
+           
 
                     The above illustration shows how CountVectorizor breaks down a text sentence to an array with each word associated with a count value. The same logic was applied to the 
                     lyrics data to have it ready for machine learning. <br><br>
@@ -111,10 +120,12 @@
                     problem, and it is nothing more than randomly assigning a class to an entry without consideration for any factor. For this 7 class classification model, the baseline
                     model would have a 14% classification accuracy (1/7 = 0.14).<br><br>
 
-                    <img src="../Plots/multinom_performance.png" style="height: 600px;width: 800px"> <br><br>
+                    <figcaption></figcaption>
+                    <img src="../Plots/multinom_performance.png" style="height: 600px;width: 800px">  
+                    <figcaption>Fig.8 -Model performances</figcaption> <br><br> <p> 
 
                     In practice, my Multinomial Naive Bayes model performs twice as good as the worst classifier, which indicates that it does somewhat work (or at least the logic
-                    for it to work is there). However, a 40% classification accuracy might be very low if this model is to be deployed in some use case. For example, is a recommendation
+                    for it to work is there). However, a 40% classification accuracy might be very low if this model is to be deployed in some use case. For example, if a recommendation
                     engine is being built using this model, 40% accuracy means less than half of recommended content is of relevance to the user, leading to a very weak recommendation engine.
 
                     <br><br>
@@ -122,10 +133,11 @@
                     Apart from accuracy, another important thing to look at when it comes to classification is the confusion matrix. In its essence, a confusion matrix shows the ways in which a classification model
                     is confused when it makes predictions, which is done by showing the he number of correct and incorrect predictions for each class. Below is the confusion matrix for this Naive
                     Bayes model: <br><br>
+                    <figcaption></figcaption> 
+                    <img src="../Plots/confusion_matrix.png" style="height: 600px;width: 800px"> 
+                    <figcaption>Fig.9 -Confusion matrix for Naive Bayes model</figcaption> <br><br> <p> 
 
-                    <img src="../Plots/confusion_matrix.png" style="height: 600px;width: 800px"> <br><br>
-
-                    The above matrix shows that the 80s and the 2010s were the eras that were best predicted by the model, with all the remaining eras having predictability ranging from negligible 
+                    Figure 9 shows that the 80s and the 2010s were the eras that were best predicted by the model, with all the remaining eras having predictability ranging from negligible 
                     to average at best. From a musical perspective, this might be due to the fact that music style was pretty much established during these era and have come either directly before
                     a cultural change in music or long after one. The 80s is the decade directly prior to the 90s, which was proven to be the era with the biggest shift in music (more details in 
                     the EDA section), and music could have been settled down by then (1950s till that point). As for the 2010s, which is 2 decades after this huge cultural shift,  music might have settled to its new style by then
@@ -162,8 +174,9 @@
                     which was also a random classifier that had a 14% accuracy.
 
                     <br><br>
-
-                    <img src="../Plots/model_comparisons_R.png" style="height: 600px;width: 800px"> <br><br>
+                    <figcaption></figcaption>
+                    <img src="../Plots/model_comparisons_R.png" style="height: 600px;width: 800px"> 
+                    <figcaption>Fig.10 -Model comparisons</figcaption>   <p> 
                     <br><br>
 
                     The most noticeable thing from the above results is that dropping all dependent variables from the input data
@@ -176,8 +189,9 @@
 
                     Finally, a confusion matrix was built on model 3 (which was the best model) to see how did the predicted vs actual values
                     differed when using the model. <br><br>
-
-                    <img src="../Plots/confusion_matrix_R.png" style="height: 600px;width: 800px"> <br><br>
+                    <figcaption></figcaption>
+                    <img src="../Plots/confusion_matrix_R.png" style="height: 600px;width: 800px"> 
+                    <figcaption>Fig.11 -Confusion matrix of best model</figcaption> <p>  <br><br> 
 
                     The above confusion matrix reflects the models high classification accuracy with most songs' eras
                     properly predicted. The only decade with some sort significant of significant error is the 2010s, where

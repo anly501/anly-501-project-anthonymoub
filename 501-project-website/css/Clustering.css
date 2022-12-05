@@ -21,13 +21,21 @@ nav{
 	padding-right: 8%;
 }
 
+figcaption {
+	color: white;
+	font-style: italic;
+	
+  }
+
+
+
 @media only screen and (max-width: 1700px){
 .wifi{
     width: 600px;
     height: 600px;
     position: absolute;
-    right: -23%;
-    top: 15%;
+    right: -22%;
+    top: 20%;
 	
 }
 }

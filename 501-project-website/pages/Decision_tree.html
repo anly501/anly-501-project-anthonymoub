@@ -13,7 +13,7 @@
 
 <div class="hero">
 
-    <img class="wifi" src="../img/wifi.svg"/>
+    <img class="wifi" src="../img/icons8-broadcasting.svg"/>
         <nav>
             <h2 class="logo">Decision Tree</h2>
             <ul>
@@ -27,7 +27,9 @@
                 <li><a href="naivebayes.html">Naive Bayes</a></li>
                 <li><a href="Decision_tree.html">Decision Tree</a></li>
                 <li><a href="Clustering.html">Clustering</a></li>
-				<li><a href="SVM.html">SVM</a></li>
+				        <li><a href="SVM.html">SVM</a></li>
+                <li><a href="ARM.html">ARM and Networking</a></li>
+                <li><a href="Conclusions.html">Conclusions</a></li>
 
             </ul>
         
@@ -53,8 +55,10 @@
              <br><br>
              A simple example to further understand decision trees is predicting whether or not a person will show up to an outdoor football
              game based on several whether related factors. The example is visualized below: <br><br>
-
-        <img src="../img/Decision_tree.png" style="height: 600px;width: 700px"> <br><br>
+        
+        <figcaption></figcaption>
+        <img src="../img/Decision_tree.png" style="height: 600px;width: 700px">
+        <figcaption>Illustration 2 -Decision tree logic part 1</figcaption> <br>  <p>   
 
         As we move down the hierarchical structure of the tree (top to bottom), more information is gained and the ability to predict
         the outcome becomes easier. The above example is a tree that has a depth of 2 (representing only 2 questions asked), but other problems
@@ -72,16 +76,18 @@
 
                     Briefly, this is how the model's logic works:: <br><br>
 
-                    <img src="../img/Classifier_logic.png" style="height: 170px;width: 800px"> <br><br>
+                    <figcaption></figcaption>
+                    <img src="../img/Classifier_logic.png" style="height: 170px;width: 800px"> 
+                    <figcaption>Illustration 3 -Decision tree logic part 2</figcaption> <br>  <p>    
 
                     The decision tree algorithm works in the following steps:<br><br>
 
-                    > User (me in this case) inputs Spotify playlist. <br>
-                    > Spotify API returns the musical features for each song (all found under the Data tab). <br>
-                    > Only numeric features are kept <br>
-                    > Playlist songs are labelled with 1 (representing in playlist) <br>
-                    > Additional songs that are not in the playlist are added and labelled with 0 (not in playlist) <br>
-                    > Fitted model is used to predict if other songs (not in dataset) would or would not be recommended (1 or 0). <br><br>
+                    &#x2022; User (me in this case) inputs Spotify playlist. <br>
+                    &#x2022; Spotify API returns the musical features for each song (all found under the Data tab). <br>
+                    &#x2022; Only numeric features are kept <br>
+                    &#x2022; Playlist songs are labelled with 1 (representing in playlist) <br>
+                    &#x2022; Additional songs that are not in the playlist are added and labelled with 0 (not in playlist) <br>
+                    &#x2022; Fitted model is used to predict if other songs (not in dataset) would or would not be recommended (1 or 0). <br><br>
 
                     Below is an explanation on how all of this was done on my Spotify playlist.<br><br> </p>
 
@@ -98,25 +104,30 @@
                   For reference, I am a huge rock and metal fan and my 1000+ song playlist reflects that (seen in the graph below), which is why I gathered
                   Rnb, hip hop, and techno playlists, since they are very different from the type of music i listen to. <br><br>
                   
-                  
-                  <img src="../Plots/Anthony_playlist.png" style="height: 550px;width: 750px"> <br><br>
+                  <figcaption></figcaption>
+                  <img src="../Plots/Anthony_playlist.png" style="height: 550px;width: 750px"> 
+                  <figcaption>Fig. 8 -Anthony playlist distribution</figcaption> <br>  <p>  
                   
                   After combining all the playlists, the final playlist/dataset has the following distribution of classes: <br><br>
 
-                  <img src="../Plots/playlist_class_distribution.png" style="height: 550px;width: 550px"> <br><br>
+                  <figcaption></figcaption>
+                  <img src="../Plots/playlist_class_distribution.png" style="height: 550px;width: 550px">  
+                  <figcaption>Fig. 9 -Class distribution within playlist</figcaption> <br>  <p>  
 
                   As the graph indicates, the dataset is well balanced between both classes and was a good dataset to
                   start modeling on. The last exploratory step before modeling was understanding which features differ
                   between classes and in what way, serving as a basic feature selection method to improve any model's 
                   predictive ability. The distribution plots of all the dataset's features in both playlists can be visualized below: <br><br>
                   
-                  <img src="../Plots/Feature_dist_plot.png" style="height: 950px;width: 950px"> <br><br>
+                  <figcaption></figcaption>
+                  <img src="../Plots/Feature_dist_plot.png" style="height: 950px;width: 950px">  
+                  <figcaption>Fig. 10 -Playlist vs out of playlist comparison</figcaption> <br>  <p> 
 
                   The most main takeaways from the above distribution plots are: <br><br>
-                  > The features where there barely are any differences between both playlists are Liveness, Duration (ms), Key, and mode. These features
+                  &#x2022; The features where there barely are any differences between both playlists are Liveness, Duration (ms), Key, and mode. These features
                   were dropped to avoid unnecessary variables in my model. <br>
-                  > The biggest differences between playlists come from valence, danceability, energy, and speechiness. <br>
-                  > The remaining features moderately differ between both playlists might or might not have a significant impact.<br><br>
+                  &#x2022; The biggest differences between playlists come from valence, danceability, energy, and speechiness. <br>
+                  &#x2022; The remaining features moderately differ between both playlists might or might not have a significant impact.<br><br>
                  
             
                   </p>
@@ -137,7 +148,9 @@
 
                     The max_depth vs training/validation error relationship can be seen in the graph below: <br><br>
 
-                    <img src="../Plots/max_depth.png" style="height: 550px;width: 750px"> <br><br>
+                    <figcaption></figcaption>
+                    <img src="../Plots/max_depth.png" style="height: 550px;width: 750px"> 
+                    <figcaption>Fig. 11 -Test and train accuracies for different n</figcaption> <br>  <p> 
 
                     The graph indicates to us that a max depth of n = 6 is the best option for the decision tree we have built as any depth after that 
                     will cause the model to over fit and perform poorly with data other than the training data. The fact that after n = 6 the training 
@@ -150,7 +163,8 @@
                     <div class="grid">
                       <img src="../Plots/Opt_model_train.png" style="height: 350px;width: 450px">  
 
-                      <img src="../Plots/Opt_model_test.png" style="height: 350px;width: 450px">  
+                      <img src="../Plots/Opt_model_test.png" style="height: 350px;width: 450px">  <br><br>  
+                      <figcaption>Fig. 12 -Confusion matrices for train and test set</figcaption> <br>  <p> 
                     </div>
                     <br><br>
 
@@ -176,10 +190,10 @@
 
                     Below are the definitions of each of the above metrics:<br><br>
 
-                    > Accuracy: % of correct predictions. <br>
-                    > Precision: The precision of a model describes how many detected items are truly relevant. It is calculated by dividing the true positives by overall
+                    &#x2022; Accuracy: % of correct predictions. <br>
+                    &#x2022; Precision: The precision of a model describes how many detected items are truly relevant. It is calculated by dividing the true positives by overall
                      positives. <br>
-                    > Recall: Recall is a measure of how many relevant elements were detected. Therefore it divides true positives by the number of relevant elements. <br><br>
+                     &#x2022; Recall: Recall is a measure of how many relevant elements were detected. Therefore it divides true positives by the number of relevant elements. <br><br>
 
                     My model performed very well in terms of accuracy (99% training and 89% testing) and precision (93% for test set), indicating that the model has good predictive 
                     ability when it comes to predicting true positives. In production terms, my model has a good chance of detecting whether a song will actually make a playlist 
@@ -187,14 +201,17 @@
 
                     The final decision tree can be visualized below: <br><br>
 
-                    <img src="../Plots/Decision_tree.png" style="height: 550px;width: 1000px"> <br><br>
+                    <figcaption></figcaption>
+                    <img src="../Plots/Decision_tree.png" style="height: 550px;width: 1000px">  
+                    <figcaption>Fig. 13 -Final decision tree</figcaption> <br>  <p> 
 
                      
 
                     <h2>Random Forest</h2> <br><br> 
 
-
-                    <img src="../img/Random_forest.png" style="height: 400px;width: 800px"> <br><br>
+                    <figcaption></figcaption>
+                    <img src="../img/Random_forest.png" style="height: 400px;width: 800px">  
+                    <figcaption>Illustration 4 -Random Forest</figcaption> <br>  <p> 
 
 
                     <p> Essentially, a random forest is an algorithm which combines the output of multiple decision trees to reach a single result using ensemble methods. Everything I had 

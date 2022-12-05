@@ -13,7 +13,7 @@
 
 <div class="hero">
 
-    <img class="wifi" src="../img/wifi.svg"/>
+    <img class="wifi" src="../img/icons8-eye.svg"/>
         <nav>
             <h2 class="logo">Exploring data</h2>
             <ul>
@@ -28,6 +28,8 @@
                 <li><a href="Decision_tree.html">Decision Tree</a></li>
 				        <li><a href="SVM.html">SVM</a></li>
                 <li><a href="Clustering.html">Clustering</a></li>
+                <li><a href="ARM.html">ARM and Networking</a></li>
+                <li><a href="Conclusions.html">Conclusions</a></li>
                 
             </ul>
         
@@ -36,7 +38,7 @@
         <div class="content">
             
             <h1>Exploring Data</h1>
-            <h3>This section focuses on exploring the different features in the data gathered from a visual
+            <h3>This section focuses on exploring the different features in the data gathered <br> from a visual
         and statistical perspective.
         </h3>
             <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with scripts and saved plots.</h4>
@@ -51,39 +53,40 @@
           case of this project, around 30 music related variables were gathered for analysis, which made the data exploring process chaotic. For this
           reason, i decided to split the exploration into three seperate parts: <br><br>
 
-          > Analyzing audio features <br>
-          > Analyzing the lyrics <br>
-          > Analyzing the industry as a whole (band types, etc.) <br>
-          > Analyzing the statistics behind the features<br><br>
+          &#x2022; Analyzing audio features <br>
+          &#x2022; Analyzing the lyrics <br>
+          &#x2022; Analyzing the industry as a whole (band types, etc.) <br>
+          &#x2022; Analyzing the statistics behind the features<br><br>
 
 
 
         </p>
-				<h2>Part One: Understanding how audio features of popular music has changed over the years.</h2>
+				<h2>How have the musical elements of popular songs changed in the last century ?</h2>
         <br>
 				<p> As mentioned in the data gathering section, the Spotify API provided with a lot of music related features. As an inintial 
           analysis, the four features picked for analysis (with how Spotify defines them): <br><br>
 
-          >Speechiness: Speechiness detects the presence of spoken words in a track. The more exclusively speech-like 
+          &#x2022; Speechiness: Speechiness detects the presence of spoken words in a track. The more exclusively speech-like 
           the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value."Rap God" by Eminem
           is an example of a song with high speechiness.<br><br>
 
-          >Instrumentalness: Predicts whether a track contains no vocals, the closer the instrumentalness value is to 1.0, the greater 
+          &#x2022; Instrumentalness: Predicts whether a track contains no vocals, the closer the instrumentalness value is to 1.0, the greater 
           likelihood the track contains no vocal content. Hans zimmer, bach, or any other composer's tracks are very high in instrumentalness. <br><br>
 
           >Duration: The duration of the track in milliseconds.  <br><br>
 
-          >Danceability: Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
+          &#x2022; Danceability: Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
           A value of 0.0 is least danceable and 1.0 is most danceable. "Billie Jean" is a song with high danceability. <br><br>
 
           <br><br>
 
           Below are four line plots that summarize how these features have changed in Billboard’s top 100 yealry songs ever since the 
           1950s. <br><br>
+          <figcaption></figcaption> 
+          <img src="../Plots/musicfeatures.png" style="height: 600px;width: 1200px; margin-bottom: 0px;">
+          <figcaption>Fig.1 - The evolution of audio features over decades.</figcaption> <br>  <p>  
 
-          <img src="../Plots/musicfeatures.png" style="height: 600px;width: 1200px"> <br><br>
-
-        The most evident thing right upfront is that all of these variables have gone through drastic changes
+        The most evident thing from Figure 1 is that all of these variables have gone through drastic changes
         over the years. However, the more interesting thing to note from this graph is the period where trends 
         shifted from one state to the other. <br><br>
         
@@ -105,24 +108,25 @@
 
         Another point worth studyuing was the "literacy and intellect" of popular songs, which is why the "difficult words" per songs
         feature was analyzed below. <br><br> 
-        
-        <img src="../Plots/difficult_words.png"> <br><br>
+        <figcaption></figcaption> 
+        <img src="../Plots/difficult_words.png" style="height: 500px;width: 950px">  
+        <figcaption>Fig.2 -Number of difficult words per song over decades.</figcaption>  <p> 
 
-
+          <p>  
         To support the previous observations, the 90s also seem to have been the era where the number of difficult words per (popular) song
-        drastically increased up until 2005, where the drop has been happening ever since (all most all time low level in 2021). Same as song duration
+        drastically increased up until 2005 (according to Figure 2), where the drop has been happening ever since (all most all time low level in 2021). Same as song duration
         the reasons behind this drop (2005 onwards) might be social in nature where people have started valuing more superficial forms of music and media (more details later).
 
       
         The two main takeaways from this graph are: <br><br>
 
-        > Popular music has in fact changed drastically over the years. <br>
-        > The 1990s seem to be the era of the musical revolution. <br><br>
+        &#x2022; Popular music has in fact changed drastically over the years. <br>
+        &#x2022; The 1990s seem to be the era of the musical revolution. <br><br>
 
 
 
       <br>
-      <h2>Part Two: Understanding how music genres have changed over the years.</h2>
+      <h2>How has genre popularity changed ?</h2>
 
       <br>
       <p>  In part one, the plots showed significant changes in the audio features of popular throughout the years. This section will focus on how artists and the genre they offer have also
@@ -131,9 +135,10 @@
     
       
 
-      <img src="../Plots/genre_evolution.png"> <br><br>
+      <img src="../Plots/genre_evolution.png" style="height: 750px;width: 1050px"> <br> 
+      <figcaption>Fig.3 -Song genres distribution over decades.</figcaption> <br><br> <p> 
 
-      <p>The above plot further supports the idea that the 90s is the decade were significant changes in the music industry happened. Up until that
+      <p>Figure 3 further supports the idea that the 90s is the decade were significant changes in the music industry happened. Up until that
         decade, the Billboard's Top 100 chart was almost predominantly rock music, the era of Guns n Roses, Scorpions, Metallica, just to name a few. 
         Despite the 80s Billboard top 100 chart being 85% taken by rock music, this number dropped to 27% in the 90s. The 90s is what some people refer to
         as the "beginning of the end" for rock music, as its dominance in the charts being taken over by hip hop, electronic music, and pop music, which 
@@ -144,7 +149,7 @@
         coming weeks).
       </p>
 
-      <h2>Part Three: Understanding how the lyrics of popular music have changed over the years.</h2> <br><br>
+      <h2>Has the message behind popular songs changed ?</h2> <br><br>
 
       <p>After understanding how audio features of popular music have changed over the years and having a look at how the industry has changed
         over time, the next relevant music related data gathered worth analyzing was the lyrics and how they have changed over that timeframe. The 
@@ -157,12 +162,12 @@
         
 		</div>
 <div class="grid">
-    <img src="../Plots/wordcloud50s.png">
-    <img src="../Plots/wordcloud60s.png">
-    <img src="../Plots/wordcloud70s.png">
-    <img src="../Plots/wordcloud80s.png">
-    <img src="../Plots/wordcloud90s.png">
-    <img src="../Plots/wordcloud00s.png">
+    <img src="../Plots/wordcloud50s.png" style="height: 200px;width: 420px">
+    <img src="../Plots/wordcloud60s.png" style="height: 200px;width: 420px">
+    <img src="../Plots/wordcloud70s.png" style="height: 200px;width: 420px">
+    <img src="../Plots/wordcloud80s.png" style="height: 200px;width: 420px">
+    <img src="../Plots/wordcloud90s.png" style="height: 200px;width: 420px">
+    <img src="../Plots/wordcloud00s.png" style="height: 200px;width: 420px">
 </div>
 <br><br><br>
 <div class="statistics">    <p>Despite having very significant differences in audio features and genres within the last 8 decades, the most popular words
@@ -181,7 +186,8 @@
 
   </p>
   <br>
-  <img src="../Plots/profanity_racism.png"> <br><br>
+  <img src="../Plots/profanity_racism.png"> <br> 
+  <figcaption>Fig.4 -Profanity and racism in songs over decades.</figcaption> <br>  <p> 
 
   <p> Almost all trend shifts seen so far happened in the 1990s, and the rise and prominence of the words "Shit", "F***", "N****", and "B****" in 
     popular music comes as no exception. This comes in line with previous observations, since these words are mostly found in hip hop and pop music (more data
@@ -193,7 +199,7 @@
   <br><br>
 
 
-  <h2>Part Four: Analyzing the statistics.</h2> 
+  <h2>Are there any mathematical relationships between song features ?</h2> 
   
   <br><br>
 
@@ -208,16 +214,17 @@
     
   </p>
   
-  <img src="../Plots/correlation_matrix.png" > <br><br>
+  <img src="../Plots/correlation_matrix.png" > <br> 
+  <figcaption>Fig.5 -Correlation heatmap of audio features.</figcaption> <br> <br> <p> 
 
-  <p>Some of the more obvious relationships conveyed by this plot are: </p> <br><br>
+  <p>Some of the more obvious relationships conveyed by figure 5 are: </p> <br> 
 
-  > Valence and danceability have a very high positive correlation (0.55): A very logical relationship as valence is defined (by Spotify) as
+  &#x2022; Valence and danceability have a very high positive correlation (0.55): A very logical relationship as valence is defined (by Spotify) as
   the musical positiveness conveyed by a track, which would definitlwey be high for songs that are "danceable".
 
   <br><br>
 
-  > Acousticness and (danceability and energy) have a high negative correlation (-0.26 and -0.55): Since acoustic tracks are calmer in nature and not as loud
+  &#x2022; Acousticness and (danceability and energy) have a high negative correlation (-0.26 and -0.55): Since acoustic tracks are calmer in nature and not as loud
   as other tracks, they definitely tend to be less danceable and have less energy.
 
   <br><br>
@@ -227,7 +234,8 @@
 
   Next, i used box plots for the features used in the correlation heatmap to get a better sense of the statistics behind each feature individually.<br><br>
 
-  <img src="../Plots/box_plots.png"> <br><br>
+  <img src="../Plots/box_plots.png"> <br> 
+  <figcaption>Fig.6 -Audio features boxplot.</figcaption> <br><br> <p> 
 
   First of all, all of the features (that have correlations with each other) move very steadily together. Unlike
   other uncorrelated variables (speechiness, duration, etc.) which have been previously visualized to have experienced drastic changes over the years, correlated variables
@@ -241,6 +249,53 @@
   Finally, the box plots indicate a significant presence of outliers in variables like "Acousticness", "Difficult words", and "Loudness", which might
   have had an impact on correlation values and might also have an impact at later stages like machine learning, where they might be dealt with at that stage.
 
+
+  <br><br>
+  <h2>How do modern audiences react to older classics when exposed to them ?</h2> 
+  
+  <br><br>
+
+  <p>All of the analysis so far has proven that music popularity is very trend based and each era enjoys a certain 
+    type of music. However, just like in anything in life, outliers exist and some songs get very popular in eras where
+    they were not supposed to. This section focuses on exploring three of these very recent outliers and how were they received 
+    by the general public. The three examples where the following: <br><br>
+
+    &#x2022; Something in the way ~ Nirvana (initially released in xxxx), played in The Batman (2022). <br>
+    &#x2022; Master of Puppets ~ Metallica (initially released in xxxx), played in Stranger Things Season 4 (2022). <br>
+    &#x2022; Running up that hil ~ Kate Bush (initially released in xxxx), played in Stranger Things Season 4 (2022). <br><br>
+    
+    The performance of these songs when they got played in their respective movie/series was nothing short of amazing: <br><br>
+    <br>
+    &#x2022; Something in the way saw a 2200% increase in streaming a couple of weeks after The Batman was released.
+    <br>
+    &#x2022; Master of Puppets saw a 650% increase in streaming a couple of weeks after Stranger Things season 4 was released.<br>
+    &#x2022; Running up the hill saw a 9000% increase in streaming a couple of weeks after Stranger Things season 4 was released.<br>
+  </p> <br><br>
+
+  However, the most interesting part is how different these songs were from the remaining songs on the Billboard at the time: <br><br>
+  
+  <img class = "outliers" src="../Plots/mop_analysis.png" > <br><br>
+  <img class = "outliers" src="../Plots/roth.png" > <br><br>
+  <img class = "outliers" src="../Plots/sitw.png" >  
+  <figcaption>Fig.7 -Outlier performances in 2022</figcaption> <br><br> <p> 
+
+  <p>The most interesting aspect from figure 7 is how different each of the three songs are compared to the other songs featured on the Billboard add their time in terms of audio features. This huge difference is very interesting as it shows that even though the general population follows trends, they do have the capacity to enjoy outliers of the trends, all it takes is proper exposure, since The Batman and Stranger Things both are In the top 5 movies/series in 2022.
+    <br><br>
+    The question that arises from these figures is what is the reason people enjoyed these outliers? Is it the way they were used in the movie/show? Is it nostalgia that led to many people revisit these songs? Or is it just the fact that many people heard these songs for the first time and legitimately really liked them? These are all very broad questions that need further investigation and analysis to properly understand and answer, yet they are very relevant nonetheless.
+     </p> <br><br>
+
+     <h2>Conclusion</h2> 
+  
+     <br><br>
+   
+     <p>This section showcased how drastically music has changed throughout the last couple of decades from an audio perspective, specifically in the 1990s,
+      which was the decade with the most influence in terms of change in music. Moreover, the correlations found between audio features served as a stepping stone
+      towards feature engineering and model building, as properly understanding the relationships between features is key to building an efficient model. Finally, this 
+      section also explored how people positively react to older classic music when properly exposed to it. The next step in this project was to take all of these findings
+      and use them appropriately for model building.
+     </p> <br><br>
+
+ 
 
 </div>
 

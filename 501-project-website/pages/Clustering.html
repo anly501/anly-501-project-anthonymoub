@@ -13,7 +13,7 @@
 
 <div class="hero">
 
-    <img class="wifi" src="../img/wifi.svg"/>
+    <img class="wifi" src="../img/icons8-user-groups.svg"/>
         <nav>
             <h2 class="logo">Clustering</h2>
             <ul>
@@ -27,7 +27,9 @@
                 <li><a href="naivebayes.html">Naive Bayes</a></li>
                 <li><a href="Decision_tree.html">Decision Tree</a></li>
                 <li><a href="SVM.html">SVM</a></li>
-				<li><a href="Clustering.html">Clustering</a></li>
+                <li><a href="Clustering.html">Clustering</a></li>
+                <li><a href="ARM.html">ARM and Networking</a></li>
+                <li><a href="Conclusions.html">Conclusions</a></li>
 
             </ul>
         
@@ -36,7 +38,7 @@
         <div class="content">
             
             <h1>Clustering</h1>
-            <h3>This section focuses explaining how clustering was used in this project and for what purpose.      </h3>
+            <h3>This section focuses on how clustering was used in this project and for what purpose.      </h3>
             <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with python scripts.</h4>
 
         </div>
@@ -56,14 +58,15 @@
 
             For example The data points in the graph below clustered together can be classified into one single group. We can distinguish the clusters, and we can identify
              that there are 3 clusters in the below picture. <br><br>
-
-             <img src="../img/Clustering.png" style="height: 300px;width: 800px"> <br><br>
+             <figcaption></figcaption> 
+             <img src="../img/Clustering.png" style="height: 300px;width: 800px"> 
+             <figcaption>Illustration 5 - Clustering</figcaption> <br>  <p>  
 
              Some examples of clustering in real world applications are : <br><br> 
 
-                > E commerce: Consumers of a certain e commerce shop could belong to clusters like college student low spender, family member high spender, etc.<br><br>
-                > Streaming: Viewers could be clustered into high usage viewers, low usage viewers, etc. <br><br>
-                > Sports: Clustering a team of players into different groups based on their attributes, strengths, weaknesses, etc. <br><br>
+             &#x2022; E commerce: Consumers of a certain e commerce shop could belong to clusters like college student low spender, family member high spender, etc.<br><br>
+             &#x2022; Streaming: Viewers could be clustered into high usage viewers, low usage viewers, etc. <br><br>
+             &#x2022; Sports: Clustering a team of players into different groups based on their attributes, strengths, weaknesses, etc. <br><br>
 
                 And many more ! <br><br> 
             
@@ -93,8 +96,9 @@
                 <br><br>
 
                 Below is a visual look at how K means clustering works: <br><br>
-
-                <img src="../img/Kmeans.png" style="height: 400px;width: 700px"> <br><br>
+                <figcaption></figcaption> 
+                <img src="../img/Kmeans.png" style="height: 400px;width: 700px"> 
+                <figcaption>Illustration 6 - K means clustering</figcaption> <br>  <p> 
 
 
                 <h3>2. DBSCAN Clustering</h3> <br>
@@ -102,13 +106,15 @@
 
                 DBSCAN clustering works like any other clustering algorithm but comes in superior to other methods when the data comes with clusters of 
                 varying densities, which would make it hard to be clustered using centroid based techniques. Below is a good visual representation: <br><br>
-
-                <img src="../img/DBSCAN1.png" style="height: 400px;width: 450px"> <br><br>
+                <figcaption></figcaption> 
+                <img src="../img/DBSCAN1.png" style="height: 400px;width: 450px"> 
+                <figcaption>Illustration 7 - DBSCAN clustering part 1</figcaption> <br>  <p> 
 
                 The data above is fit using DBSCAN, where each cluster has  donut shape. Clustering this data using Kmeans or hierarchical clustering would have resulted 
                 in the following: <br><br>
-
-                <img src="../img/DBSCAN2.png" style="height: 400px;width: 800px"> <br><br>
+                <figcaption></figcaption> 
+                <img src="../img/DBSCAN2.png" style="height: 400px;width: 800px"> 
+                <figcaption>Illustration 8 - DBSCAN clustering part 2</figcaption> <br>  <p> 
 
                 <h3>3. Hierarchical Clustering</h3> <p> 
 
@@ -117,16 +123,18 @@
                 the clusters are merged together. This is illustrated in the diagrams below. " - <a href="https://www.displayr.com/what-is-hierarchical-clustering/"style="color: rgb(39, 160, 204)">Source</a>  
 
                 <br><br>
-
+                <figcaption></figcaption> 
                 <img src="../img/HC.png" style="height: 800px;width: 400px"> 
+                <figcaption>Illustration 9 - Hierarchical clustering </figcaption> <br>  <p> 
 
                 <h2>Clustering in this project</h2> <br> <p>  
 
                 The first model I ran was for demonstration purposes to further understand how clustering works on my data. The two variables/features from my dataset I decided to use 
                 were speechiness and instrumentalness, just to see if there are any significant clusters/groups that would form. The model I chose was KMeans with a number of clusters k
                 equal to 3 (for demonstration purposes only). The results can be visualized below: <br><br>
-
-                <img src="../Plots/Kmeans_results.png" style="height: 400px;width: 800px"> <br><br>
+                <figcaption></figcaption> 
+                <img src="../Plots/Kmeans_results.png" style="height: 400px;width: 800px"> 
+                <figcaption>Figure 10 - Two variable clustering</figcaption> <br>  <p> 
 
                 It can be observed from the plot on the left that there is some sort of an inverse relationship between speechiness and instrumentalness, where songs with high speechiness
                  have low instrumentalness and vice versa, which would initially indicate that there might be some clear grouping/clustering on this data. In fact, after fitting the data
@@ -154,8 +162,9 @@
 
                     That being said, i ran a script that calculates the intertia and distortion values for every k value and plotted the results. <br><br>
 
-
-                    <img src="../Plots/elbow_plot.png" style="height: 400px;width: 600px"> <br><br>
+                    <figcaption></figcaption> 
+                    <img src="../Plots/elbow_plot.png" style="height: 400px;width: 600px">  
+                    <figcaption>Figure 11 - Inertia and distortion of model</figcaption> <br>  <p> 
 
                     Using the elbow method, the elbow happens at k = 3, hence making it the best k value to proceed with.
 
@@ -165,24 +174,27 @@
                     For DBSCAN, the hyperparameter that should be optimized to give the best possible model is epsilon. In simple terms, epsilon is the local radius for expanding clusters. 
                     Rather than using distortion or inertia to optimize the model, DBSCAN focuses on optimizing the silhouette score, which is a measure of how similar an object is to its
                      own cluster (cohesion) compared to other clusters (separation). <br><br>
-
+                     <figcaption></figcaption> 
                      <img src="../Plots/DBSCAN_elbow.png" style="height: 400px;width: 600px"> <br><br>
+                     <figcaption>Figure 12 - Silhouette score of DBSCAN model</figcaption> <br>  <p> 
 
                      Using an elbow method on the above plot we could determine that the optimal value of epsilon is 6, which was the value I used to build the DBSCAN model.
 
                      <h2> Hierarchical </h2> <br>
                      <p> The third and final model used was hierarchical clustering. Similar to K means, hierarchical clustering focuses on optimizing the number of clusters used. Silhouette 
                         score is the main metric to optimize  in hierarchical clustering. <br><br>
-
-                        <img src="../Plots/HC_elbow.png" style="height: 400px;width: 600px"> <br><br>
+                        <figcaption></figcaption> 
+                        <img src="../Plots/HC_elbow.png" style="height: 400px;width: 600px"> 
+                        <figcaption>Figure 12 - Silhouette score of hierarchical model</figcaption> <br>  <p> 
 
                         The elbow method indicates that a number of clusters equal to 2 is the best option for this model. Another way of validating this conclusion in hierarchical 
                         clustering is using a dendogram. In a dendoogram, a clade is a branch, and the the clades are arranged according to how similar (or dissimilar) they are. 
                         Clades that are close to the same height are similar to each other; clades with different heights are dissimilar — the greater the difference in height, the more
                         dissimilarity. The number of clusters is found when plotting a horizontal line on the dendogram to minimize the vertical distance between clades. <br><br>
-
-                        <img src="../Plots/dendogram.png" style="height: 500px;width: 700px"> <br><br>
-                        The above dendogram confirms the previously concluded claim that 2 is the optimal number of clusters for this model. <br>
+                        <figcaption></figcaption> 
+                        <img src="../Plots/dendogram.png" style="height: 500px;width: 700px"> 
+                        <figcaption>Figure 13 - Hierarchical clustering dendogram</figcaption> <br>  <p> 
+                        Figure 13 confirms the previously concluded claim that 2 is the optimal number of clusters for this model. <br>
 
 
                         <h2> Feature selection and optimal model  </h2> 
@@ -211,27 +223,35 @@
 
                         The most important part of this section in the project was to analyze the results and see whether or not there is a significant/interesting grouping going on in
                          the data set and how this has changed over time since my initial theory was that a lot of cluster changes have occurred over time. <br><br>
+                         <figcaption></figcaption> 
+                         <img src="../Plots/Results.png" style="height: 500px;width: 700px"> 
+                         <figcaption>Figure 14 - Cluster distribution per decade</figcaption> <br>  <p> 
 
-                         <img src="../Plots/Results.png" style="height: 500px;width: 700px"> <br><br>
-
-                         The above plot confirms my initial speculation that time has a huge impact on cluster distribution where the 90s, which was already established in the EDA section
+                         Figure 14 confirms my initial speculation that time has a huge impact on cluster distribution where the 90s, which was already established in the EDA section
                         of this project as the most important decade in terms of change in the industry, was the first decade where cluster 0 had more songs in the charts more than
                          cluster 1. Moreover, cluster two had no appearance in the chart whatsoever up until the 2010s  which also supports the idea that music tastes and popularity
                         is very time and era dependent. <br><br> 
 
                         As for what differentiates the clusters from each other, below is a radar chart that explains the differences: <br><br>
 
-
-                        <img src="../Plots/cluster_comp.png" style="height: 700px;width: 700px"> <br><br>
+                        <figcaption></figcaption> 
+                        <img src="../Plots/cluster_comp.png" style="height: 700px;width: 700px"> 
+                        <figcaption>Figure 15 - Cluster comparison</figcaption> <br>  <p> 
 
                         The biggest difference that is obvious from the radar chart above is cluster zeros very low tempo compared to clusters one and two as well as it's much higher 
                         valence than clusters one and two. Another major differentiator is danceability, where cluster 2 is significantly higher than the other two. <br><br>                 
 
 				<h2>Conclusion</h2>
         <br>
-				<p>  All in all whether or not the clustering results I got from the model I used are the best and most accurate results for grouping my data is something that is 
+				<p>  Whether or not the clustering results I got from the model I used are the best and most accurate results for grouping my data is something that is 
                     hard to determine at first but what is clear and definitely certain is the fact that popular music (and music in general) is very “groupable” since there are a
                      lot of features for each song out there, and that all of these groups vary through time.
+
+                    Unlike classification, which was used to understand the relationship between users and songs clustering was used in this project to try to understand how popular music can be grouped throughout decades, meaning if there are some types of trends and shifts and between groups within popular music over the last couple of decades. 
+                    <br> <br>
+                    The most important insight reflected by this section is the fact that the distribution of music within groups has drastically changed over the decades. This observation shows that music becomes popular and then unpopular based on cycles and trends, which also makes sense considering how the audio related features of music have also changed throughout the last couple of decades, which was discussed in the EDA section. 
+                    <br> <br>
+                    Similar to classification, clustering also showcases how songs could be mathematically grouped together and understood from an algorithmic perspective which is also very important for streaming platforms to use and create new products. 
 
                   </p>
 

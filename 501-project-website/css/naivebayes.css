@@ -27,7 +27,7 @@ nav{
     height: 600px;
     position: absolute;
     right: -23%;
-    top: 15%;
+    top: 27%;
 	
 }
 }
@@ -154,6 +154,12 @@ flex-direction: row;
 		 
     }
 }
+
+figcaption {
+	color: white;
+	font-style: italic;
+	
+  }
 
 @keyframes moveInRight {
     0% {

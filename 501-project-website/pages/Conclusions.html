@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio website</title>
+        <link rel="stylesheet" type="text/css" href="../css/conclusions.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
+
+<div class="hero">
+
+    <img class="wifi" src="../img/icons8-link.svg"/>
+        <nav>
+            <h2 class="logo">Conclusions</h2>
+            <ul>
+        <li><a href="../index.html">About Me</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="Code.html">Code</a></li>
+                <li><a href="Data.html">Data</a></li>
+                <li><a href="DataGathering.html">Data Gathering</a></li>
+                <li><a href="DataCleaning.html">Data Cleaning</a></li>
+                <li><a href="ExploringData.html">Exploring Data</a></li>
+                <li><a href="naivebayes.html">Naive Bayes</a></li>
+                <li><a href="Decision_tree.html">Decision Tree</a></li>
+                <li><a href="SVM.html">SVM</a></li>
+				<li><a href="Clustering.html">Clustering</a></li>
+                <li><a href="ARM.html">ARM and Networking</a></li>
+                <li><a href="Conclusions.html">Conclusions</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="content">
+            
+            <h1>Conclusions</h1>
+            <h3>This section offers conclusions for each method used and for the project as a whole.</h3>
+            
+        </div>
+    </div>
+
+    <section class="about"> 
+    <div class="about-text">
+
+      <h2>EDA</h2> <br>
+
+        <p>  The EDA section of this project was very interesting as it did in fact give very solid and concrete ideas about how and what changed in popular music 
+            throughout the  last couple of decades. <br><br>
+            
+            The major changes in popular music that have happened ever since the 1950s are : <br><br>
+
+            &#x2022; Songs have become much more "speechy", meaning they have much more words now compared to back then. <br>
+            &#x2022; Songs have become less "instrumental", meaning the decrease in use of instruments in songs. This does make sense when you consider
+            that almost all older songs have a guitar/drum/instrument solo, whereas modern songs do not have any kinds of solos (for the most part). The decrease in 
+            "instrumentalness" has been accompanied by an increase in "danceability", a measure of danceable a song is.<br>
+            &#x2022; Song duration has highly decreased, which i attribute to two major reasons.  <br>
+            &#x2022; The number of difficult words per song peaked between 1990 and the mid 2000s, where it has been downhill ever since. <br>
+            &#x2022; The number of racist words and profanity per song was almost non existent up until the 1990s, where this has drastically changed ever since.<br>
+            &#x2022; The only consistent thing in music has always been the major and centra themes of songs: Love. <br><br>
+
+            I believe all the above perfectly fit with each other and are actually very reminiscent of today's society in many ways. Throughout the last couple of years,
+            the technological advancements in the music streaming world made it much easier for people to have a lot more songs at their disposal and hence have a lot more
+            options and songs to go through, which has lead to people appreciating shorter songs. Also, the  <a href="https://chadd.org/about-adhd/general-prevalence/" style="color: rgb(39, 160, 204)">attention spans of people have shortened throughout the years </a>,
+            which might have also contributed to people desiring shorter songs and the ability to go through more songs per listening session. Another major change reflected by the facts above is how 
+            "degenerate" music has become, with a lot less difficult words and a lot more racist and crude words, coupled by increased "danceability" in music, a combination
+            that does make sense considering that all clubs and parties play Rnb and hip hop, rather than rock and older music (which do not fit the dance and club culture). <br><br>
+
+            The last major point worth thinking about discussed in the EDA section is how modern audiences have reacted greatly to older music, which is very different from 
+            what they listen to nowadays, which begs to question what are the factors that do make music popular ? If it just a change of taste then why would modern music 
+            listeners resonate with such different and older forms ? These questions are hard to answer with certainty but are worth thinking about. <br><br>
+
+
+        <h2>Classification</h2>
+
+            <p>  
+
+                The purpose of using classification in this project was to examine if some song features could be used to detect whether a certain user would like this song. Basically, this is what and how recommendation systems for streaming platforms like Spotify work, but I just wanted to try it on my own to see which features are and which features are not significant when it comes to user music preferences.
+                <br><br>
+                In terms of model performance, the only model that could accurately classify whether or not a user would like a song based on lyrics solely was SVM. Naïve Bayes and Decision trees were much better classifiers with the use of numerical and audio data. All in all, if a recommendation system would be built in a production environment, the choice of model would definitely depend on what features are to be used.
+                <br><br>
+                The general takeaway from this section is that music is a very personal form of art, and everyone resonates with it in their own way. This specificity gives algorithms the ability to numerically understand people’s music tastes and use it to help people constantly explore new songs and genres, which is something big corporations monetize on and build whole teams around.
+                <br><br>
+
+        <h2>Clustering</h2>
+
+            <p>  
+
+                Unlike classification, which was used to understand the relationship between users and songs clustering was used in this project to try to understand how popular music can be grouped throughout decades, meaning if there are some types of trends and shifts and between groups within popular music over the last couple of decades. 
+                <br><br>
+                The results perfectly showcased how the distribution of music within groups has drastically changed over the decades. This observation shows that music becomes popular and then unpopular based on cycles and trends, which also makes sense considering how the audio related features of music have also changed throughout the last couple of decades, which was discussed in the EDA section.
+                <br><br>
+
+                Similar to classification, clustering also showcases how songs could be mathematically grouped together and understood from an algorithmic perspective which is also very important for streaming platforms to use and create new products.
+                <br><br>
+     
+      
+     
+            </p>
+
+        
+        
+            <h2>ARM</h2>
+
+            <p>  
+
+                Association rule mining for this project on lyrics data showed how the lyrics of songs (throughout multiple decades) can be modeled in a relationship-based network diagram. The major idea which was conveyed by the network is the fact that the word “I” is the center lyric/word of all songs and is connected to the greatest number of words. This shows, also in parallel with what was discussed in the EDA section, that love, intimacy, and adventures individuals go through life are the most important motivator behind songs and careers of artists.
+                <br><br>
+                This interconnectivity and relationship between words and lyrics also promotes the idea that one can understand a user's preferences based on the lyrics of songs he or she listens to. Whether or not ARM is superior to classification where other machine learning models when it comes to building recommendation systems is something that needs further investigation and could be a project by itself.
+                
+     
+            </p>
+
+       
+        
+            <h2>Overall Conclusion</h2>
+
+            <p>  
+
+                In conclusion, this project focused on understanding how popular music has changed throughout the years, what were the observed trends, and what were the factors that have contributed to these changes. Also, this project showed how music could be understood from a mathematical and algorithmic perspective as well as the possible implementations algorithms in the world of music.
+
+                One last idea I would like to convey that I think this project also reflects is the fact that music is something that is very personal and intimate, and it also varies a lot from person to person based on every individual's experience in life. That is something we should all embrace and understand, and we should always stay open to explore new types of music and art in general, for the options are close to infinite.
+                
+     
+            </p>
+
+
+                   
+        
+</div>
+
+</section>
+
+
+
+
+
+
+</html>

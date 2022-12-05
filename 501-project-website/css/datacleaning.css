@@ -21,6 +21,14 @@ nav{
 	padding-right: 8%;
 }
 
+figcaption {
+	color: white;
+	font-style: italic;
+	
+}
+
+
+
 @media only screen and (max-width: 1700px){
 	.wifi{
 		width: 600px;
@@ -28,6 +36,8 @@ nav{
 		position: absolute;
 		right: -23%;
 		top: 22%;
+		 
+		 
 		
 	}
 	}
@@ -39,6 +49,7 @@ nav{
 		position: absolute;
 		right: -23%;
 		top: 15%;
+		 
 		
 	}
 	}
@@ -171,6 +182,7 @@ h4{
 	width: 100%;
 	padding: 100px 0px;
 	background-color: #191919;
+	text-align: justify;
 }
 .about img{
 	height: auto;

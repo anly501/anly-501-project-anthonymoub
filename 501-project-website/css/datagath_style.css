@@ -185,6 +185,7 @@ h4{
 	width: 1500px;
 	font-size: 20px;
 	margin-left: 10%;
+	text-align: justify;
 }
 .main{
 	width: 1130px;
@@ -210,10 +211,19 @@ h4{
 	color: white;
 	letter-spacing: 1px;
 	line-height: 28px;
-	font-size: 30px;
+	font-size: 20px;
 	margin-bottom: 45px;
 	width: 100%;
 }
+
+ul {
+	font:15px "Arial";
+}
+
+
+
+
+
 button{
 	background-color:#006699;
 	color: white;

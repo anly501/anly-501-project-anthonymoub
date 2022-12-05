@@ -184,9 +184,10 @@ h4{
 	color: white;
 	letter-spacing: 1px;
 	line-height: 28px;
-	font-size: 25px;
+	font-size: 20px;
 	margin-bottom: 45px;
-	text-align: left;
+	width: 80%;
+	text-align: justify;
 }
 button{
 	background-color:#006699;
@@ -382,3 +383,9 @@ footer p:nth-child(2){
 	font-size: 14px; 
 }
  
+
+.my_image{
+
+float: right;
+ 
+}

@@ -8,14 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
 
+  
 </head>
 <body>
 	<!----hero Section start---->
 
 	<div class="hero">
 
-    <img class="wifi" src="../img/wifi.svg"/>
+    <img class="wifi" src="../img/icons8-trash-can-500.png"/>
 		<nav>
 			<h2 class="logo">Data Cleaning</h2>
 			<ul>
@@ -30,6 +32,8 @@
         <li><a href="Decision_tree.html">Decision Tree</a></li>
 				<li><a href="SVM.html">SVM</a></li>
         <li><a href="Clustering.html">Clustering</a></li>
+        <li><a href="ARM.html">ARM and Networking</a></li>
+        <li><a href="Conclusions.html">Conclusions</a></li>
 			</ul>
 		
 		</nav>
@@ -47,15 +51,37 @@
 		<div class="main">
 		
 			<div class="about-text">
-				<h2>How was the data cleaned and prepared ?</h2>
+
+        <h2>What is data cleaning ?</h2> <br>
+        <p>Data cleaning is probably the most important part of any data science project, for its usually the step that takes the longest tine and is the most delicate, considering how 
+          important it is to have all the  data in the correct format to develop good and accurate models. 
+          
+          <br><br> 
+          
+          In short , Ddta cleaning is the process of fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. When combining multiple
+           data sources, there are many opportunities for data to be duplicated or mislabeled. If data is incorrect, outcomes and algorithms are unreliable, even though they may look correct.
+            There is no one absolute way to prescribe the exact steps in the data cleaning process because the processes will vary from dataset to dataset. <a href="https://www.tableau.com/learn/articles/what-is-data-cleaning" style="color: rgb(39, 160, 204)">(Source) </a> 
+
+            <br><br> Below is a good look at how data cleaning usually looks like: <br><br>
+
+            <figcaption></figcaption>
+            <img src="../img/DataCleaning.png" style="height: 450px ; width: 550px"/> 
+            <figcaption>Image 1 - Data cleaning cycle</figcaption>
+            
+            <br><br>
+          </p>
+
+				<h2>Data cleaning in this project</h2>
         <br>
-				<p> The data cleaning process was done on two seperate files <br><br>
+				<p> The data cleaning process was done on two separate files <br><br>
 
-          > Data_cleaning.R: R script focused on cleaning record and labeled data <br>
-          > Cleaning_data.ipynb: Jupyter notebook focused on cleaning text data (in this case lyrics related data) <br>
-          <br><br><br>
+          &#x2022; Data_cleaning.R: R script focused on cleaning record and labeled data. <br>
+          &#x2022; Cleaning_data.ipynb: Jupyter notebook focused on cleaning text data (in this case lyrics related data). <br>
+          &#x2022; A lot of additional model specific data cleaning was done when developing models, which is found in these models' 
+          Python and R scripts. <br>
+          <br><br> 
 
-          Part One: Data_cleaning.R <br><br>
+          <h3> Data_cleaning.R</h3>  <p>   
 
           After the whole data gathering process, i ended up with 2 main datasets, one for songs prior to 2015 and the other
           for songs between 2015 and 2021. Before proceeding to the next step which was merging both datasets into one final main
@@ -63,19 +89,11 @@
 
           The first thing that had to be done was deleting unnecessary columns like: <br><br>
 
-          > X.1: A useless column that was a byproduct from previous code.<br>
-          > spotify_id: This variable served its purpose and was of no use from this point on.<br>
-          > id: A useless column.<br>
-          > uri: A useless column.<br>
-          >analysis_url: A useless column.<br><br>
-
-          After having all unwanted columns dropped, it was time to check the data type of each variable, which would be important
-          at later stages of the project. Running the str() function in R summarizes all this information. <br><br>
-
-
-          <img class="dc" src="../img/data_types.png" style="height: 550px ; width: 800px"/> <br><br>
-
-        All the data types were correct and as required. The APIs used in the data gathering process of the project could have been responsible for that. <br><br>
+          &#x2022; X.1: A useless column that was a byproduct from previous code.<br>
+          &#x2022; spotify_id: This variable served its purpose and was of no use from this point on.<br>
+          &#x2022; id: A useless column.<br>
+          &#x2022; uri: A useless column.<br>
+          &#x2022; analysis_url: A useless column.<br><br>
 
         The next step was dealing with missing values,which are present in a couple of entries of the lyrics column.All songs with missing lyrics were
         dropped as they are a small number (183) out of all the songs gathered, the absence of these songs would have a very small (if any) effect on the analysis,
@@ -86,15 +104,17 @@
         The same data cleaning methods were applied on the old music dataset, and the two datasets were joined together into one final dataset for the Billboard's
         Top 100 songs from 1950 till 2021. A brief screenshot of how the final dataset looks like: <br><br>
 
-        <img src="../img/finaldf1.png" style="height: 550px ; width: 800px"/> <br><br>
-        <img src="../img/finaldf2.png" style="height: 550px ; width: 800px"/> <br><br><br><br>
+        <figcaption></figcaption>
+        <img src="../img/finaldf1.png" style="height: 450px ; width: 850px"/> <br><br>
+        <img src="../img/finaldf2.png" style="height: 450px ; width: 850px"/> <br><br>
+        <figcaption>Image 2 - Cleaned dataset</figcaption><br><br> <p>  
 
 
-        Part Two: Cleaning_data.ipynb <br><br>
+          <h3> Cleaning_data.ipynb </h3> <p> 
 
-        As previously mentioned, this notebook mainly focused on dealing with labeled text data (the label in this case is year of song/lyric) 
-        and preparing it in a format that is appropriate for further analysis. Just likeany NLP project (or part of a project in this case), one of the first steps is removing stopwords from text since they provide unnecessary noise. The Python NLTK
-        package was used to remove these stopwords from all the lyrics. The stop words removed were any word that belongs to the following: <br><br>
+        This notebook mainly focused on dealing with labeled text data (the label in this case is year of song/lyric) 
+        and preparing it in a format that is appropriate for further analysis. Just like any NLP project (or part of a project in this case), one of the first steps is removing stopwords from text since they provide unnecessary noise. The Python NLTK
+        package was used to remove these stop words from all the lyrics. The stop words removed were any word that belongs to the following: <br><br>
 
         'i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves',
         'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves',
@@ -110,15 +130,31 @@
         <br><br>
 
         Since the analysis was to be done on a per decade basis, the song lyrics data was split into their respective decades: 1950s, 1960s,
-        1970s, 1980s, 1990s, 00s, and 2010s. The python count vectorizor was used on each lyric dataset to get the count per word for each song in 
-        its respective dataset, something which was used later in the exploratory stage of the project. Below is an example of the output of 
-        count vectorization. <br><br>
-
-        <img class="lc" src="../img/lyric_count_90.png"/> <br><br>
+        1970s, 1980s, 1990s, 00s, and 2010s. <br><br>
+        
 
         Finally, this script ended up providing me with the lyrics of Billboard's top 100 songs per decade along with basic vector related properties,
-        which are essential for text analysis like word clouds.
+        which are essential for text analysis like word clouds. All other cleaning was minor and very objective based, all of which are explained 
+        in their respective tabs/sections. 
 
+
+
+        <h3> Model specific cleaning </h3> <p> 
+
+          Since each machine learning model has different assumptions, rules, and limitations, the data had to be additionally cleaned to tailor 
+          to these specific requirements. The cleaning included but was not limited to: 
+          <br><br>
+
+          &#x2022; Transforming years to decades for classification (ex: 1960 --> 60s)<br>
+          &#x2022; Normalizing audio features since each feature has its own scale.<br>
+          &#x2022; Aggregating the genres column into only 6 genres.<br>
+          &#x2022; Dropping NA values.<br>
+          
+        <h3> Conclusion </h3> <p>
+
+          The cleaning for this project was not very extensive and relatively straight to the point, mainly due to the fact that the data i gathered from Github 
+          and the APIs i used (Spotify and others) was almost ready for modelling. The additional cleaning tasks i did were very specific to my use case and are 
+          unavoidable in any project.
 
 			</div>
 		</div>

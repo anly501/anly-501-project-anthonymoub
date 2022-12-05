@@ -27,7 +27,7 @@ nav{
     height: 600px;
     position: absolute;
     right: -23%;
-    top: 15%;
+    top: 29%;
 	
 }
 }
@@ -114,7 +114,9 @@ flex-direction: row;
 
 .grid img {
   width: 100%;
+ 
 }
+
 
 
 
@@ -220,9 +222,10 @@ h4{
 }
 
 .about-text{
-	width: 1500px;
+	width: 100%;
 	font-size: 20px;
 	padding-left: 6%;
+	text-align: justify;
 }
 
 .about-text img{
@@ -237,8 +240,9 @@ h4{
     line-height: 28px;
     font-size: 20px;
     margin-bottom: 45px;
-    width: 1500px;
+    width: 95%;
     padding-left: 6%;
+	text-align: justify;
 }
 
 
@@ -269,8 +273,21 @@ h4{
 	line-height: 28px;
 	font-size: 20px;
 	margin-bottom: 45px;
-	width: 100%;
+	width: 90%;
+
+	
 }
+
+.outliers {
+	height: 90%;
+	width: 93%;
+}
+figcaption {
+	color: white;
+	font-style: italic;
+	
+  }
+  
 button{
 	background-color:#006699;
 	color: white;

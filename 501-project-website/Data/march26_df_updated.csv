@@ -1,0 +1,100 @@
+"X","title","artist","year","spotify_id","id","danceability","energy","key","loudness","mode","speechiness","acousticness","instrumentalness","liveness","valence","tempo","duration_ms","time_signature","uri","analysis_url"
+0,"Heat Waves","Glass Animals",2022,"02MWAaffLxlfxAUY7c5dvx",0,0.761,0.525,11,-6.9,1,0.0944,0.44,6.7e-06,0.0921,0.531,80.87,238805,4,0,0
+1,"Stay","The Kid LAROI & Justin Bieber",2022,"5HCyWlXZPP0y6Gqq8TgA20",0,0.591,0.764,1,-5.484,1,0.0483,0.0383,0,0.103,0.478,169.928,141806,4,0,0
+2,"Super Gremlin","Kodak Black",2022,"4A8cWXxKfIL3lAyUDzXbCF",0,0.825,0.414,2,-6.634,1,0.144,0.00265,0,0.357,0.106,72.993,200548,4,0,0
+3,"abcdefu","GAYLE",2022,"4fouWK6XVHhzl78KzQ1UjL",0,0.695,0.54,4,-5.692,1,0.0493,0.299,0,0.367,0.415,121.932,168602,4,0,0
+4,"We Don't Talk About Bruno","Carolina Gaitan, Mauro Castillo, Adassa, Rhenzy Feliz, Diane Guerrero, Stephanie Beatriz & Encanto Cast",2022,"52xJxFP6TqMuO4Yt0eOkMz",0,0.577,0.45,0,-8.516,0,0.0834,0.357,0,0.111,0.83,205.863,216120,4,0,0
+5,"Ghost","Justin Bieber",2022,"6I3mqTwhRpn34SLVafSH7G",0,0.601,0.741,2,-5.569,1,0.0478,0.185,2.91e-05,0.415,0.441,153.96,153190,4,0,0
+6,"Easy On Me","Adele",2022,"0gplL1WMoJ6iYaPgMCL0gX",0,0.604,0.366,5,-7.519,1,0.0282,0.578,0,0.133,0.13,141.981,224695,4,0,0
+7,"Enemy","Imagine Dragons X JID",2022,"4qXKkOZ691yYgQu4Lunrds",0,0.724,0.782,2,-4.437,1,0.289,0.21,0,0.44,0.528,76.984,173381,4,0,0
+8,"Thats What I Want","Lil Nas X",2022,"0e8nrvls4Qqv5Rfa2UhqmO",0,0.737,0.846,1,-4.51,0,0.22,0.00614,0,0.0486,0.546,87.981,143901,4,0,0
+9,"Bad Habits","Ed Sheeran",2022,"3rmo8F54jFF8OgYsqTxm5d",0,0.807,0.893,11,-3.745,0,0.0347,0.0451,2.79e-05,0.366,0.537,126.011,230747,4,0,0
+10,"Shivers","Ed Sheeran",2022,"50nfwKoDiSYg8zOCREWAm5",0,0.788,0.859,2,-2.724,1,0.0856,0.281,0,0.0424,0.822,141.02,207853,4,0,0
+11,"Woman","Doja Cat",2022,"6Uj1ctrBOjOas8xZXGqKk4",0,0.824,0.764,5,-4.175,0,0.0854,0.0888,0.00294,0.117,0.881,107.998,172627,4,0,0
+12,"Cold Heart (PNAU Remix)","Elton John & Dua Lipa",2022,"6zSpb8dQRaw0M1dK8PBwQz",0,0.796,0.798,1,-6.312,1,0.0317,0.034,4.19e-05,0.0952,0.942,116.032,202735,4,0,0
+13,"Big Energy","Latto",2022,"6Zu3aw7FfjAF9WA0fA81Oq",0,0.935,0.807,11,-3.838,0,0.114,0.0514,0,0.349,0.813,106.017,173182,4,0,0
+14,"Sweetest Pie","Megan Thee Stallion & Dua Lipa",2022,"7mFj0LlWtEJaEigguaWqYh",0,0.814,0.628,7,-7.178,1,0.221,0.167,0,0.101,0.677,123.977,201334,4,0,0
+15,"Need To Know","Doja Cat",2022,"3Vi5XqYrmQgOYBajMWSvCi",0,0.664,0.609,1,-6.509,1,0.0707,0.304,0,0.0926,0.194,130.041,210560,4,0,0
+16,"Save Your Tears","The Weeknd & Ariana Grande",2022,"5QO79kh1waicV47BqGRL3g",0,0.68,0.826,0,-5.487,1,0.0309,0.0212,1.24e-05,0.543,0.644,118.051,215627,4,0,0
+17,"Ahhh Ha","Lil Durk",2022,"54VFhe501kUbDYj2OrueMp",0,0.676,0.61,1,-9.185,1,0.273,0.000114,1.73e-06,0.191,0.519,156.005,186538,4,0,0
+18,"Levitating","Dua Lipa",2022,"5nujrmhLynf4yMoMtj8AQF",0,0.702,0.825,6,-3.787,0,0.0601,0.00883,0,0.0674,0.915,102.977,203064,4,0,0
+19,"Pushin P","Gunna & Future Featuring Young Thug",2022,"3XOalgusokruzA5ZBA2Qcb",0,0.773,0.422,1,-4.572,0,0.187,0.00783,0.00693,0.129,0.488,77.502,136267,1,0,0
+20,"Industry Baby","Lil Nas X & Jack Harlow",2022,"27NovPIUIRrOZoCHxABJwK",0,0.736,0.704,3,-7.409,0,0.0615,0.0203,0,0.0501,0.894,149.995,212000,4,0,0
+21,"'Til You Can't","Cody Johnson",2022,"4k3lPl8YTKuY8c1HelVnm3",0,0.501,0.815,1,-4.865,1,0.0436,0.0513,0,0.106,0.46,160.087,224213,4,0,0
+22,"One Right Now","Post Malone & The Weeknd",2022,"00Blm7zeNqgYLPtW6zg8cj",0,0.687,0.781,1,-4.806,1,0.053,0.0361,0,0.0755,0.688,97.014,193507,4,0,0
+23,"What Happened To Virgil","Lil Durk Featuring Gunna",2022,"7ohROa13QK43JBRqfCmz4P",0,0.795,0.526,6,-9.086,0,0.204,0.067,2e-06,0.134,0.194,140.037,181393,4,0,0
+24,"I Hate U","SZA",2022,"5dXWFMwD7I7zXsInONVl0H",0,0.535,0.388,7,-9.805,0,0.155,0.507,0,0.11,0.412,106.703,174000,5,0,0
+25,"Petty Too","Lil Durk Featuring Future",2022,"0VlpgNPHWCyh8xxLcaK2fp",0,0.824,0.577,2,-9.443,1,0.357,0.0109,0,0.107,0.442,154.081,159927,4,0,0
+26,"Hrs And Hrs","Muni Long",2022,"3ncmoWTwJgx63LwMTyBCXf",0,0.52,0.546,8,-4.991,0,0.213,0.579,0,0.112,0.634,137.419,204317,3,0,0
+27,"MAMIII","Becky G X Karol G",2022,"7FlQk2gJ6TBrHHiidvdR2O",0,0.836,0.703,4,-3.554,0,0.0657,0.0845,0,0.138,0.902,94.048,226093,4,0,0
+28,"Surface Pressure","Jessica Darrow",2022,"760jhRscwGbIIe1m1IIQpU",0,0.65,0.584,2,-8.286,1,0.307,0.0174,1.54e-06,0.042,0.37,180.088,202227,4,0,0
+29,"No Interviews","Lil Durk",2022,"1tXDziDamT0we73CTDsgsv",0,0.701,0.61,6,-6.639,0,0.306,0.0113,0,0.109,0.598,157.995,179806,4,0,0
+30,"You Right","Doja Cat & The Weeknd",2022,"0k4d5YPDr1r7FX77VdqWez",0,0.828,0.621,8,-6.414,1,0.0565,0.0164,0.00233,0.0845,0.436,128.986,186173,4,0,0
+31,"Good 4 U","Olivia Rodrigo",2022,"4ZtFanR9U6ndgddUvNcjcG",0,0.563,0.664,9,-5.044,1,0.154,0.335,0,0.0849,0.688,166.928,178147,4,0,0
+32,"Light Switch","Charlie Puth",2022,"1jEBSDN5vYViJQr78W7jr2",0,0.689,0.627,6,-5.692,1,0.308,0.105,0.000321,0.0905,0.905,184.008,187704,4,0,0
+33,"Golden Child","Lil Durk",2022,"4UO8Ywh6dKZVJZ9iUofEhD",0,0.841,0.532,2,-9.307,1,0.278,0.00864,2.48e-06,0.268,0.319,79.993,114580,4,0,0
+34,"Buy Dirt","Jordan Davis Featuring Luke Bryan",2022,"69AIpwGNLxr4qS1X5ynx60",0,0.586,0.559,4,-6.725,1,0.05,0.639,0,0.0872,0.437,177.945,167480,4,0,0
+35,"Fancy Like","Walker Hayes",2022,"58UKC45GPNTflCN6nwCUeF",0,0.647,0.765,1,-6.459,1,0.06,0.111,0,0.315,0.855,79.994,161853,4,0,0
+36,"Thinking With My Dick","Kevin Gates Featuring Juicy J",2022,"1ojBtNRMzjL7ptLPZCzfRz",0,0.77,0.699,0,-6.59,1,0.199,0.0596,1.65e-05,0.17,0.696,81.003,165315,4,0,0
+37,"Fingers Crossed","Lauren Spencer-Smith",2022,"3yMC1KsTwh0ceXdIe4QQAQ",0,0.56,0.473,5,-7.23,1,0.0533,0.618,0,0.31,0.441,109.414,175345,4,0,0
+38,"Bam Bam","Camila Cabello Featuring Ed Sheeran",2022,"0QBzMgT7NIeoCYy3sJCof1",0,0.756,0.697,8,-6.377,1,0.0401,0.182,0,0.333,0.956,94.996,206071,4,0,0
+39,"Handsomer","Russ Featuring Ktlyn",2022,"0vp1sk3FzuDBeLMLcRhQdL",0,0.891,0.62,8,-6.822,1,0.157,0.176,1.59e-06,0.103,0.535,82.035,143415,4,0,0
+40,"Love Nwantiti (Ah Ah Ah)","CKay",2022,"2Xr1dTzJee307rmrkt8c0g",0,0.727,0.739,8,-3.805,1,0.0411,0.365,0.00137,0.161,0.533,93.005,145800,4,0,0
+41,"Beers On Me","Dierks Bentley, BRELAND & HARDY",2022,"19ZzEzb4BVK1wVO4brrmZz",0,0.59,0.846,4,-4.251,1,0.0396,0.182,0,0.53,0.733,146.028,174681,4,0,0
+42,"Broadway Girls","Lil Durk Featuring Morgan Wallen",2022,"3DZ8dbKg4OTSSqGARvecYd",0,0.659,0.745,10,-3.599,1,0.0347,0.0417,0,0.296,0.54,74.967,185600,4,0,0
+43,"Sand In My Boots","Morgan Wallen",2022,"0uRrG2jRR5tuifsYIJHEao",0,0.403,0.537,3,-6.628,1,0.031,0.59,0,0.112,0.414,69.877,202133,4,0,0
+44,"Doin' This","Luke Combs",2022,"6TpyujRefwsflWFXbmjVpj",0,0.588,0.55,1,-5.878,1,0.0269,0.166,8.67e-06,0.11,0.39,115.01,254173,4,0,0
+45,"Something In The Way","Nirvana",2022,"1nFtiJxYdhtFfFtfXBv06s",0,0.427,0.201,8,-13.044,1,0.0317,0.745,0.263,0.109,0.0668,105.218,232147,4,0,0
+46,"Knife Talk","Drake Featuring 21 Savage & Project Pat",2022,"2BcMwX1MPV6ZHP4tUT9uq6",0,0.849,0.424,5,-9.579,0,0.324,0.0635,0,0.0834,0.153,145.887,242966,4,0,0
+47,"Barbarian","Lil Durk",2022,"6DPEzXUB3ZVzT2NDh7MkJt",0,0.645,0.678,8,-8.343,1,0.409,0.0389,0,0.11,0.158,98.016,149244,4,0,0
+48,"Boyfriend","Dove Cameron",2022,"59CfNbkERJ3NoTXDvoURjj",0,0.345,0.612,7,-6.543,0,0.0608,0.232,0,0.194,0.232,179.773,153000,3,0,0
+49,"To Be Loved By You","Parker McCollum",2022,"2pUQX4d3Cjh3umGkVz0XyI",0,0.475,0.805,10,-4.456,1,0.0377,0.000453,0,0.143,0.488,145.976,199680,4,0,0
+50,"Never Say Never","Cole Swindell / Lainey Wilson",2022,"03kCiUPjdAV9ur9ugm8PQT",0,0.472,0.937,0,-4.028,0,0.0567,0.00717,0,0.11,0.454,140.073,176147,4,0,0
+51,"AA","Walker Hayes",2022,"6aIrXGmaFqPafbYgxbMUsj",0,0.634,0.764,4,-5.858,1,0.0297,0.00354,0,0.337,0.736,104.03,189560,4,0,0
+52,"Shootout @ My Crib","Lil Durk",2022,"23PzodQrNGxbywlba84Rva",0,0.754,0.553,10,-8.777,0,0.394,0.06,0,0.108,0.195,90.6,153813,4,0,0
+53,"Numb Little Bug","Em Beihold",2022,"3o9kpgkIcffx0iSwxhuNI2",0,0.742,0.527,8,-6.892,0,0.0769,0.327,0,0.25,0.638,84.974,169238,4,0,0
+54,"Started From","Lil Durk",2022,"03cBu30KbreokkrclGPQf8",0,0.624,0.561,7,-8.757,1,0.476,0.0895,0,0.109,0.357,159.186,121060,4,0,0
+55,"Drunk (And I Don't Wanna Go Home)","Elle King & Miranda Lambert",2022,"0QULNNd9z5s35entfiiXoa",0,0.612,0.884,5,-4.4,1,0.0459,0.00516,0,0.0997,0.626,119.991,245626,4,0,0
+56,"The Family Madrigal","Stephanie Beatriz, Olga Merediz & Encanto Cast",2022,"4b1yxSdlumA8N4fEk4UOZp",0,0.594,0.628,1,-6.345,1,0.359,0.12,0,0.0582,0.556,141.391,257213,4,0,0
+57,"Headtaps","Lil Durk",2022,"3HWQrKGmb05pcNoTIzzBwL",0,0.562,0.609,5,-7.672,1,0.279,0.0461,0,0.131,0.38,158.803,173880,4,0,0
+58,"She's All I Wanna Be","Tate McRae",2022,"0IuVhCflrQPMGRrOyoY5RW",0,0.614,0.644,2,-5.372,0,0.0426,0.0134,7.07e-06,0.117,0.651,160.036,206772,4,0,0
+59,"Smoking & Thinking","Lil Durk",2022,"5ELEsgMwvWJald9BQbIgsV",0,0.655,0.539,7,-11.133,1,0.0512,0.229,3.6e-06,0.104,0.238,85.07,248947,4,0,0
+60,"23","Sam Hunt",2022,"4PuAqZlL1tkidkuxfDlLbF",0,0.641,0.78,3,-5.138,1,0.0852,0.0206,0,0.143,0.693,98.004,179720,4,0,0
+61,"Slow Down Summer","Thomas Rhett",2022,"6c9mvipi1OooFPcU2dbwxq",0,0.457,0.756,11,-5.64,1,0.0359,0.00901,0,0.0966,0.472,155.965,217960,4,0,0
+62,"Peru","Fireboy DML & Ed Sheeran",2022,"3s1KwrLP0NlFWiWbjz6bfQ",0,0.956,0.417,7,-7.892,0,0.0926,0.572,0.00071,0.0782,0.714,108.015,187111,4,0,0
+63,"The Motto","Tiesto & Ava Max",2022,"18asYwWugKjjsihZ0YvRxO",0,0.754,0.763,7,-4.627,0,0.0435,0.0301,2.23e-05,0.0901,0.464,117.953,164819,4,0,0
+64,"Grow Up/Keep It On Speaker","Lil Durk",2022,"4AP3P2EVKANYuJk3Fi3v6Y",0,0.512,0.633,1,-7.951,0,0.289,0.0276,2.02e-06,0.578,0.236,113.621,196341,3,0,0
+65,"Do We Have A Problem?","Nicki Minaj X Lil Baby",2022,"70Gw6yQcnYCBKXTFONiDtc",0,0.842,0.509,1,-8.644,0,0.426,0.526,0.000285,0.118,0.521,120.001,207065,4,0,0
+66,"What Else Can I Do?","Diane Guerrero & Stephanie Beatriz",2022,"3XoYqtiWHhsk59frZupImG",0,0.718,0.709,4,-5.568,1,0.039,0.258,0,0.101,0.54,119.974,179427,4,0,0
+67,"Nail Tech","Jack Harlow",2022,"62Yo3FDddWY8ydu6PW2wyz",0,0.677,0.557,1,-8.409,1,0.0694,0.00508,8.36e-06,0.0984,0.1,150.127,206385,4,0,0
+68,"Blocklist","Lil Durk",2022,"79cq3PF1wgkDVTAFMlOjNB",0,0.621,0.572,5,-8.102,0,0.218,0.0615,0,0.089,0.208,83.694,126653,4,0,0
+69,"Me Or Sum","Nardo Wick, Lil Baby & Future",2022,"2HHLfzE7PkljuqyYU4vwmh",0,0.534,0.573,1,-6.757,1,0.414,0.00926,0,0.136,0.373,160.333,225533,4,0,0
+70,"Heart On Fire","Eric Church",2022,"0ysCB1Jg4hli0XlEWlipo7",0,0.653,0.927,8,-4.699,1,0.0289,0.0352,4.47e-05,0.0966,0.894,119.97,258800,4,0,0
+71,"Dos Oruguitas","Sebastian Yatra",2022,"5rohUzwEoRsUvAA1Bf3DLo",0,0.423,0.355,0,-10.565,1,0.0454,0.761,0,0.0915,0.465,93.788,214613,4,0,0
+72,"Difference Is","Lil Durk Featuring Summer Walker",2022,"1qzoBWC6US7szlOsIQ1VxZ",0,0.488,0.482,10,-9.127,0,0.382,0.125,0,0.0999,0.318,158.669,193396,3,0,0
+73,"Circles Around This Town","Maren Morris",2022,"13G5xv1wUKvJYbK0wYmioN",0,0.591,0.814,4,-4.986,1,0.0468,0.015,0,0.117,0.815,149.9,195760,4,0,0
+74,"Freaky Deaky","Tyga X Doja Cat",2022,"3vySEUpD0tc801F2WZDLYw",0,0.799,0.653,2,-5.453,0,0.037,0.019,0,0.0935,0.236,104.019,215281,4,0,0
+75,"If I Was A Cowboy","Miranda Lambert",2022,"6F7UOC6fPWOkPqybOWBHSv",0,0.575,0.644,6,-5.68,0,0.0309,0.271,0,0.131,0.626,80.07,195013,4,0,0
+76,"Beautiful Lies","Yung Bleu & Kehlani",2022,"3BjwSq6phb60SOdTZw5pZY",0,0.481,0.362,3,-10.766,0,0.209,0.237,0,0.114,0.639,83.605,212879,4,0,0
+77,"Flower Shops","ERNEST Featuring Morgan Wallen",2022,"2ccuOtUjIyx3tPcsnpeBzJ",0,0.527,0.461,7,-5.908,1,0.0269,0.118,0,0.0831,0.227,128.153,214405,3,0,0
+78,"Sacrifice","The Weeknd",2022,"1agdUoJsYEqdMX6xZH9dZN",0,0.735,0.795,11,-6.523,0,0.113,0.0296,3.18e-05,0.0678,0.905,122,188918,4,0,0
+79,"Smokin Out The Window","Silk Sonic (Bruno Mars & Anderson .Paak)",2022,"3xVZYkcuWalGudeKl861wb",0,0.627,0.618,2,-8.529,1,0.0437,0.0558,0,0.351,0.848,82.03,197443,4,0,0
+80,"To The Moon!","JNR CHOI & Sam Tompkins",2022,"5vUnjhBzRJJIAOJPde6zDx",0,0.745,0.65,2,-11.814,1,0.346,0.0451,0.00758,0.111,0.386,144.047,152137,4,0,0
+81,"P Power","Gunna Featuring Drake",2022,"0lEjxUUlKqjqXrVlIHFduD",0,0.828,0.591,1,-6.217,1,0.109,0.0199,0.000323,0.361,0.202,119.251,193347,4,0,0
+82,"High","The Chainsmokers",2022,"09AvsbivV1FQBRAEBJh7UL",0,0.601,0.787,0,-6.178,1,0.031,0.0492,0,0.142,0.525,134.981,175163,4,0,0
+83,"Pressure","Ari Lennox",2022,"6ElfCM1XppU0YWkkFYh4s2",0,0.85,0.658,0,-5.558,1,0.221,0.139,0,0.063,0.832,144.445,193279,4,0,0
+84,"Federal Nightmares","Lil Durk",2022,"4W730PJT4aw79pZ9D8BLhl",0,0.577,0.681,11,-6.219,1,0.201,0.0138,0,0.178,0.539,83.597,151340,4,0,0
+85,"Rumors","Gucci Mane Featuring Lil Durk",2022,"0P2P1AxcRYhiZvoF5MyRmM",0,0.688,0.842,2,-4.211,1,0.264,0.0499,0,0.241,0.416,159.897,185856,4,0,0
+86,"Never Wanted To Be That Girl","Carly Pearce & Ashley McBryde",2022,"7yRJMLG9ja0fBVVEmV6vcT",0,0.553,0.609,1,-6.436,1,0.0469,0.151,0,0.112,0.471,73.903,214416,4,0,0
+87,"Half Of My Hometown","Kelsea Ballerini Featuring Kenny Chesney",2022,"1yRke3PmsyFrYlFZOAkABk",0,0.57,0.618,10,-4.966,1,0.0445,0.153,0,0.159,0.286,138.034,231832,4,0,0
+88,"I Love You So","The Walters",2022,"4SqWKzw0CbA05TGszDgMlc",0,0.575,0.648,10,-4.891,1,0.0358,0.583,0,0.115,0.466,75.977,160240,4,0,0
+89,"Banking On Me","Gunna",2022,"7Fege3yv4dvehB3NdRBGwI",0,0.793,0.308,0,-10.414,0,0.0466,0.613,1.68e-05,0.0953,0.46,135.143,2e+05,4,0,0
+90,"Give Heaven Some Hell","HARDY",2022,"2bVeUlOC5JjTpkQXuUUoYm",0,0.639,0.843,11,-4.975,1,0.0362,0.0525,0,0.0854,0.528,126.047,217802,4,0,0
+91,"I'm Tired","Labrinth & Zendaya",2022,"6LtHYDgYHRCHoKK3snfr2w",0,0.375,0.133,0,-10.624,0,0.0352,0.651,0,0.0695,0.192,131.721,187944,4,0,0
+92,"Bones","Imagine Dragons",2022,"0HqZX76SFLDz2aW8aiqi7G",0,0.773,0.742,5,-3.678,0,0.046,0.0206,0,0.0754,0.571,114.071,165265,4,0,0
+93,"Rocking A Cardigan In Atlanta","Lil Shordie Scott",2022,"0N0h5lXc4HOiLgGb9EZi8m",0,0.803,0.64,1,-4.721,1,0.151,0.583,0.000331,0.437,0.816,140.073,96826,4,0,0
+94,"Pissed Me Off","Lil Durk",2022,"52nTQQahs46s1iHFQ3Wv5Q",0,0.723,0.516,11,-10.707,0,0.485,0.00311,1.26e-06,0.115,0.223,155.967,123077,4,0,0
+95,"By Your Side","Rod Wave",2022,"2AaJeBEq3WLcfFW1y8svDf",0,0.649,0.508,8,-10.232,1,0.0959,0.0345,3.59e-05,0.0736,0.405,157.975,194051,4,0,0
+96,"Waiting On A Miracle","Stephanie Beatriz",2022,"3oRW9ZGPRbLRMneQ5lwflt",0,0.48,0.554,1,-8.145,0,0.069,0.171,0,0.131,0.267,190.066,161840,3,0,0
+97,"I Hate YoungBoy","YoungBoy Never Broke Again",2022,"3itijJswMR7p7RbfqlYf1Z",0,0.584,0.756,10,-6.245,0,0.362,0.0266,0,0.36,0.728,165.269,261818,4,0,0
+98,"City Of Gods","Fivio Foreign, Kanye West & Alicia Keys",2022,"4huBDGP4I3S0pYI0EaRN1c",0,0.474,0.801,8,-5.978,0,0.375,0.102,0,0.322,0.497,147.356,256000,4,0,0

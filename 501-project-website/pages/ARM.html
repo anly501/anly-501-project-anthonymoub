@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio website</title>
+        <link rel="stylesheet" type="text/css" href="../css/ARM.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
+
+<div class="hero">
+
+    <img class="wifi" src="../img/icons8-link.svg"/>
+        <nav>
+            <h2 class="logo">ARM and Networking</h2>
+            <ul>
+        <li><a href="../index.html">About Me</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="Code.html">Code</a></li>
+                <li><a href="Data.html">Data</a></li>
+                <li><a href="DataGathering.html">Data Gathering</a></li>
+                <li><a href="DataCleaning.html">Data Cleaning</a></li>
+                <li><a href="ExploringData.html">Exploring Data</a></li>
+                <li><a href="naivebayes.html">Naive Bayes</a></li>
+                <li><a href="Decision_tree.html">Decision Tree</a></li>
+                <li><a href="SVM.html">SVM</a></li>
+				<li><a href="Clustering.html">Clustering</a></li>
+                <li><a href="ARM.html">ARM and Networking</a></li>
+                <li><a href="Conclusions.html">Conclusions</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="content">
+            
+            <h1>Association Rule Mining</h1>
+            <h3>This section focuses on how association rule mining was used in this project <br>
+                 and for what purpose.   </h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with python scripts.</h4>
+
+        </div>
+    </div>
+
+    <section class="about"> 
+    <div class="about-text">
+
+      <h2>Introduction</h2> <br>
+
+        <p>  In brief, Association rule mining uses a combination of if else statements that help discover relationships within the data, doing so by looking 
+            for patterns, correlations, and associations between the several variables in a dataset.  <br><br>
+            
+            The association rule has 2 parts: <br><br>
+
+            &#x2022; Antecedent (if) <br> 
+            &#x2022; Consequent (then) <br><br>
+
+            The consequent is usually found in combination with the antecedent. For illustration purposes, assume we have a dataset of all Netflix 
+            shows watched by all USA Netflix users, the following association rules are derived from the data: <br><br>
+
+            &#x2022; If a user watches "Mr Robot", there is a 65% chance they watch "Dark". <br> 
+            &#x2022; If a user watches "The Witcher", there is a 85% chance they watch "Stranger Things". <br><br>
+
+            The logic is applicable  many problems like consumer clustering, recommendation systems, etc. where there are correlational and/or causal relationships between several variables within the data.
+
+            <br><br>
+
+            As for how ARM was used in this project, i decided to use it on music lyrics to properly understand if there are any patterns and relationships between words in popular music. 
+            The dataset used has a combination of all the billboards top 100 songs from the years 1956 till 2022, which encompasses a wide variety of music genres, styles, and trends. <br><br>
+
+     
+            </p>
+
+                <h2>How it works</h2> <br><br>
+
+                <p> 
+
+                Just like any machine other model that is built on text data, the first step is to pre process the text data and clean it to make it appropriate for cleaning. The processing steps
+                include the following:  <br><br>  
+
+                &#x2022; Removing stopwords ("the" , "a", "an", "and", etc) that would create unnecessary noise in the model.<br>
+                &#x2022; Replacing \n with spaces <br>
+                &#x2022; Lemmitizing words, which means bringing words to their base form Example: Caring --> Care, Plays --> Play, etc. <br>
+                &#x2022; Run a sentiment analysis on every sentence. <br><br>
+
+
+                After pre processing, the data was ready for apriori modelling, which is an algorithm that uses frequent itemsets to generate association rules, and it is designed to work on 
+                datasets that contain transactions. With the help of these association rules, it determines how strongly or how weakly two objects are connected. The algorithm's parameters are the following:
+                <br><br>
+
+                &#x2022; min_support: Used to select the items with support values greater than the value specified<br>
+                &#x2022; min_confidence: Filters those rules that have confidence greater than the confidence threshold specified by the parameter.<br>
+                &#x2022; min_lift: Specifies the minimum lift value for the short listed rules.<br>
+                &#x2022; min_length : Specifies the minimum number of items that you want in your rules. <br><br>
+
+                Playing around with these parameters has a huge impact on the final results. For example, increasing the min support parameter would lead to a “stricter” model and therefore have less associations, 
+                which is something i did since myy dataset had over 4000 songs, which would have led to a hectic and messy association results. <br><br>
+
+        
+                <h3>Results</h3> <br>
+                <p>  
+
+                I fit the final model I used into a network object and visualized the results, where each node represents a word and is connected to the word that appears the most after it: <br><br>
+
+                <figcaption></figcaption> 
+                <img src="../Plots/ARM_network.png" style="height: 800px;width: 800px">
+                <figcaption>Illustration 10 - ARM network</figcaption> <br>  <p> <br><br>
+
+                Illustration 10 is the perfect representation of how association rule mining works, where each word is connected to the word that appears the most after it.
+                The most obvious thing from the above network is the high presence of the word “I’m” in lyrics, which does make sense considering the nature of music and how personal
+                it is to the artists that write these songs. <br><br> 
+                  
+                The second most used word is the word love which also makes sense ,especially considering what we what I have discussed in the EDA section, 
+                since it has been the main theme of songs ever since the 1950s. <br><br> 
+
+                <h3>Conclusion</h3> <br>    
+                <p> 
+
+                Just like all the machine learning models that have been used in this project, association rule mining proves to be a very good method to further understand music,
+                 specifically the underlying patterns in song lyrics, and get to know how are the words and ideas conveyed connected to each other.
+
+                    
+
+                  </p>
+
+                   
+        
+</div>
+
+</section>
+
+
+
+
+
+
+</html>
