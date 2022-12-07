@@ -8,7 +8,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+      <meta http-equiv="Content-Type" content="charset=UTF-8" />
     </head>
 
 <div class="hero">
@@ -17,20 +17,36 @@
         <nav>
             <h2 class="logo">Naive Bayes</h2>
             <ul>
-        <li><a href="../index.html">About Me</a></li>
-                <li><a href="introduction.html">Introduction</a></li>
-                <li><a href="Code.html">Code</a></li>
-                <li><a href="Data.html">Data</a></li>
-                <li><a href="DataGathering.html">Data Gathering</a></li>
-                <li><a href="DataCleaning.html">Data Cleaning</a></li>
-                <li><a href="ExploringData.html">Exploring Data</a></li>
-                <li><a href="naivebayes.html">Naive Bayes</a></li>
-                <li><a href="Decision_tree.html">Decision Tree</a></li>
-				        <li><a href="SVM.html">SVM</a></li>
-                <li><a href="Clustering.html">Clustering</a></li>
-                <li><a href="ARM.html">ARM and Networking</a></li>
-                <li><a href="Conclusions.html">Conclusions</a></li>
-
+              <li><a href="../index.html">About Me</a></li>
+              <li><a href="introduction.html">Introduction</a></li>
+              <li><a href="Code.html">Code</a></li>
+              <li><div class="dropdown">
+                <button class="dropbtn">Data 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="Data.html">Data</a>
+                  <a href="DataGathering.html">Data Gathering</a>
+                  <a href="DataCleaning.html">Data Cleaning</a>
+                </div>
+              </div></li>
+              <li><a href="ExploringData.html">Exploring Data</a></li>
+              <li><div class="dropdown">
+                <button class="dropbtn" style="padding-top: 30%;">Models 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="naivebayes.html">Naive Bayes</a>
+                  <a href="Decision_tree.html">Decision Tree</a>
+                  <a href="SVM.html">SVM</a>
+                  <a href="Clustering.html">Clustering</a>
+                  <a href="ARM.html">ARM</a>
+      
+                </div>
+      
+              </div></li>
+      
+              <li><a href="Conclusions.html">Conclusions</a></li>
             </ul>
         
         </nav>
@@ -190,7 +206,7 @@
                     Finally, a confusion matrix was built on model 3 (which was the best model) to see how did the predicted vs actual values
                     differed when using the model. <br><br>
                     <figcaption></figcaption>
-                    <img src="../Plots/confusion_matrix_R.png" style="height: 600px;width: 800px"> 
+                    <img src="../Plots/confusion_matrix_R.png" style="height: 600px;width: 850px"> 
                     <figcaption>Fig.11 -Confusion matrix of best model</figcaption> <p>  <br><br> 
 
                     The above confusion matrix reflects the models high classification accuracy with most songs' eras
@@ -209,7 +225,7 @@
                       and not lyrics of songs. Moreover, the work done using this method reemphasized to me the importance of the independence
                       of features assumption it relies on and how important in general model assumptions are and how significant of an impact they could
                       have on the results.
-                    </p>>
+                    </p>
 
                    
           

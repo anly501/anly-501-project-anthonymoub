@@ -8,7 +8,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+      <meta http-equiv="Content-Type" content="charset=UTF-8" />
     </head>
 
 <div class="hero">
@@ -17,19 +17,36 @@
         <nav>
             <h2 class="logo">Exploring data</h2>
             <ul>
-        <li><a href="../index.html">About Me</a></li>
-                <li><a href="introduction.html">Introduction</a></li>
-                <li><a href="Code.html">Code</a></li>
-                <li><a href="Data.html">Data</a></li>
-                <li><a href="DataGathering.html">Data Gathering</a></li>
-                <li><a href="DataCleaning.html">Data Cleaning</a></li>
-                <li><a href="ExploringData.html">Exploring Data</a></li>
-                <li><a href="naivebayes.html">Naive Bayes</a></li>
-                <li><a href="Decision_tree.html">Decision Tree</a></li>
-				        <li><a href="SVM.html">SVM</a></li>
-                <li><a href="Clustering.html">Clustering</a></li>
-                <li><a href="ARM.html">ARM and Networking</a></li>
-                <li><a href="Conclusions.html">Conclusions</a></li>
+              <li><a href="../index.html">About Me</a></li>
+              <li><a href="introduction.html">Introduction</a></li>
+              <li><a href="Code.html">Code</a></li>
+              <li><div class="dropdown">
+                <button class="dropbtn">Data 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                <a href="Data.html">Data</a>
+                <a href="DataGathering.html">Data Gathering</a>
+                <a href="DataCleaning.html">Data Cleaning</a>
+                </div>
+              </div></li>
+              <li><a href="ExploringData.html">Exploring Data</a></li>
+              <li><div class="dropdown">
+                <button class="dropbtn" style="padding-top: 30%;">Models 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                <a href="naivebayes.html">Naive Bayes</a>
+                <a href="Decision_tree.html">Decision Tree</a>
+                <a href="SVM.html">SVM</a>
+                <a href="Clustering.html">Clustering</a>
+                <a href="ARM.html">ARM</a>
+          
+                </div>
+          
+              </div></li>
+          
+              <li><a href="Conclusions.html">Conclusions</a></li>
                 
             </ul>
         
@@ -63,7 +80,7 @@
         </p>
 				<h2>How have the musical elements of popular songs changed in the last century ?</h2>
         <br>
-				<p> As mentioned in the data gathering section, the Spotify API provided with a lot of music related features. As an inintial 
+				<p> As mentioned in the data gathering section, the Spotify API provided a lot of music related features. As an initial 
           analysis, the four features picked for analysis (with how Spotify defines them): <br><br>
 
           &#x2022; Speechiness: Speechiness detects the presence of spoken words in a track. The more exclusively speech-like 
@@ -73,14 +90,14 @@
           &#x2022; Instrumentalness: Predicts whether a track contains no vocals, the closer the instrumentalness value is to 1.0, the greater 
           likelihood the track contains no vocal content. Hans zimmer, bach, or any other composer's tracks are very high in instrumentalness. <br><br>
 
-          >Duration: The duration of the track in milliseconds.  <br><br>
+          &#x2022; Duration: The duration of the track in milliseconds.  <br><br>
 
           &#x2022; Danceability: Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
           A value of 0.0 is least danceable and 1.0 is most danceable. "Billie Jean" is a song with high danceability. <br><br>
 
           <br><br>
 
-          Below are four line plots that summarize how these features have changed in Billboard’s top 100 yealry songs ever since the 
+          Figure 1 below has four line plots that summarize how these features have changed in Billboard’s top 100 yearly songs ever since the 
           1950s. <br><br>
           <figcaption></figcaption> 
           <img src="../Plots/musicfeatures.png" style="height: 600px;width: 1200px; margin-bottom: 0px;">
@@ -109,7 +126,7 @@
         Another point worth studyuing was the "literacy and intellect" of popular songs, which is why the "difficult words" per songs
         feature was analyzed below. <br><br> 
         <figcaption></figcaption> 
-        <img src="../Plots/difficult_words.png" style="height: 500px;width: 950px">  
+        <img src="../Plots/difficult_words.png" style="height: 480px;width: 800px">  
         <figcaption>Fig.2 -Number of difficult words per song over decades.</figcaption>  <p> 
 
           <p>  
@@ -130,7 +147,7 @@
 
       <br>
       <p>  In part one, the plots showed significant changes in the audio features of popular throughout the years. This section will focus on how artists and the genre they offer have also
-        changed over the same timeframe. The significance of such an analysis is the fact that eventually people will listen only to what the artists are making, making the artists (and the 
+        changed over the same time frame. The significance of such an analysis is the fact that eventually people will listen only to what the artists are making, making the artists (and the 
         record industry) themselves the trend setters and breakers.</p>
     
       
@@ -142,9 +159,9 @@
         decade, the Billboard's Top 100 chart was almost predominantly rock music, the era of Guns n Roses, Scorpions, Metallica, just to name a few. 
         Despite the 80s Billboard top 100 chart being 85% taken by rock music, this number dropped to 27% in the 90s. The 90s is what some people refer to
         as the "beginning of the end" for rock music, as its dominance in the charts being taken over by hip hop, electronic music, and pop music, which 
-        (except for electronic music) have become the dominant genres in the Billboard thrughout the last decade. <br><br>
+        (except for electronic music) have become the dominant genres in the Billboard throughout the last decade. <br><br>
 
-        Changes of this magnitude do not happen overnight and are not coincidential, so with the proper data and approach, one could understand why the 90s
+        Changes of this magnitude do not happen overnight and are not coincidental, so with the proper data and approach, one could understand why the 90s
         was so revolutionary and what might be the root cause(s) behind this cultural shift in popular music. (More exploration to be done in the 
         coming weeks).
       </p>
@@ -152,11 +169,11 @@
       <h2>Has the message behind popular songs changed ?</h2> <br><br>
 
       <p>After understanding how audio features of popular music have changed over the years and having a look at how the industry has changed
-        over time, the next relevant music related data gathered worth analyzing was the lyrics and how they have changed over that timeframe. The 
+        over time, the next relevant music related data gathered worth analyzing was the lyrics and how they have changed over that time frame. The 
         lyrics of a song carry all its meaning, and they are what resonates the most with listeners. In some way, the lyrics that people consume say something
-        about them and their moods,interests,etc. Below are word clouds for the lyrics of popular songs for each dcade from the 1950s until now. Word clouds
+        about them and their moods,interests,etc. Below are word clouds for the lyrics of popular songs for each decade from the 1950s until now (50s, 60s, 70s, ...2020s). Word clouds
         size words based on their frequencies, meaning the largest word in the word cloud is the one that is found the most number of times in the inputted text,
-        which in this case is a decade's pupular song lyrics. <br><br>
+        which in this case is a decade's popular song lyrics. <br><br>
       </p>
 
         
@@ -179,7 +196,7 @@
 
     Despite the themes and messages conveyed by the lyrics being almost constant, it is very well known that the wording, tone, and overall ways in which 
     the messages are being conveyed have changed over the years. To elaborate, it has become widely accepted that modern music is much more "vulgar" than
-    older music, with a lot more profanity, racism, and offesnsive language present in lyrics nowadays. Below is a visual observation at how this type of
+    older music, with a lot more profanity, racism, and offensive language present in lyrics nowadays. Below is a visual observation at how this type of
     language has found itself into popular music. <br><br>
 
 
@@ -204,7 +221,7 @@
   <br><br>
 
   <p>All the previous parts served as a good understanding of how the music industry and the music itself have changed since 1950s, but this part
-    will focus more on the statistics aspect of the data, as it is a very important step to properl understand the data and how it could be
+    will focus more on the statistics aspect of the data, as it is a very important step to properly understand the data and how it could be
     used for machine learning. <br><br>
 
     The first step was developing a correlation matrix between all features of the dataset, but this was not visually pleasant at all since we have around 
@@ -220,7 +237,7 @@
   <p>Some of the more obvious relationships conveyed by figure 5 are: </p> <br> 
 
   &#x2022; Valence and danceability have a very high positive correlation (0.55): A very logical relationship as valence is defined (by Spotify) as
-  the musical positiveness conveyed by a track, which would definitlwey be high for songs that are "danceable".
+  the musical positiveness conveyed by a track, which would definitely be high for songs that are "danceable".
 
   <br><br>
 
@@ -235,7 +252,7 @@
   Next, i used box plots for the features used in the correlation heatmap to get a better sense of the statistics behind each feature individually.<br><br>
 
   <img src="../Plots/box_plots.png"> <br> 
-  <figcaption>Fig.6 -Audio features boxplot.</figcaption> <br><br> <p> 
+  <figcaption>Fig.6 -Audio features box plot.</figcaption> <br><br> <p> 
 
   First of all, all of the features (that have correlations with each other) move very steadily together. Unlike
   other uncorrelated variables (speechiness, duration, etc.) which have been previously visualized to have experienced drastic changes over the years, correlated variables

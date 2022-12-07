@@ -1,3 +1,6 @@
+
+
+
 *{
 	padding: 0;
 	margin: 0;
@@ -18,7 +21,7 @@ nav{
 	align-items: center;
 	justify-content: space-between;
 	padding-top: 45px;
-	padding-left: 8%;
+	padding-left: 0%;
 	padding-right: 8%;
 }
 .logo{
@@ -33,7 +36,8 @@ span{
 nav ul li{
 	list-style-type: none;
 	display: inline-block;
-	padding: 10px  25px;
+	padding: 0px  25px;
+	align-items: center;
 }
 nav ul li a{
 	color: white;
@@ -157,13 +161,16 @@ h4{
 .about-text{
 	width: 900px;
 	font-size: larger;
+	grid-column: 1;
+	grid-row: 1;
+	margin-left: 20%;
 	 
 	
 }
 .main{
 	width: 1130px;
 	max-width: 95%;
-	display: flex;
+	display: grid;
 	align-items: center;
 	justify-content: space-around;
 }
@@ -386,6 +393,58 @@ footer p:nth-child(2){
 
 .my_image{
 
-float: right;
- 
+
+height: 550px ; 
+width: 350px;
+grid-column: 2;
+grid-row: 1;
+margin-left: 30%;
+margin-bottom: 75%;
 }
+
+
+/* The dropdown container */
+.dropdown {
+	
+	overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+	font-size: 16px; 
+	border: none;
+	outline: none;
+	color: white;
+ 
+	background-color: inherit;
+	 
+	 
+  }
+
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+ 
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+
+  .dropdown-content a:hover {
+	background-color: white;
+  }
+  
+ 
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }  

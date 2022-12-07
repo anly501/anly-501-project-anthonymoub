@@ -1,3 +1,6 @@
+
+
+
 *{
 	padding: 0;
 	margin: 0;
@@ -444,4 +447,72 @@ footer p:nth-child(2){
 	color: #006699;
 	bottom: 35px;
 	font-size: 14px; 
+}
+
+
+/* The dropdown container */
+.dropdown {
+	
+	overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+	font-size: 16px; 
+	border: none;
+	outline: none;
+	color: white;
+ 
+	background-color: inherit;
+	 
+	 
+  }
+
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+ 
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+
+  .dropdown-content a:hover {
+	background-color: white;
+  }
+  
+ 
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }  
+
+  * {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
 }

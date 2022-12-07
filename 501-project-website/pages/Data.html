@@ -21,15 +21,32 @@
 				<li><a href="../index.html">About Me</a></li>
 				<li><a href="introduction.html">Introduction</a></li>
 				<li><a href="Code.html">Code</a></li>
-				<li><a href="Data.html">Data</a></li>
-				<li><a href="DataGathering.html">Data Gathering</a></li>
-				<li><a href="DataCleaning.html">Data Cleaning</a></li>
+				<li><div class="dropdown">
+				  <button class="dropbtn">Data 
+				  <i class="fa fa-caret-down"></i>
+				  </button>
+				  <div class="dropdown-content">
+				  <a href="Data.html">Data</a>
+				  <a href="DataGathering.html">Data Gathering</a>
+				  <a href="DataCleaning.html">Data Cleaning</a>
+				  </div>
+				</div></li>
 				<li><a href="ExploringData.html">Exploring Data</a></li>
-				<li><a href="naivebayes.html">Naive Bayes</a></li>
-				<li><a href="Decision_tree.html">Decision Tree</a></li>
-				<li><a href="SVM.html">SVM</a></li>
-				<li><a href="Clustering.html">Clustering</a></li>
-				<li><a href="ARM.html">ARM and Networking</a></li>
+				<li><div class="dropdown">
+				  <button class="dropbtn" style="padding-top: 30%;">Models 
+				  <i class="fa fa-caret-down"></i>
+				  </button>
+				  <div class="dropdown-content">
+				  <a href="naivebayes.html">Naive Bayes</a>
+				  <a href="Decision_tree.html">Decision Tree</a>
+				  <a href="SVM.html">SVM</a>
+				  <a href="Clustering.html">Clustering</a>
+				  <a href="ARM.html">ARM</a>
+			
+				  </div>
+			
+				</div></li>
+			
 				<li><a href="Conclusions.html">Conclusions</a></li>
 			</ul>
 		
@@ -55,12 +72,19 @@
 
                     A major point of relevance this project tries to investigate is music popularity, specifically examining the factors that make music popular in different eras. For that reason, the dataset gathered is based on The Billboard Hot 100, which is the music industry standard record chart in the United States for songs published weekly by Billboard magazine.
 					<br><br>
-					The Billboard Hot 100 is a chart with the top 100 songs of the week (there also is a monthly and yearly version). Chart rankings are based on sales (physical and digital), radio play, and online streaming in the United States. The Billboard Hot 100 has been updated on a weekly basis ever since it was launched on August 4, 1958, resulting in a huge database of popular music.
+					<a href="https://www.billboard.com/charts/hot-100/" style="color: rgb(39, 160, 204)">The Billboard Hot 100 </a> is a chart with the top 100 songs of the week (there also is a monthly and yearly version). Chart rankings are based on sales (physical and digital), radio play, and online streaming in the United States. The Billboard Hot 100 has been updated on a weekly basis ever since it was launched on August 4, 1958, resulting in a huge database of popular music.
                     
                     Since this project focuses on the evolution of music by the decade (the 60s compared to the 80s, 90s, etc.) having the weekly Billboard Hot 100’s charts would be redundant and does not serve much-added value.
 					Consequently, the data gathered was the yearly top 100 songs from 1958 till 2021, with each song associated with several features and variables.
 
 					<br><br>
+
+					The use of this dataset guarantees authenticity of the data since it comes from one of the biggest companies in the industry and also guarantees 
+					that my objective of understanding music popularity would be met since this data revolves only around popular music. Each of the features gathered 
+					are named and explained (as per Spotify's definition) below: <br><br>
+
+					Note: The data folder in the Github repository of this project contains many csv that all revolve around what is explained in this section. The purpose
+					and content of each file is explained throughout this project.
 
                     </p>
 		
@@ -89,7 +113,8 @@
 				<i class="far fa-user"></i>
 				<h5>Genres</h5>
 				<div class="pra">
-					<p>Each song is associated with one out of 15 major genres: rock, alternative/indie, electronic/dance, soul, classical/soundtrack, pop,hip-hop/rnb,disco,swing,folk,country,jazz,blues</p>
+					<p>Each song is associated with one out of 15 major genres: rock, alternative/indie, electronic/dance, soul, classical/soundtrack, pop,hip-hop/rnb,disco,swing,folk,country,jazz,
+						blues</p>
 
 				
 				</div>
@@ -242,7 +267,7 @@
 				<i class="fa-solid fa-lightbulb"></i>
 				<h5>Energy</h5>
 				<div class="pra">
-					<p>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</p>
+					<p>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</p>
 
 		
 				</div>
@@ -273,7 +298,7 @@
 				<i class="fa-solid fa-drum"></i>
 				<h5>Instrumentalness</h5>
 				<div class="pra">
-					<p>Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</p>
+					<p>Predicts whether a track contains no vocals.  Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</p>
 
 				
 				</div>
@@ -335,7 +360,7 @@
             <i class="fa-solid fa-comment-dots"></i>
             <h5>Speechiness</h5>
             <div class="pra">
-                <p>Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</p>
+                <p>Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry)</p>
 
             
             </div>

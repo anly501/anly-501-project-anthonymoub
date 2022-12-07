@@ -1,3 +1,5 @@
+
+
 *{
 	padding: 0;
 	margin: 0;
@@ -185,6 +187,7 @@ h4{
 	line-height: 28px;
 	font-size: 25px;
 	margin-bottom: 45px;
+	text-align: justify;
 
 }
 .main{
@@ -278,9 +281,10 @@ h5{
 }
 .pra p{
 	color: white;
-	font-size: 20px;
+	font-size: 17px;
 	line-height: 27px;
 	margin-bottom: 25px;
+	text-align: justify;
 }
 .card .button{
 	background-color:#006699;
@@ -377,3 +381,50 @@ footer p:nth-child(2){
 	bottom: 35px;
 	font-size: 14px; 
 }
+
+
+/* The dropdown container */
+.dropdown {
+	
+	overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+	font-size: 16px; 
+	border: none;
+	outline: none;
+	color: white;
+ 
+	background-color: inherit;
+	 
+	 
+  }
+
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+ 
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+
+  .dropdown-content a:hover {
+	background-color: white;
+  }
+  
+ 
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }  

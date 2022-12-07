@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>Portfolio website</title>
@@ -13,6 +13,7 @@
   <link href="/Users/anthonymoubarak/Desktop/anly-501-project-anthonymoub/501-project-website/fontawesome-free-6.2.1-web/css/v5-font-face.css" rel="stylesheet" />
   <link href="/Users/anthonymoubarak/Desktop/anly-501-project-anthonymoub/501-project-website/fontawesome-free-6.2.1-web/css/fontawesome.css" rel="stylesheet" /> 
   <script src="https://kit.fontawesome.com/63620424d5.js" crossorigin="anonymous"></script>
+  <meta http-equiv="Content-Type" content="charset=UTF-8" />
 
 
 
@@ -32,17 +33,36 @@
 				<li><a href="index.html">About Me</a></li>
 				<li><a href="./pages/introduction.html">Introduction</a></li>
 				<li><a href="./pages/Code.html">Code</a></li>
-				<li><a href="./pages/Data.html">Data</a></li>
-				<li><a href="./pages/DataGathering.html">Data Gathering</a></li>
-				<li><a href="./pages/DataCleaning.html">Data Cleaning</a></li>
+				<li><div class="dropdown">
+					<button class="dropbtn">Data 
+					  <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+					  <a href="./pages/Data.html">Data</a>
+					  <a href="./pages/DataGathering.html">Data Gathering</a>
+					  <a href="./pages/DataCleaning.html">Data Cleaning</a>
+					</div>
+
+				</div></li>
+
 				<li><a href="./pages/ExploringData.html">Exploring Data</a></li>
-				<li><a href="./pages/naivebayes.html">Naive Bayes</a></li>
-				<li><a href="./pages/Decision_tree.html">Decision Tree</a></li>
-				<li><a href="./pages/SVM.html">SVM</a></li>
-				<li><a href="./pages/Clustering.html">Clustering</a></li>
-				<li><a href="./pages/ARM.html">ARM</a></li>
+				<li><div class="dropdown">
+					<button class="dropbtn" style="padding-top: 30%;">Models 
+					  <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+					  <a href="./pages/naivebayes.html">Naive Bayes</a>
+					  <a href="./pages/Decision_tree.html">Decision Tree</a>
+					  <a href="./pages/SVM.html">SVM</a>
+					  <a href="./pages/Clustering.html">Clustering</a>
+					  <a href="./pages/ARM.html">ARM</a>
+
+					</div>
+
+				</div></li>
+
 				<li><a href="./pages/Conclusions.html">Conclusions</a></li>
-				
+
 
 			</ul>
 		
@@ -86,13 +106,20 @@
 					<br><br>
 
 
-					Upon graduation, I see myself working as a Data Scientist in an industry that revolves around a passion of mine. Netflix, Spotify, WHOOP, are examples
+					I firmly believe that I should eventually work at a company that I actually believe in and in their products, as I aim to look at my job as my purpose, 
+					in the sense of contributing to an environment that serves the world products that are impactful and that matter. That being said, upon graduation I see myself working as a Data Scientist in an industry that revolves around a passion of mine. Netflix, Spotify, WHOOP, are examples
 					of companies that I would love to work in as I would be directly contributing to the world of film,music, fitness.</p>
 			</div>
 
+			<div class = "my_image" ><img src="./img/me.jpg"  />  </div>
+
+			
+
 			
 		</div>
-		<div class = "my_image" ><img src="./img/me.jpg"  style="height: 750px ; width: 550px;" />  </div>
+
+		
+		
 	</section>
 
 	<!-----service section start----------->

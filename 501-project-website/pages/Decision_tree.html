@@ -6,31 +6,104 @@
     
         <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
+      <meta http-equiv="Content-Type" content="charset=UTF-8" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script>
+        function imageZoom(imgID, resultID) {
+          var img, lens, result, cx, cy;
+          img = document.getElementById(imgID);
+          result = document.getElementById(resultID);
+          /*create lens:*/
+          lens = document.createElement("DIV");
+          lens.setAttribute("class", "img-zoom-lens");
+          /*insert lens:*/
+          img.parentElement.insertBefore(lens, img);
+          /*calculate the ratio between result DIV and lens:*/
+          cx = result.offsetWidth / lens.offsetWidth;
+          cy = result.offsetHeight / lens.offsetHeight;
+          /*set background properties for the result DIV:*/
+          result.style.backgroundImage = "url('" + img.src + "')";
+          result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+          /*execute a function when someone moves the cursor over the image, or the lens:*/
+          lens.addEventListener("mousemove", moveLens);
+          img.addEventListener("mousemove", moveLens);
+          /*and also for touch screens:*/
+          lens.addEventListener("touchmove", moveLens);
+          img.addEventListener("touchmove", moveLens);
+          function moveLens(e) {
+            var pos, x, y;
+            /*prevent any other actions that may occur when moving over the image:*/
+            e.preventDefault();
+            /*get the cursor's x and y positions:*/
+            pos = getCursorPos(e);
+            /*calculate the position of the lens:*/
+            x = pos.x - (lens.offsetWidth / 2);
+            y = pos.y - (lens.offsetHeight / 2);
+            /*prevent the lens from being positioned outside the image:*/
+            if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+            if (x < 0) {x = 0;}
+            if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+            if (y < 0) {y = 0;}
+            /*set the position of the lens:*/
+            lens.style.left = x + "px";
+            lens.style.top = y + "px";
+            /*display what the lens "sees":*/
+            result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+          }
+          function getCursorPos(e) {
+            var a, x = 0, y = 0;
+            e = e || window.event;
+            /*get the x and y positions of the image:*/
+            a = img.getBoundingClientRect();
+            /*calculate the cursor's x and y coordinates, relative to the image:*/
+            x = e.pageX - a.left;
+            y = e.pageY - a.top;
+            /*consider any page scrolling:*/
+            x = x - window.pageXOffset;
+            y = y - window.pageYOffset;
+            return {x : x, y : y};
+          }
+        }
+        </script>
     
     </head>
-
+<body>
 <div class="hero">
 
     <img class="wifi" src="../img/icons8-broadcasting.svg"/>
         <nav>
             <h2 class="logo">Decision Tree</h2>
             <ul>
-        <li><a href="../index.html">About Me</a></li>
-                <li><a href="introduction.html">Introduction</a></li>
-                <li><a href="Code.html">Code</a></li>
-                <li><a href="Data.html">Data</a></li>
-                <li><a href="DataGathering.html">Data Gathering</a></li>
-                <li><a href="DataCleaning.html">Data Cleaning</a></li>
-                <li><a href="ExploringData.html">Exploring Data</a></li>
-                <li><a href="naivebayes.html">Naive Bayes</a></li>
-                <li><a href="Decision_tree.html">Decision Tree</a></li>
-                <li><a href="Clustering.html">Clustering</a></li>
-				        <li><a href="SVM.html">SVM</a></li>
-                <li><a href="ARM.html">ARM and Networking</a></li>
-                <li><a href="Conclusions.html">Conclusions</a></li>
-
+              <li><a href="../index.html">About Me</a></li>
+              <li><a href="introduction.html">Introduction</a></li>
+              <li><a href="Code.html">Code</a></li>
+              <li><div class="dropdown">
+                <button class="dropbtn">Data 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                <a href="Data.html">Data</a>
+                <a href="DataGathering.html">Data Gathering</a>
+                <a href="DataCleaning.html">Data Cleaning</a>
+                </div>
+              </div></li>
+              <li><a href="ExploringData.html">Exploring Data</a></li>
+              <li><div class="dropdown">
+                <button class="dropbtn" style="padding-top: 30%;">Models 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                <a href="naivebayes.html">Naive Bayes</a>
+                <a href="Decision_tree.html">Decision Tree</a>
+                <a href="SVM.html">SVM</a>
+                <a href="Clustering.html">Clustering</a>
+                <a href="ARM.html">ARM</a>
+          
+                </div>
+          
+              </div></li>
+          
+              <li><a href="Conclusions.html">Conclusions</a></li>
             </ul>
         
         </nav>
@@ -108,13 +181,13 @@
                   <img src="../Plots/Anthony_playlist.png" style="height: 550px;width: 750px"> 
                   <figcaption>Fig. 8 -Anthony playlist distribution</figcaption> <br>  <p>  
                   
-                  After combining all the playlists, the final playlist/dataset has the following distribution of classes: <br><br>
+                  <br>After combining all the playlists, the final playlist/dataset has the following distribution of classes: <br> 
 
                   <figcaption></figcaption>
                   <img src="../Plots/playlist_class_distribution.png" style="height: 550px;width: 550px">  
                   <figcaption>Fig. 9 -Class distribution within playlist</figcaption> <br>  <p>  
 
-                  As the graph indicates, the dataset is well balanced between both classes and was a good dataset to
+                  As figure 9 illustrates, the dataset is well balanced between both classes and is a good dataset to
                   start modeling on. The last exploratory step before modeling was understanding which features differ
                   between classes and in what way, serving as a basic feature selection method to improve any model's 
                   predictive ability. The distribution plots of all the dataset's features in both playlists can be visualized below: <br><br>
@@ -136,13 +209,13 @@
 
                   <p> Just like what was done with Naive Bayes, the first step was splitting the data into training and testing data (80% train, 20% test). Next, 
                     Python's sklearn library was used to build a decision tree model on the training and later use it on the testing data to check the accuracy. One of the main
-                    disadvantages of decision trees is tendency for overfitting. <br><br>
+                    disadvantages of decision trees is tendency for over fitting. <br><br>
 
-                    Overfitting refers to the condition when the model completely fits the training data but fails to generalize the testing unseen data. Overfit 
+                    Over fitting refers to the condition when the model completely fits the training data but fails to generalize the testing unseen data. Overfit 
                     condition arises when the model memorizes the noise of the training data and fails to capture important patterns. A perfectly fit decision tree 
                     performs well for training data but performs poorly for unseen test data. <br><br>
 
-                    There are many ways to avoid an overfit decision tree, one of which is calculating the training and testing accuracies for different values of max_depth 
+                    There are many ways to avoid an over fit decision tree, one of which is calculating the training and testing accuracies for different values of max_depth 
                     and get the optimal point accordingly. Max_depth is a decision tree hyperparameter that controls the maximum depth of the tree that will be created and the 
                     optimal point is the depth level at which the training error monotonously increases and testing error monotonously decreases after that depth. <br><br>
 
@@ -201,9 +274,19 @@
 
                     The final decision tree can be visualized below: <br><br>
 
+                    <div class="img-zoom-container">
                     <figcaption></figcaption>
-                    <img src="../Plots/Decision_tree.png" style="height: 550px;width: 1000px">  
-                    <figcaption>Fig. 13 -Final decision tree</figcaption> <br>  <p> 
+                    <img id = "myimage" src="../Plots/Decision_tree.png" style="height: 550px;width: 1000px">  
+                    <figcaption>Fig. 13 -Final decision tree</figcaption> 
+                    <div id="myresult" class="img-zoom-result"></div><br>  <p> 
+                    </div>
+
+                    <script>
+                      // Initiate zoom effect:
+                      imageZoom("myimage", "myresult");
+                    </script>  
+                    <p>  
+                    Note: Hover over decision tree to get a zoomed in clear look at the nodes.
 
                      
 
@@ -248,8 +331,7 @@
 
 </section>
 
-
-
+</body>
 
 
 
