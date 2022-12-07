@@ -13,7 +13,7 @@
 
 <div class="hero">
 
-    <img class="wifi" src="../img/iphone.svg"/>
+    <img class="wifi" src="../img/tablets.svg"/>
         <nav>
             <h2 class="logo">Product and deployment</h2>
             <ul>
@@ -45,7 +45,7 @@
                   </div>
             
                 </div></li>
-                <li><a href="Conclusions.html">Product</a></li>
+                <li><a href="Product.html">Product</a></li>
                 <li><a href="Conclusions.html">Conclusions</a></li>
 
             </ul>
@@ -65,83 +65,54 @@
     <section class="about"> 
     <div class="about-text">
 
-      <h2>Model Introduction</h2> <br>
+      <h2>Introduction</h2> <br>
 
-        <p>  In brief, Association rule mining uses a combination of if else statements that help discover relationships within the data, doing so by looking 
-            for patterns, correlations, and associations between the several variables in a dataset.  <br><br>
-            
-            The association rule has 2 parts: <br><br>
-
-            &#x2022; Antecedent (if) <br> 
-            &#x2022; Consequent (then) <br><br>
-
-            The consequent is usually found in combination with the antecedent. For illustration purposes, assume we have a dataset of all Netflix 
-            shows watched by all USA Netflix users, the following association rules are derived from the data: <br><br>
-
-            &#x2022; If a user watches "Mr Robot", there is a 65% chance they watch "Dark". <br> 
-            &#x2022; If a user watches "The Witcher", there is a 85% chance they watch "Stranger Things". <br><br>
-
-            The logic is applicable  many problems like consumer clustering, recommendation systems, etc. where there are correlational and/or causal relationships between several variables within the data.
-
-            <br><br>
-
-            As for how ARM was used in this project, i decided to use it on music lyrics to properly understand if there are any patterns and relationships between words in popular music. 
-            The dataset used has a combination of all the billboards top 100 songs from the years 1956 till 2022, which encompasses a wide variety of music genres, styles, and trends. <br><br>
+        <p>  Personally, I believe that the end goal of every data science project should be putting all the models developed into production and developing or
+             improving a certain product that further develops the mission of the company. All throughout this project I have developed multiple models (including
+              classification and clustering algorithms) that I believe could be used to improve certain products in the world of music streaming. I am not saying that
+               the models I have developed are mathematically and technically superior than the ones that are out there right now but what I want from this section is to give 
+               my opinion on how clustering and classification could be used to improve the user experience when it comes to music streaming services like Spotify Amazon Music apple music etc.  
 
      
             </p>
 
-                <h2>How it works</h2> <br><br>
+                <h2>Product</h2> <br><br>
 
                 <p> 
+                    Recommended recommendation algorithms and systems are not something new and have been popular in the industry for a while but what I want to propose is a new sort of recommendation 
+                    system that helps users explore new types of music based on their own preferences. <br><br>
 
-                Just like any machine other model that is built on text data, the first step is to pre process the text data and clean it to make it appropriate for cleaning. The processing steps
-                include the following:  <br><br>  
+                    The current recommendation systems understand what a user likes and recommends new songs based on that usually meaning a user who gets stuck to the same John or genres they usually
+                     listen. In my opinion, Spotify is the streamer that has the best recommendation system applications, the enhanced button and the smart shuffle button, which are explained below: 
 
-                &#x2022; Removing stopwords ("the" , "a", "an", "and", etc) that would create unnecessary noise in the model.<br>
-                &#x2022; Replacing \n with spaces <br>
-                &#x2022; Lemmitizing words, which means bringing words to their base form Example: Caring --> Care, Plays --> Play, etc. <br>
-                &#x2022; Run a sentiment analysis on every sentence. <br><br>
+                     <br><br>
+
+                     <img src="../img/Spotify.png" style="height: 530px;width: 900px">
 
 
-                After pre processing, the data was ready for apriori modelling, which is an algorithm that uses frequent itemsets to generate association rules, and it is designed to work on 
-                datasets that contain transactions. With the help of these association rules, it determines how strongly or how weakly two objects are connected. The algorithm's parameters are the following:
-                <br><br>
+                     <br><br>
 
-                &#x2022; min_support: Used to select the items with support values greater than the value specified<br>
-                &#x2022; min_confidence: Filters those rules that have confidence greater than the confidence threshold specified by the parameter.<br>
-                &#x2022; min_lift: Specifies the minimum lift value for the short listed rules.<br>
-                &#x2022; min_length : Specifies the minimum number of items that you want in your rules. <br><br>
 
-                Playing around with these parameters has a huge impact on the final results. For example, increasing the min support parameter would lead to a “stricter” model and therefore have less associations, 
-                which is something i did since myy dataset had over 4000 songs, which would have led to a hectic and messy association results. <br><br>
+                     Spotify's Enhance button suggests new songs that are similar to the songs on the current playlist . To use the Enhance button, a user should click on the "Enhance" button
+                      at the top and click the small plus button to the right of the suggested song to permanently add it to the playlist. The smart shuffle also works in a very similar manner. <br><br>
 
-        
-                <h3>Results</h3> <br>
-                <p>  
+                      Personally, I believe this is best use of recommendation music and I use it multiple times per week as I think it really is accurate which showcases the power of the models used.
+                       My recommendation would be to add a button that would have similar functionalities to the enhanced button but with the purpose of helping users discover different types of music. 
+                       The user journey would look like that: <br><br>
 
-                I fit the final model I used into a network object and visualized the results, where each node represents a word and is connected to the word that appears the most after it: <br><br>
+                       <img src="../img/Product_flowchart.png" style="height: 330px;width: 900px"> <br><br>
 
-                <figcaption></figcaption> 
-                <img src="../Plots/ARM_network.png" style="height: 800px;width: 800px">
-                <figcaption>Illustration 10 - ARM network</figcaption> <br>  <p> <br><br>
+                    The model is behind this new product/button would probably be classification or clustering algorithms that are trained on a user's playlist/liked music and used to discover types of songs outside the realm of what the user usually listens to. 
 
-                Illustration 10 is the perfect representation of how association rule mining works, where each word is connected to the word that appears the most after it.
-                The most obvious thing from the above network is the high presence of the word “I’m” in lyrics, which does make sense considering the nature of music and how personal
-                it is to the artists that write these songs. <br><br> 
-                  
-                The second most used word is the word love which also makes sense ,especially considering what we what I have discussed in the EDA section, 
-                since it has been the main theme of songs ever since the 1950s. <br><br> 
+                    <br><br>
 
-                <h3>Conclusion</h3> <br>    
-                <p> 
 
-                Just like all the machine learning models that have been used in this project, association rule mining proves to be a very good method to further understand music,
-                 specifically the underlying patterns in song lyrics, and get to know how are the words and ideas conveyed connected to each other.
+                    <h2>Conclusion</h2> <br><br> <p>  
+                    One obvious and major limitation would be that recommendation systems are successful for a reason and that deviating away from that and trying to look for new music genres/types might lead to lower recommendation accuracies. This is a very preliminary 
+                    idea but still I think it is an idea worth exploring and improving upon because the beauty of music is how we constantly learn and get attached to new forms of it every once in a while, and it 
+                    would be great to get some help from algorithms along the way !
 
-                    
 
-                  </p>
 
                    
         
