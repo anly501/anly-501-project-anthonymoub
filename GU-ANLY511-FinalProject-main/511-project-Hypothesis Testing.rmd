@@ -1,0 +1,243 @@
+---
+title: "511proj_chisquared"
+output: html_document
+date: "2022-11-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part 1: Chi squared test
+
+H0: The bike type and membership type are independent  <br>
+H1: The bike type and membership type are dependent 
+
+```{r}
+data <- read.csv('/Users/Tegveer/Library/CloudStorage/Box-Box/Fall\ 2022\ Courses/ANLY\ 511/Final\ Project/Data/Combined_df_teg.csv')
+data$Member.type <- tolower(data$Member.type)
+
+data <- data[data$Member.type != 'docked_bike' , ]
+```
+
+```{r}
+# Examine the distribution and number to properly perform EDA and hypothesis testing 
+
+
+table(data$rideable_type , data$Member.type)
+
+data_filtered <- data[c('rideable_type','Member.type') ]
+
+classic <- data_filtered[data_filtered$rideable_type == 'classic_bike' , ]
+
+classic_member <- classic[classic$Member.type == 'member' , ]
+
+
+nrow(classic[classic$Member.type == 'member' , ])/nrow(classic)
+nrow(classic[classic$Member.type != 'member' , ])/nrow(classic)
+
+ebike <- data_filtered[data_filtered$rideable_type == 'electric_bike' , ]
+ebike_member <- ebike[ebike$Member.type == 'member' , ]
+nrow(ebike[ebike$Member.type == 'member' , ])/nrow(ebike)
+
+```
+
+```{r}
+
+Bike <- c("Classic" , "Electric" , "Classic" , "Electric")
+Rides <- c(0.76 , 0.24, 0.57 , 0.43)
+membership_type <- c("Member" , "Member", "Casual", "Casual")
+
+membrship_df <- data.frame(Bike, Rides, membership_type)
+
+ 
+library(ggplot2)
+
+ggplot(membrship_df, aes(fill=membership_type, y=Rides, x=Bike)) + 
+    geom_bar(position="fill", stat="identity" )  + ggtitle('Proportion of Rides per Rider Status (2016-2022)') + 
+  theme(plot.title = element_text(hjust = 0.5)) + theme_minimal() + labs(x="Bike Type", y="Proportion of Rides", fill = "Rider Status")
+```
+
+```{r}
+
+# Do a hypothesis test to test for independence between rideable type and member type 
+# Drop "docked" bicycles 
+
+x <- table(data$rideable_type, data$Member.type)
+
+chisq.test(x)
+
+ 
+```
+ Conclusion: p < 0.05, so we reject H0 and conclude with 5% significance that the bike type and membership type are dependent.
+ 
+
+## Part 2: t test
+
+H0: The mean trip duration of casual riders is the same as the mean trip duration as members  <br>
+H1: The mean trip duration of casual riders is nit the same as the mean trip duration as members 
+
+```{r}
+
+members_duration <- data[data$Member.type == 'member' , ]$Duration
+casual_duration <- data[data$Member.type == 'casual' , ]$Duration
+
+
+df_duration <-data.frame(Duration=c(members_duration,casual_duration),Grp=rep(c("Member","Casual"),times=c(length(members_duration) , length(casual_duration))))
+df_duration <- df_duration[(df_duration$Duration > 0) & (df_duration$Duration < 150) , ]
+
+#boxplot(Duration~Grp,data=df_duration)
+
+library(dplyr)
+df_duration %>%
+  ggplot( aes(x = Grp, y = Duration, fill=Grp)) +
+  geom_boxplot() +ggtitle("Boxplot of Ride Durations (minutes) per Rider Status")  +
+  theme(plot.title = element_text(hjust = 0.5)) + theme_minimal() + labs(x="Rider Status", y="Duration (minutes)", fill = "Rider Status")
+```
+
+```{r}
+t.test(Duration ~ Grp, data = df_duration,alternative = "greater")
+```
+
+
+ Conclusion: p < 0.05, so we reject H0 and conclude that the mean trip duration of casual riders is not the same as the mean trip duration as members 
+ 
+ 
+ 
+H0: The mean trip duration of classic bike riders is the same as the mean trip duration as electric bike riders  <br>
+H1: The mean trip duration of classic bike riders is not the same as the mean trip duration as electric bike riders 
+
+ 
+```{r}
+classic_duration <- data[data$rideable_type == 'classic_bike' , ]$Duration
+electric_duration <- data[data$rideable_type == 'electric_bike' , ]$Duration
+
+
+df_duration_type <-data.frame(Duration=c(classic_duration,electric_duration),Grp=rep(c("Classic","Electric"),times=c(length(classic_duration) , length(electric_duration))))
+df_duration_type <- df_duration_type[(df_duration_type$Duration > 0) & (df_duration_type$Duration < 50) , ]
+
+
+df_duration_type %>%
+  ggplot( aes(x = Grp, y = Duration, fill=Grp)) +
+  geom_boxplot() +ggtitle("Boxplot of Ride Durations (minutes) per Bike Type")  +
+  theme(plot.title = element_text(hjust = 0.5)) + theme_minimal() + labs(x="Rider Status", y="Duration (minutes)", fill = "Bike Type")
+
+```
+```{r}
+t.test(Duration ~ Grp, data = df_duration_type,alternative = "less")
+```
+
+Conclusion: p > 0.05, so we failt to reject the null hypothesis and conclude with 5% significance that the mean trip duration of classic bike riders is the same as the mean trip duration as electric bike riders.
+
+
+## Part 3: Bootstrap test
+
+H0: The mean distance cover per trip of classic bike riders is the same as the mean trip duration as electric bike riders  <br>
+H1: The mean distance cover per trip of classic bike riders is not the same as the mean trip duration as electric bike riders 
+
+```{r}
+
+classic_distance_covered <- data[data$rideable_type == 'classic_bike' , ]$distance_miles
+electric_distance_covered <- data[data$rideable_type == 'electric_bike' , ]$distance_miles
+
+
+df_distance_type <-data.frame(Distance=c(classic_distance_covered,electric_distance_covered),Grp=rep(c("Classic","Electric"),times=c(length(classic_distance_covered) , length(electric_distance_covered))))
+df_distance_type <- df_distance_type[(df_distance_type$Distance > 0) & (df_distance_type$Distance < 50) , ]
+
+
+df_distance_type %>%
+  ggplot( aes(x = Grp, y = Distance, fill=Grp)) +
+  geom_boxplot() +ggtitle("Ride Distances (miles) per Bike Type")  +
+  theme(plot.title = element_text(hjust = 0.5)) + theme_minimal() + labs(x="Bike Type", y="Distance (miles)", fill = "Bike Type")
+
+```
+
+
+
+
+```{r}
+
+# Bootstrap test
+
+z.1 <- rep(NA,10000)
+
+for (j in 1:10000){
+  boot.c <- mean(sample(classic_distance_covered, length(classic_distance_covered), replace = T))
+  boot.e <- mean(sample(electric_distance_covered, length(electric_distance_covered), replace = T))
+  z.1[j] <- boot.e - boot.c #the difference
+}
+
+ci.1 <- quantile(z.1, c(.025, .975))
+ci.1
+```
+
+Since the null value (mean difference equal to 0) is not inside the confidence interval, we can reject the null hypothesis. This means that Kelly Clarkson’s music average energy is greater than that Ariana Grande’s. This does make sense since it is in line with the results of the t test.
+
+
+```{r}
+# Bootstrap test
+
+n_C <- length(classic_distance_covered)
+n_E <- length(electric_distance_covered)
+N <- 1000
+
+C.mean <- numeric(N) 
+for (i in 1:N)
+{
+  x <- sample(classic_distance_covered, n_C, replace = TRUE)
+  C.mean[i] <- mean(x) #bootstrap sample mean
+}
+
+E.mean <- numeric(N) 
+for (i in 1:N)
+{
+  x <- sample(electric_distance_covered, n_E, replace = TRUE)
+  E.mean[i] <- mean(x) #bootstrap sample mean
+}
+#jpeg(file="bootstrap.jpeg")
+par(mfrow=c(2,2))
+hist(C.mean, 
+     main = "Bootstrap Distribution: Distance in Miles for Classic Bikes", 
+     col = 'orange',
+     cex.main=0.85, breaks=30) 
+abline(v = mean(classic_distance_covered), 
+       col = "green", 
+       lty = 2) # observed mean 
+hist(E.mean, 
+     main="Bootstrap Distribution: Distance in Miles for Electric Bikes",
+     col = 'lightblue',
+     cex.main=0.85, breaks=30) 
+abline(v = mean(electric_distance_covered), 
+       col = "red", 
+       lty = 2) # observed mean 
+qqnorm(C.mean)
+qqline(C.mean)
+qqnorm(E.mean)
+qqline(E.mean)
+#dev.off()
+
+```
+
+
+```{r hourly}
+data$Start.date <- strptime(data$Start.date, "%Y-%m-%d %H:%M:%S")
+data$End.date <- strptime(data$End.date, "%Y-%m-%d %H:%M:%S")
+
+library(lubridate)
+data <- data %>%
+  dplyr::mutate(start_year = lubridate::year(Start.date), 
+                start_month = lubridate::month(Start.date), 
+                start_day = lubridate::day(Start.date),
+                start_hour = lubridate::hour(Start.date))
+
+data <- data %>%
+  dplyr::mutate(end_year = lubridate::year(End.date), 
+                end_month = lubridate::month(End.date), 
+                end_day = lubridate::day(End.date),
+                end_hour = lubridate::hour(End.date))
+
+freq_start_hour <- data %>% group_by(start_hour, Member.type) %>% summarize(num_trips=n())
+ggplot(freq_start_hour, aes(x=start_hour, y=num_trips, group=Member.type)) +
+    geom_line(aes(color=Member.type))+
+    geom_point(aes(color=Member.type)) + theme_minimal() + labs(x="Hour of Day", y="Number of Trips", color = "Rider Status", title="Hour of Day vs Number of Trips by Rider Status")
+```
