@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio website</title>
+        <link rel="stylesheet" type="text/css" href="../../css/CB_css/cb_eda.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <meta http-equiv="Content-Type" content="charset=UTF-8" />
+    </head>
+
+<div class="hero">
+
+    <img class="wifi" src="../../img/icons8-eye.svg"/>
+	<nav>
+		<h2 class="logo">Introduction</h2>
+		<ul>
+			<li><a href="../../index.html">About Me</a></li>
+			<li><a href="cb_intro.html">Introduction</a></li>
+			<li><a href="cb_code.html">Code</a></li>
+			<li><div class="dropdown">
+			  <button class="dropbtn">Data 
+				<i class="fa fa-caret-down"></i>
+			  </button>
+			  <div class="dropdown-content">
+				<a href="cb_data.html">Data</a>
+				<a href="cb_data_cleaning.html">Data Cleaning</a>
+			  </div>
+			</div></li>
+			<li><a href="cb_eda.html">Exploring Data</a></li>
+			<li><a href="cb_sa.html">Statistical Analysis</a></li>
+			
+			<li><a href="cb_conclusions.html">Conclusions</a></li>
+
+		</ul>
+	
+	</nav>
+
+        <div class="content">
+            
+            <h1>Exploring Data</h1>
+            <h3>This section focuses on exploring the different features in the data gathered <br> from a visual
+        and statistical perspective.
+        </h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with scripts and saved plots.</h4>
+
+        </div>
+    </div>
+
+    <section class="about"> 
+    <div class="about-text">
+
+				<h2>How has the evolution of Capital Bikeshare usage changed over the years ?</h2>
+        <br>
+
+        <img src="../../Plots/cb_usage.png" style="height: 500px;width: 750px"> 
+
+
+        <br><br>
+				<p> We notice that the demand for CaBi stayed relatively similar across 2016 to 2019. The drop in demand in 2020 is a cause of the COVID-19 pandemic and the consequent lockdown imposed. However,
+                    the key finding here is that post-covid demand levels have not yet caught up to pre-covid demand!
+                    <br><br>
+
+                    <img src="../../Plots/cb_members.png" style="height: 500px;width: 750px"> 
+                    <br><br>
+
+          On the other hand, there are some positive signs when it comes to membership growth.The fact that CaBi had the highest number of members in 2020 signifies that the number of casual riders, mainly tourists and folks residing in D.C for a few months at maximum, declined significantly due to the imposed lockdown. As a result of the lockdown, we notice a drop in members from 2020 to 2021 by almost 25%! Therefore, the pandemic indubitably affected CaBi’s revenues and has now put them in a period of recovery. <br> 
+          <p>  
+
+        The most evident thing from Figure 1 is that all of these variables have gone through drastic changes
+        over the years. However, the more interesting thing to note from this graph is the period where trends 
+        shifted from one state to the other. <br><br>
+
+        <img src="../../Plots/cb_daily.png" style="height: 500px;width: 750px">  <br><br>
+        
+        In terms of ride distribution per hour of the day, the above figure highlights that there is relatively no activity on CaBi bikes amongst members and casual riders at 3AM and 4AM across the years 2016 to 2022. However, at 8AM we see a spike in rides started for members and not for casual riders, implying
+        that members mainly commute for work using CaBi. Another peak is seen at 5PM, this time for both members and casual riders, which denotes that members mainly commute from their workplaces back home but casual riders set off for a leisurely trip, reinforcing our observation from Figure 6 that casual riders comprise mainly tourists.
+         <br><br>
+
+         <img src="../../Plots/Ridge.png" style="height: 500px;width: 750px">  <br><br>
+
+        The ridge plot above helps us visualize the distribution of the number of rides started over a day across all years and members in our data. At 5AM, there is relatively no
+        activity for CaBi, but once the clock strikes 6AM and riders start their day, the activity increases gradually until it reaches a peak at 8AM. Due to work hours, activity is low from 9AM to 4PM, but we see even greater activity at 5PM and 6PM as riders leave their workplaces. Activity after 6PM starts reducing gradually and the cycle begins again at 6AM the next day. <br><br>
+
+        Instrumentalness of songs seems to be the least volatile among those features, but it also showcased a significant change in the 90s.
+        <br><br>
+
+        <img src="../../Plots/Geospatial1.png" style="height: 500px;width: 750px">  <br><br>
+
+        The Folium package in Python helped us generate the geospatial visualizations because our data contained latitude and longitude features for start as well as end dates of each trip. Therefore, we created a function that takes in the station address as a string and outputs a heatmap of stations where rides ended. From Figure 13 above, most trips ended around the Rosslyn Metro Station and Dupont Circle, indicating that the Georgetown community uses CaBi as a substitute for the Georgetown University Transportation Shuttle. Moreover, 8000 trips, including 5500 members and 2500 casual riders, were started from 37th & O St NW across 2016-2022.
+        <br><br>
+
+        <img src="../../Plots/Geospatial2.png" style="height: 650px;width: 750px">  <br><br>
+
+        Finally, since our dataset has more than 700 stations, using station ID was avoided as including it in statistical and machine learning models as a categorical variable would be very hectic and would probably require supercomputers. Consequently, we opted to cluster the stations into 2 separate groups that we would eventually be used as a variable in the machine learning part of this project, reducing the number of variables from 700 (total stations) to 2 (clusters).
+        K-means clustering was used since it is the most popular clustering algorithm and fits the problem well. The results can be visualized in the above image. <br><br>
+
+        The algorithm’s performance is near perfect, as there is no visible overlap between the two clusters and all stations are assigned to a cluster in a visually logical manner. The red cluster
+        is representative of bike stations in Georgetown, Chevy Chase (Maryland), and Arlington (Virgina) and the blue cluster is representative of bike stations in both Washington D.C, bordering the states of Maryland and Virginia, and the vicinity of Ronald Reagan Washington
+National Airport (Virginia). This has now helped us factor in the location of each station through the resulting labels of the clustering models.
+
+
+ 
+
+</div>
+
+</section>
+
+
+
+
+
+
+</html>

@@ -27,7 +27,7 @@ nav{
 .logo{
 	color: white;
 	font-size: 35px;
-	letter-spacing: 1px;
+	padding-left: 5%;
 	cursor: pointer;
 }
 span{
@@ -49,6 +49,26 @@ nav ul li a:hover{
 	color: #006699;
 	transition: .4s;
 }
+
+
+
+.link {
+	color: blue; /* initial color of the link */
+	text-decoration: none; /* remove underline from link */
+  }
+  
+.link:hover {
+	color: red; /* color of the link when hovered over */
+	text-decoration: underline; /* add back underline on hover */
+  }
+  
+  
+
+
+
+
+
+
 .btn{
 	background-color:#006699;
 	color: white;

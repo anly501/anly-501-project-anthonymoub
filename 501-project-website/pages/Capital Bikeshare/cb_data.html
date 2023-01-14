@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio website</title>
+	<link rel="stylesheet" type="text/css" href="../../css/CB_css/cb_data.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/63620424d5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!----hero Section start---->
+
+	<div class="hero">
+		<img class="data" src="../../img/db.svg"/>
+		<nav>
+			<h2 class="logo">Introduction</h2>
+			<ul>
+				<li><a href="../../index.html">About Me</a></li>
+				<li><a href="cb_intro.html">Introduction</a></li>
+				<li><a href="cb_code.html">Code</a></li>
+				<li><div class="dropdown">
+				  <button class="dropbtn">Data 
+					<i class="fa fa-caret-down"></i>
+				  </button>
+				  <div class="dropdown-content">
+					<a href="cb_data.html">Data</a>
+					<a href="cb_data_cleaning.html">Data Cleaning</a>
+				  </div>
+				</div></li>
+				<li><a href="cb_eda.html">Exploring Data</a></li>
+				<li><a href="cb_sa.html">Statistical Analysis</a></li>
+				
+				<li><a href="cb_conclusions.html">Conclusions</a></li>
+	
+			</ul>
+		
+		</nav>
+
+		<div class="content">
+			
+			<h1>Data</h1>
+			<h3>This section focuses on what data was collected</h3>
+            <h4>All data is hosted in <a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">this </a>this link </h4>
+
+			
+		</div>
+	</div>
+	<!----Data collected ---->
+	<section class="about">
+		<div class="main">
+		
+			<div class="about-text">
+				<h2>What data was used ?</h2>
+				<p>The data was found and collected from the CaBi Amazon S3 Bucket. All the datasets were organized yearly from 2016 to September 2022 and, for each year, the CSV files were either present quarterly or monthly. For our analysis, we appended geospatial features to the yearly datasets not containing those features (2016-March 2020) by sampling on the feature of Station ID and then concatenated yearly data frames into a combined CSV file that we used for Descriptive and Inferential Statistics. More information about each of these steps is described in detail under the Data Cleaning section. <br><br>
+
+                    Details of useful columns to our project have been listed in below:
+		
+                    </p>
+		
+			</div>
+		</div>
+	<!-----Data features section start----------->
+	<div class="service">
+		<div class="title">
+			<h2>Data features</h2>
+            
+		</div>
+        
+		<div class="box">
+			<div class="card">
+				<i class="fas fa-bars"></i>
+				<h5>Duration</h5>
+				<div class="pra">
+					<p>Response Variable present across all years</p>
+					
+
+					
+				</div>
+			</div>
+
+			<div class="card">
+				<i class="far fa-user"></i>
+				<h5>Start Date</h5>
+				<div class="pra">
+					<p>Start and end date of each trip -> extract date features (hour, month, etc.)</p>
+
+				
+				</div>
+			</div>
+
+			<div class="card">
+				<i class="fa-solid fa-magnifying-glass-plus"></i>
+				<h5>Start and end station</h5>
+				<div class="pra">
+					<p>837 Levels: Station Addresses encoded as ID’s </p>
+
+		
+				</div>
+			</div>
+
+            <div class="card">
+				<i class="fa-brands fa-wordpress"></i>
+				<h5>Bike Type</h5>
+				<div class="pra">
+					<p>3 Levels: Classic or Docked or Electric </p>
+
+		
+				</div>
+			</div>
+
+
+            <div class="card">
+				<i class="fa-solid fa-grip-lines"></i>
+				<h5>Rider Status</h5>
+				<div class="pra">
+					<p>2 Levels: Casual or Member </p>
+
+		
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+    <!-----Second set of features----------->
+
+    <div class="service">
+
+
+		<div class="box">
+
+            <div class="card">
+				<i class="fa-solid fa-grip-lines"></i>
+				<h5>Rider Status</h5>
+				<div class="pra">
+					<p>2 Levels: Casual or Member </p>
+
+		
+				</div>
+			</div>
+
+			<div class="card">
+				<i class="fa-solid fa-a"></i>
+				<h5>Geospatial coordinates</h5>
+				<div class="pra">
+					<p>2016-2020 March missing these variables -> Data Cleaning and Feature Engineering!</p>
+					
+
+					
+				</div>
+			</div>
+
+			<div class="card">
+				<i class="fa-solid fa-chess-board"></i>
+				<h5>Distance (miles)</h5>
+				<div class="pra">
+					<p>Distance of each ride</p>
+
+				
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

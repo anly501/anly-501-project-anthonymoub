@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio website</title>
+	<link rel="stylesheet" type="text/css" href="../../css/datacleaning.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="charset=UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+
+  
+</head>
+<body>
+	<!----hero Section start---->
+
+	<div class="hero">
+
+    <img class="wifi" src="../../img/icons8-trash-can-500.png"/>
+	<nav>
+		<h2 class="logo">Introduction</h2>
+		<ul>
+			<li><a href="../../index.html">About Me</a></li>
+			<li><a href="cb_intro.html">Introduction</a></li>
+			<li><a href="cb_code.html">Code</a></li>
+			<li><div class="dropdown">
+			  <button class="dropbtn">Data 
+				<i class="fa fa-caret-down"></i>
+			  </button>
+			  <div class="dropdown-content">
+				<a href="cb_data.html">Data</a>
+				<a href="cb_data_cleaning.html">Data Cleaning</a>
+			  </div>
+			</div></li>
+			<li><a href="cb_eda.html">Exploring Data</a></li>
+			<li><a href="cb_sa.html">Statistical Analysis</a></li>
+			
+			<li><a href="cb_conclusions.html">Conclusions</a></li>
+
+		</ul>
+	
+	</nav>
+
+		<div class="content">
+			
+			<h1>Data Cleaning</h1>
+			<h3>This section focuses on how the data collected was cleaned</h3>
+            <h4><a href="https://github.com/anly501/anly-501-project-anthonymoub/tree/main/501-project-website" style="color: rgb(39, 160, 204)">Link </a> to Github repo with datasets and API scripts</h4>
+
+		</div>
+	</div>
+	<!----Data collected ---->
+	<section class="about">
+		<div class="main">
+		
+			<div class="about-text">
+
+        <h2>What is data cleaning ?</h2> <br>
+        <p>Data cleaning is probably the most important part of any data science project, for its usually the step that takes the longest tine and is the most delicate, considering how 
+          important it is to have all the  data in the correct format to develop good and accurate models. 
+          
+          <br><br> 
+          
+          In short , Ddta cleaning is the process of fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. When combining multiple
+           data sources, there are many opportunities for data to be duplicated or mislabeled. If data is incorrect, outcomes and algorithms are unreliable, even though they may look correct.
+            There is no one absolute way to prescribe the exact steps in the data cleaning process because the processes will vary from dataset to dataset. <a href="https://www.tableau.com/learn/articles/what-is-data-cleaning" style="color: rgb(39, 160, 204)">(Source) </a> 
+
+            <br><br> Below is a good look at how data cleaning usually looks like: <br><br>
+
+            <figcaption></figcaption>
+            <img src="../../img/DataCleaning.png" style="height: 450px ; width: 550px"/> 
+            <figcaption>Image 1 - Data cleaning cycle</figcaption>
+            
+            <br><br>
+          </p>
+
+				<h2>Data cleaning in this project</h2>
+        <br>
+				<p> Considering that the data was gathered from pre existing CSV files, there was no extensive cleaning required, but rather minor pre-processing for specific needs of this project. All data cleaning was completed using Python. The correct sequence to follow in our Github Repository for data cleaning is “511 Geospatial Features Append.ipynb” followed by “Joining_data_teg.ipynb”.
+          <br><br> 
+
+          It is important to mention all NA values were dropped since there were a total of 20,000 NA values out of 20 million rows of data we had gathered from all the CSVs, so dropping them would not be significant and/or change our analysis. In addition the column called “Bike.number” was dropped as it represents every ID for every bike Capital Bikeshare owns. With that being known, it can be said that running an analysis on every bike is useless since all of them are the same and there are a lot of bikes in stock.
+          <br><br> 
+
+          Next, not all of the datasets (2016 - 2020) had longitude and latitude columns, which motivated us to conduct geospatial analysis for which left joins were used. Left joins were performed between every yearly dataset provided from the source on the column called Station.number (see visual example below), but distinctions were made between the 2021 and 2022 datasets that involved longitude and latitude columns with ones that did not. The only column that all the datasets share in common as shown below.
+          <br><br>
+
+          <img src="../../img/cb_clean.png" style="height: 250px ; width: 610px"/> 
+
+          <br><br>
+
+          One last task that had to be completed before joining the datasets was sampling, since every dataset has around 3 million rows, and joining them as is would have resulted in 21 million rows, which was not within the scope of the project and would require much more computational power. For that reason, we had to come up with a sampling strategy that is reflective of the population data, which is why we decided to sample on station number, as it guarantees the spread of rides around the DC. Maryland, and Virginia area remains consistent with that of the population data.
+
+          <br><br>
+
+          As shown below, presented is a small example that explains that sampling strategy:
+
+          <br><br>
+
+          <img src="../../img/cb_sizered.png" style="height: 120px ; width: 660px"/>
+
+          <br><br>
+
+
+         Assume the initial dataset had 3 million rows and all rides are coming from 3 stations with 20% of bike rides from the first station, 50% from the second, and 30% from the third. The sampling was conducted using Python functions that guarantee that this spread among stations is the same when x (in this case 10) % is being sampled from the initial data. Obviously, The data set had much more than just three stations but this is just a small example to explain the sampling strategy.
+
+         <br><br>
+
+         Finally all 7 datasets were joined together into one final cleaned dataset that had approximately 2.1 million rows of data, which was representative of the population data.
+
+
+			</div>
+		</div>
+	
+
+</body>
+</html>
