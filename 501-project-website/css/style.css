@@ -15,7 +15,9 @@
 	background-size: cover;
 	background-position: center;
 	position: relative;
+	overflow-x: hidden;
 }
+
 nav{
 	display: flex;
 	align-items: center;
@@ -25,9 +27,6 @@ nav{
 	padding-right: 8%;
 }
 
-.hero {
-	overflow-x: hidden;
-  }
 
 	  
 .logo{
