@@ -13,6 +13,8 @@
 	width: 100%;
 	background-color: #000;
 	background-size: cover;
+	position: relative;
+	overflow-x: hidden;
 	background-position: center;
 }
 nav{
@@ -23,6 +25,9 @@ nav{
 	padding-left: 8%;
 	padding-right: 8%;
 }
+.hero {
+	overflow-x: hidden;
+  }
 
 @media only screen and (max-width: 1700px){
 .wifi{

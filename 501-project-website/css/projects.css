@@ -24,6 +24,9 @@ nav{
 	padding-left: 0%;
 	padding-right: 8%;
 }
+.hero {
+	overflow-x: hidden;
+  }
 .logo{
 	color: white;
 	font-size: 35px;

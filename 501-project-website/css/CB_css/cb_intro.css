@@ -13,6 +13,8 @@
 	background-color: #000;
 	background-size: cover;
 	background-position: center; 
+	position: relative;
+	overflow-x: hidden;
     
 }
 

@@ -13,10 +13,14 @@
 	background-color: #000;
 	background-size: cover;
 	background-position: center; 
+	position: relative;
+	overflow-x: hidden;
     
 }
 
 
+
+ 
 
 nav{
 	display: flex;
@@ -156,6 +160,7 @@ h4{
 	width: 100%;
 	padding: 100px 0px;
 	background-color: #191919;
+	
 }
 .about img{
 	height: auto;
@@ -167,12 +172,18 @@ h4{
 	margin-left: 10%;
 	text-align: justify;
 }
+
+
+
+
 .main{
 	width: 1130px;
 	max-width: 95%;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+	
+	
 }
 .about-text h2{
 	color: white;
@@ -221,8 +232,6 @@ button:hover{
 		width: 600px;
 		height: 600px;
 		position: absolute;
-		right: -18%;
-		top: 15%;
 		
 	}
 	}
@@ -232,9 +241,9 @@ button:hover{
 			width: 800px;
 			height: 800px;
 			position: absolute;
-			right: -18%;
+			right: -20%;
 			top: 15%;
-			
+	
 		}
 		}
 

@@ -13,8 +13,14 @@
 	width: 100%;
 	background-color: #000;
 	background-size: cover;
+	position: relative;
+	overflow-x: hidden;
 	background-position: center;
 }
+
+.hero {
+	overflow-x: hidden;
+  }
 nav{
 	display: flex;
 	align-items: center;

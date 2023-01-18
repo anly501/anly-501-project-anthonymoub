@@ -12,6 +12,8 @@
 	height: 100vh;
 	width: 100%;
 	background-color: #000;
+	position: relative;
+	overflow-x: hidden;
 	background-size: cover;
 	background-position: center;
 }
@@ -23,6 +25,9 @@ nav{
 	padding-left: 8%;
 	padding-right: 8%;
 }
+.hero {
+	overflow-x: hidden;
+  }
 
 @media only screen and (max-width: 1700px){
 .wifi{
