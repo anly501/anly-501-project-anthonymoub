@@ -299,10 +299,10 @@ button{
 	text-decoration: none;
 	border: 2px solid transparent;
 	font-weight: bold;
-	padding: 13px 30px;
 	border-radius: 30px;
 	transition: .4s; 
 }
+
 button:hover{
 	background-color: transparent;
 	border: 2px solid #006699;

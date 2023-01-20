@@ -212,7 +212,6 @@ button{
 	text-decoration: none;
 	border: 2px solid transparent;
 	font-weight: bold;
-	padding: 13px 30px;
 	border-radius: 30px;
 	transition: .4s; 
 }
@@ -229,10 +228,12 @@ button:hover{
 
 @media only screen and (max-width: 1700px){
 	.guitar{
-		width: 600px;
-		height: 600px;
+		width: 800px;
+		height: 800px;
 		position: absolute;
-		
+		right: -25%;
+		top: 5%;
+	
 	}
 	}
 	
@@ -241,7 +242,7 @@ button:hover{
 			width: 800px;
 			height: 800px;
 			position: absolute;
-			right: -20%;
+			right: -18%;
 			top: 15%;
 	
 		}
@@ -453,3 +454,9 @@ footer p:nth-child(2){
   .dropdown:hover .dropdown-content {
 	display: block;
   }  
+.navbar{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	z-index: 1;
+}
