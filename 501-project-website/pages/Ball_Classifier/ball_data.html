@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio website</title>
+	<link rel="stylesheet" type="text/css" href="../../css/CB_css/cb_data.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/63620424d5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!----hero Section start---->
+
+	<div class="hero">
+		<img class="data" src="../../img/db.svg"/>
+		<nav>
+			<h2 class="logo">Introduction</h2>
+			<ul class = "navbar">
+				<li><a href="../../index.html">About Me</a></li>
+				<li><a href="ball_intro.html">Introduction</a></li>
+				<li><a href="ball_code.html">Code</a></li>
+				<li><a href="ball_data.html">Data</a></li>
+				<li><a href="Deep_learning.html">Deep Learning</a></li>
+				<li><a href="ball_conclusions.html">Conclusions</a></li>
+	
+			</ul>
+		
+		</nav>
+
+		<div class="content">
+			
+			<h1>Data</h1>
+			<h3>This section focuses on what data was collected</h3>
+            <h4>All data is hosted in <a href="https://drive.google.com/drive/u/1/folders/1cNc9h_TC_OV-dzVZEnASuFXs50RNBI4i" style="color: rgb(39, 160, 204)">this </a>this link </h4>
+
+			
+		</div>
+	</div>
+	<!----Data collected ---->
+	<section class="about">
+		<div class="main">
+		
+			<div class="about-text">
+				<h2>What data was used ?</h2>
+				<p>Since Google has recently changed its policies when it comes to APIs and image gathering the data collection process for this project was relatively easy and manual. A Google Chrome plugin called Fatkun was used to manually download around 50 pictures per ball type, all of which were placed in the following google drive folder (link). 
+					<br><br>
+					Since the data collection was done manually a lot of the data cleaning was being done automatically, where I was directly filtering out low quality images that clearly have low quality and/or wrong representations of the respective sport.
+					<br><br>
+					The sports for which ball images where collected (which were also the data's labels) are: <br><br>
+					
+					&#x2022; American Football <br>
+					&#x2022; Baseball<br>
+					&#x2022; Basketball<br>
+					&#x2022; Bowling <br>
+					&#x2022; Golf<br>
+					&#x2022; Rugby<br>
+					&#x2022; Soccer <br>
+					&#x2022; Tennis<br>
+					&#x2022; Volleyball<br>
+                   
+
+					<br><br>
+
+					Each of these sport had a folder with tens of images for its ball, and each image is associated with a tag/label that will be used by 
+					the deep learning model. Example below: <br><br>
+
+					<img src="../../img/Balls.png" style="height: 440px;width: 430px">  </p>
+		
+			</div>
+		</div>
+
+
+</body>
+</html>
