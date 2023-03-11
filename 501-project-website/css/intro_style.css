@@ -228,8 +228,8 @@ button:hover{
 
 @media only screen and (max-width: 1700px){
 	.guitar{
-		width: 800px;
-		height: 800px;
+		width: 770px;
+		height: 770px;
 		position: absolute;
 		right: -25%;
 		top: 5%;
@@ -237,16 +237,16 @@ button:hover{
 	}
 	}
 	
-	@media only screen and (min-width: 1800px){
-		.guitar{
-			width: 800px;
-			height: 800px;
-			position: absolute;
-			right: -18%;
-			top: 15%;
-	
-		}
-		}
+@media only screen and (min-width: 1800px){
+	.guitar{
+		width: 800px;
+		height: 800px;
+		position: absolute;
+		right: -18%;
+		top: 15%;
+
+	}
+	}
 
 
 .card-text{
